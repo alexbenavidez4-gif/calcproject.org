@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Improvement Calculators — Paint, Flooring, Tile, Concrete, Fence &amp; More</title>
+<meta name="description" content="Twelve free calculators for indoor and outdoor home improvement projects — paint, flooring, tile, drywall, wallpaper, trim, mulch, concrete, gravel, fence, deck, and sod. Works in imperial or metric.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16324A;
+    --navy-deep:#0F2436;
+    --cyan:#7FB3C7;
+    --chalk:#F3F1E8;
+    --orange:#E4572E;
+    --yellow:#F4B942;
+    --graphite:#2A2A28;
+    --graphite-soft:#5B5B57;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--navy); color:var(--chalk); font-family:'Inter',sans-serif; line-height:1.5; }
+  h1,h2,h3{ font-family:'Bebas Neue',sans-serif; letter-spacing:0.03em; margin:0; }
+  .mono{ font-family:'IBM Plex Mono',monospace; }
+  a{color:var(--yellow);}
+
+  .unit-toggle{
+    position:fixed; top:16px; right:16px; z-index:50;
+    display:flex; align-items:center; background:var(--chalk); border-radius:20px;
+    padding:4px; box-shadow:0 8px 24px rgba(0,0,0,0.4); font-family:'IBM Plex Mono',monospace;
+  }
+  .unit-toggle button{
+    border:none; background:transparent; padding:8px 14px; font-size:11px; letter-spacing:0.06em;
+    text-transform:uppercase; font-weight:700; border-radius:16px; cursor:pointer; color:var(--graphite-soft);
+    transition:background .15s ease, color .15s ease;
+  }
+  .unit-toggle button.active{ background:var(--orange); color:#fff; }
+  @media (max-width:640px){ .unit-toggle{ top:auto; bottom:16px; left:16px; right:auto; } }
+
+  .back-to-top{
+    position:fixed; bottom:24px; right:max(20px, calc(50vw - 704px)); z-index:50;
+    width:180px; display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:12px 14px; border-radius:30px; background:var(--orange); color:#fff; border:none;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700;
+    cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,0.4); opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s, background .15s ease;
+  }
+  .back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  .back-to-top:hover{ background:#c8471f; }
+
+  .ruler{
+    position:relative; height:34px; margin:0 auto; max-width:1000px;
+    background-image:
+      repeating-linear-gradient(90deg, var(--cyan) 0, var(--cyan) 1px, transparent 1px, transparent 12px),
+      repeating-linear-gradient(90deg, var(--chalk) 0, var(--chalk) 2px, transparent 2px, transparent 60px);
+    background-position:0 100%, 0 100%; background-repeat:repeat-x; background-size:12px 12px, 60px 24px;
+    opacity:0.55;
+  }
+  .ruler::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--chalk); opacity:0.6; }
+
+  header{ padding:64px 24px 40px; text-align:center; }
+  .eyebrow{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--yellow); border:1px solid var(--yellow); padding:4px 10px;
+    border-radius:var(--radius); margin-bottom:20px;
+  }
+  header h1{ font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; color:var(--chalk); max-width:900px; margin:0 auto; }
+  header h1 span{color:var(--orange);}
+  header p{ max-width:600px; margin:22px auto 0; color:var(--cyan); font-size:1.05rem; }
+
+  main{max-width:1000px; margin:0 auto; padding:48px 20px 80px;}
+
+  nav.jump{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:40px 0 8px; }
+  nav.jump a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    text-decoration:none; color:var(--chalk); border:1px solid rgba(243,241,232,0.35); padding:8px 14px;
+    border-radius:var(--radius); transition:border-color .15s ease, color .15s ease;
+  }
+  nav.jump a:hover{border-color:var(--yellow); color:var(--yellow);}
+
+  .section-heading{ text-align:center; margin:70px 0 6px; }
+  .section-heading h2{ font-size:clamp(2rem, 5vw, 3rem); color:var(--chalk); }
+  .section-heading:first-of-type{ margin-top:20px; }
+
+  .ticket{
+    background:var(--chalk); color:var(--graphite); border-radius:6px; margin:36px 0; overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,0.28); opacity:0; transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .ticket.visible{opacity:1; transform:translateY(0);}
+  .ticket-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:22px 26px 18px;
+    border-bottom:2px dashed rgba(42,42,40,0.2);
+  }
+  .stamp{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--orange); border:1.5px solid var(--orange); padding:5px 9px; border-radius:var(--radius);
+    transform:rotate(-2deg); white-space:nowrap;
+  }
+  .ticket-head h2{ font-size:2rem; color:var(--navy); }
+  .ticket-head p{ margin:6px 0 0; color:var(--graphite-soft); font-size:0.95rem; max-width:480px; }
+
+  .ticket-body{ display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  @media (max-width:640px){ .ticket-body{grid-template-columns:1fr;} }
+
+  .calc-inputs{ padding:24px 26px 28px; }
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:0.82rem; font-weight:600; color:var(--graphite); margin-bottom:6px; }
+  .field .hint{ font-weight:400; color:var(--graphite-soft); font-size:0.78rem; }
+  .field input{
+    width:100%; padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:0.95rem;
+    border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); background:#fff; color:var(--graphite);
+  }
+  .field input:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .field-row{display:flex; gap:12px;}
+  .field-row .field{flex:1;}
+
+  .calc-btn{
+    margin-top:6px; width:100%; padding:13px 16px; background:var(--orange); color:var(--chalk); border:none;
+    border-radius:var(--radius); font-family:'IBM Plex Mono',monospace; font-size:0.85rem; letter-spacing:0.1em;
+    text-transform:uppercase; font-weight:600; cursor:pointer; transition:transform .08s ease, background .15s ease;
+  }
+  .calc-btn:hover{background:#c8471f;}
+  .calc-btn:active{transform:scale(0.97);}
+
+  .receipt-wrap{ background:var(--navy-deep); padding:24px 26px; display:flex; align-items:center; }
+  .receipt{
+    background:#fff; color:var(--graphite); width:100%; padding:20px 18px; border-radius:var(--radius);
+    position:relative; font-family:'IBM Plex Mono',monospace;
+  }
+  .receipt::before{
+    content:""; position:absolute; top:-1px; left:0; right:0; height:1px;
+    background-image:repeating-linear-gradient(90deg, rgba(42,42,40,0.35) 0 6px, transparent 6px 12px);
+  }
+  .receipt .label{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--graphite-soft); }
+  .receipt .result-line{
+    display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dotted rgba(42,42,40,0.2); font-size:0.9rem;
+  }
+  .receipt .result-line:last-of-type{border-bottom:none;}
+  .receipt .total{
+    margin-top:10px; padding-top:10px; border-top:2px solid var(--graphite);
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .receipt .total .amount{ font-size:1.5rem; font-weight:600; color:var(--navy); }
+
+  .formula-note{
+    padding:18px 26px 26px; border-top:1px solid rgba(42,42,40,0.12); font-size:0.88rem;
+    color:var(--graphite-soft); grid-column:1 / -1;
+  }
+  .formula-note strong{color:var(--graphite);}
+
+  .guide-link{
+    margin:0 26px 24px; padding-top:16px; border-top:1px dashed rgba(42,42,40,0.2);
+  }
+  .guide-link a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--navy); text-decoration:none; border-bottom:2px solid var(--orange); padding-bottom:2px;
+  }
+  .guide-link a:hover{ color:var(--orange); }
+
+  footer{ text-align:center; padding:40px 20px 60px; color:var(--cyan); font-size:0.85rem; }
+  footer p{max-width:520px; margin:8px auto;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} .ticket{opacity:1; transform:none;} }
+</style>
+</head>
+<body>
+
+<div class="unit-toggle" role="group" aria-label="Unit system">
+  <button type="button" id="btn-imperial" class="active" onclick="setUnitSystem('imperial')">Imperial</button>
+  <button type="button" id="btn-metric" onclick="setUnitSystem('metric')">Metric</button>
+</div>
+
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr; Back to Top</button>
+
+<header>
+  <span class="eyebrow">Free &middot; No sign-up &middot; No app</span>
+  <h1>Measure once.<br>Calculate once.<br><span>Buy it right.</span></h1>
+  <p>Twelve calculators for every part of the project — indoor and outdoor. Switch to metric in the corner if you measure in meters and liters.</p>
+</header>
+
+<div class="ruler" role="presentation"></div>
+
+<main>
+  <nav class="jump" aria-label="Jump to calculator">
+    <a href="#paint">Paint</a>
+    <a href="#flooring">Flooring</a>
+    <a href="#tile">Tile</a>
+    <a href="#drywall">Drywall</a>
+    <a href="#wallpaper">Wallpaper</a>
+    <a href="#trim">Trim</a>
+    <a href="#mulch">Mulch &amp; Soil</a>
+    <a href="#concrete">Concrete</a>
+    <a href="#gravel">Gravel</a>
+    <a href="#fence">Fence</a>
+    <a href="#deck">Deck</a>
+    <a href="#sod">Sod</a>
+    <a href="guides.html">Guides</a>
+  </nav>
+
+  <div class="section-heading"><span class="eyebrow">Indoor</span><h2>Indoor Projects</h2></div>
+
+  <!-- ================= PAINT ================= -->
+  <section class="ticket" id="paint">
+    <div class="ticket-head">
+      <div><h2>Paint Calculator</h2><p>Figure out how many gallons a room actually needs, including doors, windows, and a second coat.</p></div>
+      <span class="stamp">Job: Interior Paint</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="p-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="p-length" min="0" step="0.1" value="12" data-factor="0.3048"></div>
+          <div class="field"><label for="p-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="p-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field"><label for="p-height">Wall height (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="p-height" min="0" step="0.1" value="8" data-factor="0.3048"></div>
+        <div class="field-row">
+          <div class="field"><label for="p-doors">Doors <span class="hint u" data-imp="(~21 sq ft each)" data-met="(~2 m&sup2; each)">(~21 sq ft each)</span></label><input type="number" id="p-doors" min="0" step="1" value="1"></div>
+          <div class="field"><label for="p-windows">Windows <span class="hint u" data-imp="(~15 sq ft each)" data-met="(~1.4 m&sup2; each)">(~15 sq ft each)</span></label><input type="number" id="p-windows" min="0" step="1" value="2"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="p-coats">Number of coats</label><input type="number" id="p-coats" min="1" step="1" value="2"></div>
+          <div class="field"><label for="p-coverage">Coverage <span class="hint u" data-imp="(sq ft / gallon)" data-met="(m&sup2; / liter)">(sq ft / gallon)</span></label><input type="number" id="p-coverage" min="1" step="1" value="350" data-factor="0.024541"></div>
+        </div>
+        <button class="calc-btn" onclick="calcPaint()">Calculate gallons</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="p-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> wall area = (2 &times; length + 2 &times; width) &times; height, minus door and window area, &times; number of coats, &divide; coverage. <strong>Example:</strong> <span class="u" data-imp="a 12&times;10 ft room with 8 ft walls, one door, two windows, and two coats needs roughly 2 gallons at 350 sq ft/gallon coverage." data-met="a 3.7&times;3 m room with 2.4 m walls, one door, two windows, and two coats needs roughly 7.6 liters at 8.6 m&sup2;/liter coverage.">a 12&times;10 ft room with 8 ft walls, one door, two windows, and two coats needs roughly 2 gallons at 350 sq ft/gallon coverage.</span></div>
+      <div class="guide-link"><a href="how-much-paint-does-a-bedroom-need.html">Read the full guide: How Much Paint Does a Bedroom Actually Need? &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ================= FLOORING ================= -->
+  <section class="ticket" id="flooring">
+    <div class="ticket-head">
+      <div><h2>Flooring Calculator</h2><p>Convert room size into square footage and boxes needed, with waste built in for cuts.</p></div>
+      <span class="stamp">Job: Flooring</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="f-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="f-length" min="0" step="0.1" value="14" data-factor="0.3048"></div>
+          <div class="field"><label for="f-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="f-width" min="0" step="0.1" value="11" data-factor="0.3048"></div>
+        </div>
+        <div class="field"><label for="f-waste">Waste allowance <span class="hint">(% for cuts &amp; mistakes)</span></label><input type="number" id="f-waste" min="0" step="1" value="10"></div>
+        <div class="field"><label for="f-boxcoverage">Coverage per box <span class="u" data-imp="(sq ft)" data-met="(m&sup2;)">(sq ft)</span></label><input type="number" id="f-boxcoverage" min="0.1" step="0.1" value="20" data-factor="0.0929"></div>
+        <button class="calc-btn" onclick="calcFlooring()">Calculate boxes</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="f-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> area = length &times; width, plus your waste percentage, divided by how many square feet each box covers, rounded up to a full box. <strong>Example:</strong> <span class="u" data-imp="a 14&times;11 ft room (154 sq ft) with 10% waste needs about 170 sq ft of material &mdash; 9 boxes if each box covers 20 sq ft." data-met="a 4.3&times;3.4 m room (14.3 m&sup2;) with 10% waste needs about 15.8 m&sup2; of material &mdash; 9 boxes if each box covers 1.9 m&sup2;.">a 14&times;11 ft room (154 sq ft) with 10% waste needs about 170 sq ft of material &mdash; 9 boxes if each box covers 20 sq ft.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= TILE ================= -->
+  <section class="ticket" id="tile">
+    <div class="ticket-head">
+      <div><h2>Tile Calculator</h2><p>Figure out how many tiles a floor or wall needs, based on your exact tile size.</p></div>
+      <span class="stamp">Job: Tile</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="t-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="t-length" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+          <div class="field"><label for="t-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="t-width" min="0" step="0.1" value="8" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="t-tilelen">Tile length (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="t-tilelen" min="0.1" step="0.1" value="12" data-factor="2.54"></div>
+          <div class="field"><label for="t-tilewid">Tile width (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="t-tilewid" min="0.1" step="0.1" value="12" data-factor="2.54"></div>
+        </div>
+        <div class="field"><label for="t-waste">Waste allowance <span class="hint">(% for cuts &amp; breakage)</span></label><input type="number" id="t-waste" min="0" step="1" value="10"></div>
+        <button class="calc-btn" onclick="calcTile()">Calculate tiles</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="t-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> area = length &times; width, plus waste, divided by the square footage of one tile. <strong>Example:</strong> <span class="u" data-imp="a 10&times;8 ft floor with 12&times;12 in tiles and 10% waste needs about 88 tiles." data-met="a 3&times;2.4 m floor with 30&times;30 cm tiles and 10% waste needs about 88 tiles.">a 10&times;8 ft floor with 12&times;12 in tiles and 10% waste needs about 88 tiles.</span></div>
+      <div class="guide-link"><a href="tile-layout-mistakes-guide.html">Read the full guide: Tile Layout Mistakes That Cost You Extra Boxes &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ================= DRYWALL ================= -->
+  <section class="ticket" id="drywall">
+    <div class="ticket-head">
+      <div><h2>Drywall Calculator</h2><p>Convert wall dimensions into the number of sheets you need to buy.</p></div>
+      <span class="stamp">Job: Drywall</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="d-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="d-length" min="0" step="0.1" value="12" data-factor="0.3048"></div>
+          <div class="field"><label for="d-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="d-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field"><label for="d-height">Wall height (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="d-height" min="0" step="0.1" value="8" data-factor="0.3048"></div>
+        <div class="field-row">
+          <div class="field"><label for="d-doors">Doors</label><input type="number" id="d-doors" min="0" step="1" value="1"></div>
+          <div class="field"><label for="d-windows">Windows</label><input type="number" id="d-windows" min="0" step="1" value="2"></div>
+        </div>
+        <div class="field"><label for="d-sheetsize">Sheet size <span class="hint u" data-imp="(sq ft &mdash; 32 for 4x8)" data-met="(m&sup2; &mdash; ~3 for a standard sheet)">(sq ft &mdash; 32 for 4x8)</span></label><input type="number" id="d-sheetsize" min="1" step="1" value="32" data-factor="0.0929"></div>
+        <button class="calc-btn" onclick="calcDrywall()">Calculate sheets</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="d-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> wall area minus door/window area, divided by sheet size. <strong>Example:</strong> <span class="u" data-imp="a 12&times;10 ft room with 8 ft walls needs about 8 sheets of standard 4x8 drywall." data-met="a 3.7&times;3 m room with 2.4 m walls needs about 8 sheets of a standard 1.2&times;2.4 m drywall sheet.">a 12&times;10 ft room with 8 ft walls needs about 8 sheets of standard 4x8 drywall.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= WALLPAPER ================= -->
+  <section class="ticket" id="wallpaper">
+    <div class="ticket-head">
+      <div><h2>Wallpaper Calculator</h2><p>Estimate rolls needed, with room left over for pattern matching and trimming.</p></div>
+      <span class="stamp">Job: Wallpaper</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="w-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="w-length" min="0" step="0.1" value="12" data-factor="0.3048"></div>
+          <div class="field"><label for="w-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="w-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field"><label for="w-height">Wall height (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="w-height" min="0" step="0.1" value="8" data-factor="0.3048"></div>
+        <div class="field-row">
+          <div class="field"><label for="w-doors">Doors</label><input type="number" id="w-doors" min="0" step="1" value="1"></div>
+          <div class="field"><label for="w-windows">Windows</label><input type="number" id="w-windows" min="0" step="1" value="2"></div>
+        </div>
+        <div class="field"><label for="w-rollcoverage">Usable coverage per roll <span class="u" data-imp="(sq ft)" data-met="(m&sup2;)">(sq ft)</span></label><input type="number" id="w-rollcoverage" min="1" step="1" value="25" data-factor="0.0929"></div>
+        <button class="calc-btn" onclick="calcWallpaper()">Calculate rolls</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="w-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> net wall area divided by usable square footage per roll after trimming. <strong>Example:</strong> <span class="u" data-imp="a 12&times;10 ft room needs about 7 rolls at 25 usable sq ft per roll." data-met="a 3.7&times;3 m room needs about 7 rolls at 2.3 usable m&sup2; per roll.">a 12&times;10 ft room needs about 7 rolls at 25 usable sq ft per roll.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= TRIM ================= -->
+  <section class="ticket" id="trim">
+    <div class="ticket-head">
+      <div><h2>Baseboard &amp; Trim Calculator</h2><p>Turn room perimeter into the number of boards to buy.</p></div>
+      <span class="stamp">Job: Trim</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="b-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-length" min="0" step="0.1" value="12" data-factor="0.3048"></div>
+          <div class="field"><label for="b-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="b-doorways">Doorways</label><input type="number" id="b-doorways" min="0" step="1" value="1"></div>
+          <div class="field"><label for="b-doorwaywidth">Avg. doorway width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-doorwaywidth" min="0" step="0.1" value="3" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="b-waste">Waste allowance (%)</label><input type="number" id="b-waste" min="0" step="1" value="10"></div>
+          <div class="field"><label for="b-boardlength">Board length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-boardlength" min="1" step="1" value="8" data-factor="0.3048"></div>
+        </div>
+        <button class="calc-btn" onclick="calcTrim()">Calculate boards</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="b-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> perimeter minus doorway widths, plus waste, divided by board length. <strong>Example:</strong> <span class="u" data-imp="a 12&times;10 ft room with one 3 ft doorway needs about 6 boards at 8 ft each." data-met="a 3.7&times;3 m room with one 0.9 m doorway needs about 6 boards at 2.4 m each.">a 12&times;10 ft room with one 3 ft doorway needs about 6 boards at 8 ft each.</span></div>
+    </div>
+  </section>
+
+  <div class="ruler" role="presentation"></div>
+  <div class="section-heading"><span class="eyebrow">Outdoor</span><h2>Outdoor Projects</h2></div>
+
+  <!-- ================= MULCH / SOIL ================= -->
+  <section class="ticket" id="mulch">
+    <div class="ticket-head">
+      <div><h2>Mulch &amp; Soil Calculator</h2><p>Find the volume or bags you need for a bed or garden area, at any depth.</p></div>
+      <span class="stamp">Job: Mulch &amp; Soil</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="m-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="m-length" min="0" step="0.1" value="20" data-factor="0.3048"></div>
+          <div class="field"><label for="m-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="m-width" min="0" step="0.1" value="6" data-factor="0.3048"></div>
+        </div>
+        <div class="field"><label for="m-depth">Desired depth (<span class="u" data-imp="inches" data-met="cm">inches</span>)</label><input type="number" id="m-depth" min="0.5" step="0.5" value="3" data-factor="2.54"></div>
+        <div class="field"><label for="m-bagsize">Bag size <span class="hint u" data-imp="(cubic ft)" data-met="(liters)">(cubic ft)</span></label><input type="number" id="m-bagsize" min="0.1" step="0.1" value="2" data-factor="28.3168"></div>
+        <button class="calc-btn" onclick="calcMulch()">Calculate material</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="m-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> volume = length &times; width &times; depth, then converted to bags or bulk units. <strong>Example:</strong> <span class="u" data-imp="a 20&times;6 ft bed at 3 inches deep needs about 1.1 cubic yards &mdash; roughly 15 bags at 2 cubic ft each." data-met="a 6.1&times;1.8 m bed at 7.6 cm deep needs about 0.84 cubic meters &mdash; roughly 15 bags at 56.6 liters each.">a 20&times;6 ft bed at 3 inches deep needs about 1.1 cubic yards &mdash; roughly 15 bags at 2 cubic ft each.</span></div>
+      <div class="guide-link"><a href="gravel-vs-mulch-guide.html">Read the full guide: Gravel vs. Mulch &mdash; Which Is Right for Your Yard? &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ================= CONCRETE ================= -->
+  <section class="ticket" id="concrete">
+    <div class="ticket-head">
+      <div><h2>Concrete Calculator</h2><p>Find the volume and bags needed for a slab, footing, or pad.</p></div>
+      <span class="stamp">Job: Concrete</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="c-length">Slab length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+          <div class="field"><label for="c-width">Slab width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="c-thickness">Thickness (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="c-thickness" min="1" step="0.5" value="4" data-factor="2.54"></div>
+          <div class="field"><label for="c-bagsize">Bag size <span class="hint u" data-imp="(cu ft)" data-met="(liters)">(cu ft)</span></label><input type="number" id="c-bagsize" min="0.1" step="0.05" value="0.6" data-factor="28.3168"></div>
+        </div>
+        <button class="calc-btn" onclick="calcConcrete()">Calculate concrete</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="c-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> volume = length &times; width &times; thickness, then &divide; bag size for bag count. <strong>Example:</strong> <span class="u" data-imp="a 10&times;10 ft slab at 4 inches needs about 1.23 cubic yards &mdash; roughly 56 bags at 80lb each." data-met="a 3&times;3 m slab at 10.2 cm needs about 0.94 cubic meters &mdash; roughly 56 bags at 17 liters each.">a 10&times;10 ft slab at 4 inches needs about 1.23 cubic yards &mdash; roughly 56 bags at 80lb each.</span></div>
+      <div class="guide-link"><a href="concrete-slab-basics-guide.html">Read the full guide: Concrete Slab Basics &mdash; Thickness, Curing Time &amp; Weather Windows &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ================= GRAVEL ================= -->
+  <section class="ticket" id="gravel">
+    <div class="ticket-head">
+      <div><h2>Gravel Calculator</h2><p>Estimate volume and total weight for a driveway, path, or drainage bed.</p></div>
+      <span class="stamp">Job: Gravel</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="g-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="g-length" min="0" step="0.1" value="20" data-factor="0.3048"></div>
+          <div class="field"><label for="g-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="g-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="g-depth">Depth (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="g-depth" min="0.5" step="0.5" value="4" data-factor="2.54"></div>
+          <div class="field"><label for="g-tonsperyard">Weight <span class="hint u" data-imp="(tons per cubic yard)" data-met="(kg per cubic meter)">(tons per cubic yard)</span></label><input type="number" id="g-tonsperyard" min="0.1" step="0.1" value="1.4" data-factor="1186.55"></div>
+        </div>
+        <button class="calc-btn" onclick="calcGravel()">Calculate gravel</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="g-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> volume &times; density gives total weight. <strong>Example:</strong> <span class="u" data-imp="a 20&times;10 ft path at 4 inches deep needs about 3.5 tons of gravel." data-met="a 6.1&times;3 m path at 10.2 cm deep needs about 3.2 tonnes of gravel.">a 20&times;10 ft path at 4 inches deep needs about 3.5 tons of gravel.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= FENCE ================= -->
+  <section class="ticket" id="fence">
+    <div class="ticket-head">
+      <div><h2>Fence Calculator</h2><p>Turn fence line length into posts and panels needed.</p></div>
+      <span class="stamp">Job: Fence</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="fc-length">Total fence line (<span class="u" data-imp="linear ft" data-met="linear m">linear ft</span>)</label><input type="number" id="fc-length" min="0" step="0.1" value="120" data-factor="0.3048"></div>
+        <div class="field-row">
+          <div class="field"><label for="fc-postspacing">Post spacing (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="fc-postspacing" min="1" step="0.5" value="8" data-factor="0.3048"></div>
+          <div class="field"><label for="fc-panelwidth">Panel width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="fc-panelwidth" min="1" step="0.5" value="8" data-factor="0.3048"></div>
+        </div>
+        <button class="calc-btn" onclick="calcFence()">Calculate posts &amp; panels</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="fc-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> posts = (fence length &divide; spacing) + 1, panels = fence length &divide; panel width. <strong>Example:</strong> <span class="u" data-imp="120 linear ft with 8 ft spacing needs 16 posts and 15 panels." data-met="36.6 linear meters with 2.4 m spacing needs 16 posts and 15 panels.">120 linear ft with 8 ft spacing needs 16 posts and 15 panels.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= DECK ================= -->
+  <section class="ticket" id="deck">
+    <div class="ticket-head">
+      <div><h2>Deck Calculator</h2><p>Estimate decking boards needed, accounting for board width and gap spacing.</p></div>
+      <span class="stamp">Job: Deck</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="dk-length">Deck length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="dk-length" min="0" step="0.1" value="16" data-factor="0.3048"></div>
+          <div class="field"><label for="dk-width">Deck width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="dk-width" min="0" step="0.1" value="12" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="dk-boardwidth">Board width (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="dk-boardwidth" min="1" step="0.125" value="5.5" data-factor="2.54"></div>
+          <div class="field"><label for="dk-gap">Gap (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="dk-gap" min="0" step="0.0625" value="0.125" data-factor="2.54"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="dk-boardlength">Board length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="dk-boardlength" min="1" step="1" value="12" data-factor="0.3048"></div>
+          <div class="field"><label for="dk-waste">Waste allowance (%)</label><input type="number" id="dk-waste" min="0" step="1" value="10"></div>
+        </div>
+        <button class="calc-btn" onclick="calcDeck()">Calculate boards</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="dk-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> deck area &divide; (board width + gap) gives total board length, plus waste, divided by board length. <strong>Example:</strong> <span class="u" data-imp="a 16&times;12 ft deck needs about 35 boards at 12 ft each." data-met="a 4.9&times;3.7 m deck needs about 35 boards at 3.7 m each.">a 16&times;12 ft deck needs about 35 boards at 12 ft each.</span></div>
+      <div class="guide-link"><a href="deck-board-spacing-guide.html">Read the full guide: Deck Board Spacing &mdash; Why That Small Gap Matters &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ================= SOD ================= -->
+  <section class="ticket" id="sod">
+    <div class="ticket-head">
+      <div><h2>Sod Calculator</h2><p>Convert lawn area into pallets of sod needed.</p></div>
+      <span class="stamp">Job: Sod</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="s-length">Lawn length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="s-length" min="0" step="0.1" value="40" data-factor="0.3048"></div>
+          <div class="field"><label for="s-width">Lawn width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="s-width" min="0" step="0.1" value="30" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="s-waste">Waste allowance (%)</label><input type="number" id="s-waste" min="0" step="1" value="5"></div>
+          <div class="field"><label for="s-sqftperpallet">Coverage per pallet <span class="u" data-imp="(sq ft)" data-met="(m&sup2;)">(sq ft)</span></label><input type="number" id="s-sqftperpallet" min="1" step="1" value="450" data-factor="0.0929"></div>
+        </div>
+        <button class="calc-btn" onclick="calcSod()">Calculate sod</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="s-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> lawn area plus waste, divided by square footage per pallet. <strong>Example:</strong> <span class="u" data-imp="a 40&times;30 ft lawn needs about 3 pallets." data-met="a 12.2&times;9.1 m lawn needs about 3 pallets.">a 40&times;30 ft lawn needs about 3 pallets.</span></div>
+    </div>
+  </section>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p>Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement — always round up and keep your receipt for returns.</p>
+  <p><a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+
+<script>
+  // ---- Unit system state ----
+  let unitSystem = 'imperial';
+  const FT_TO_M = 0.3048;
+  const IN_TO_CM = 2.54;
+  const SQFT_TO_M2 = 0.09290304;
+  const CUYD_TO_M3 = 0.764554857984;
+  const GAL_TO_L = 3.785411784;
+  const CUFT_TO_L = 28.316846592;
+  const TON_TO_KG = 907.18474;
+  const SQFT_PER_GAL_TO_M2_PER_L = SQFT_TO_M2 / GAL_TO_L;
+  const TONPERCUYD_TO_KGPERM3 = TON_TO_KG / CUYD_TO_M3;
+
+  function setUnitSystem(sys){
+    if(sys===unitSystem) return;
+    const toMetric = sys==='metric';
+    document.querySelectorAll('input[data-factor]').forEach(inp=>{
+      const factor = parseFloat(inp.dataset.factor);
+      let val = parseFloat(inp.value);
+      if(isNaN(val)) return;
+      val = toMetric ? val*factor : val/factor;
+      inp.value = Math.round(val*100)/100;
+    });
+    unitSystem = sys;
+    document.querySelectorAll('.u').forEach(el=>{ el.innerHTML = toMetric ? el.dataset.met : el.dataset.imp; });
+    document.getElementById('btn-imperial').classList.toggle('active', !toMetric);
+    document.getElementById('btn-metric').classList.toggle('active', toMetric);
+    recalcAll();
+  }
+
+  // ---- Paint ----
+  function calcPaint(){
+    let L=parseFloat(document.getElementById('p-length').value)||0;
+    let W=parseFloat(document.getElementById('p-width').value)||0;
+    let H=parseFloat(document.getElementById('p-height').value)||0;
+    const doors=parseFloat(document.getElementById('p-doors').value)||0;
+    const windows=parseFloat(document.getElementById('p-windows').value)||0;
+    const coats=parseFloat(document.getElementById('p-coats').value)||1;
+    let coverage=parseFloat(document.getElementById('p-coverage').value)||350;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; H=H/FT_TO_M; coverage=coverage/SQFT_PER_GAL_TO_M2_PER_L; }
+    const grossWall=2*(L+W)*H, openings=(doors*21)+(windows*15), netWall=Math.max(grossWall-openings,0);
+    const totalPaintArea=netWall*coats, gallons=Math.ceil((totalPaintArea/coverage)*4)/4;
+    let netOut=netWall, totalOut=totalPaintArea, resultOut=gallons, areaUnit='sq ft', resultUnit='gal';
+    if(unitSystem==='metric'){ netOut=netWall*SQFT_TO_M2; totalOut=totalPaintArea*SQFT_TO_M2; resultOut=gallons*GAL_TO_L; areaUnit='m\u00b2'; resultUnit='L'; }
+    document.getElementById('p-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Net wall area</span><span>${netOut.toFixed(1)} ${areaUnit}</span></div><div class="result-line"><span>Total paint area</span><span>${totalOut.toFixed(1)} ${areaUnit}</span></div><div class="total"><span>Buy</span><span class="amount">${resultOut.toFixed(2)} ${resultUnit}</span></div>`;
+  }
+
+  // ---- Flooring ----
+  function calcFlooring(){
+    let L=parseFloat(document.getElementById('f-length').value)||0;
+    let W=parseFloat(document.getElementById('f-width').value)||0;
+    const waste=parseFloat(document.getElementById('f-waste').value)||0;
+    let boxCoverage=parseFloat(document.getElementById('f-boxcoverage').value)||1;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; boxCoverage=boxCoverage/SQFT_TO_M2; }
+    const area=L*W, totalWithWaste=area*(1+waste/100), boxes=Math.ceil(totalWithWaste/boxCoverage);
+    let areaOut=area, totalOut=totalWithWaste, unit='sq ft';
+    if(unitSystem==='metric'){ areaOut=area*SQFT_TO_M2; totalOut=totalWithWaste*SQFT_TO_M2; unit='m\u00b2'; }
+    document.getElementById('f-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Room area</span><span>${areaOut.toFixed(1)} ${unit}</span></div><div class="result-line"><span>With waste</span><span>${totalOut.toFixed(1)} ${unit}</span></div><div class="total"><span>Buy</span><span class="amount">${boxes} boxes</span></div>`;
+  }
+
+  // ---- Tile ----
+  function calcTile(){
+    let L=parseFloat(document.getElementById('t-length').value)||0;
+    let W=parseFloat(document.getElementById('t-width').value)||0;
+    let tl=parseFloat(document.getElementById('t-tilelen').value)||1;
+    let tw=parseFloat(document.getElementById('t-tilewid').value)||1;
+    const waste=parseFloat(document.getElementById('t-waste').value)||0;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; tl=tl/IN_TO_CM; tw=tw/IN_TO_CM; }
+    const area=L*W, areaWithWaste=area*(1+waste/100), sqftPerTile=(tl*tw)/144, tiles=Math.ceil(areaWithWaste/sqftPerTile);
+    let areaOut=area, waOut=areaWithWaste, unit='sq ft';
+    if(unitSystem==='metric'){ areaOut=area*SQFT_TO_M2; waOut=areaWithWaste*SQFT_TO_M2; unit='m\u00b2'; }
+    document.getElementById('t-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Area to cover</span><span>${areaOut.toFixed(1)} ${unit}</span></div><div class="result-line"><span>With waste</span><span>${waOut.toFixed(1)} ${unit}</span></div><div class="total"><span>Buy</span><span class="amount">${tiles} tiles</span></div>`;
+  }
+
+  // ---- Drywall ----
+  function calcDrywall(){
+    let L=parseFloat(document.getElementById('d-length').value)||0;
+    let W=parseFloat(document.getElementById('d-width').value)||0;
+    let H=parseFloat(document.getElementById('d-height').value)||0;
+    const doors=parseFloat(document.getElementById('d-doors').value)||0;
+    const windows=parseFloat(document.getElementById('d-windows').value)||0;
+    let sheetSize=parseFloat(document.getElementById('d-sheetsize').value)||32;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; H=H/FT_TO_M; sheetSize=sheetSize/SQFT_TO_M2; }
+    const grossWall=2*(L+W)*H, openings=(doors*21)+(windows*15), netWall=Math.max(grossWall-openings,0);
+    const sheets=Math.ceil(netWall/sheetSize);
+    let netOut=netWall, sheetOut=sheetSize, unit='sq ft';
+    if(unitSystem==='metric'){ netOut=netWall*SQFT_TO_M2; sheetOut=sheetSize*SQFT_TO_M2; unit='m\u00b2'; }
+    document.getElementById('d-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Net wall area</span><span>${netOut.toFixed(1)} ${unit}</span></div><div class="result-line"><span>Sheet size</span><span>${sheetOut.toFixed(1)} ${unit}</span></div><div class="total"><span>Buy</span><span class="amount">${sheets} sheets</span></div>`;
+  }
+
+  // ---- Wallpaper ----
+  function calcWallpaper(){
+    let L=parseFloat(document.getElementById('w-length').value)||0;
+    let W=parseFloat(document.getElementById('w-width').value)||0;
+    let H=parseFloat(document.getElementById('w-height').value)||0;
+    const doors=parseFloat(document.getElementById('w-doors').value)||0;
+    const windows=parseFloat(document.getElementById('w-windows').value)||0;
+    let rollCoverage=parseFloat(document.getElementById('w-rollcoverage').value)||25;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; H=H/FT_TO_M; rollCoverage=rollCoverage/SQFT_TO_M2; }
+    const grossWall=2*(L+W)*H, openings=(doors*21)+(windows*15), netWall=Math.max(grossWall-openings,0);
+    const rolls=Math.ceil(netWall/rollCoverage);
+    let netOut=netWall, rollOut=rollCoverage, unit='sq ft';
+    if(unitSystem==='metric'){ netOut=netWall*SQFT_TO_M2; rollOut=rollCoverage*SQFT_TO_M2; unit='m\u00b2'; }
+    document.getElementById('w-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Net wall area</span><span>${netOut.toFixed(1)} ${unit}</span></div><div class="result-line"><span>Usable per roll</span><span>${rollOut.toFixed(1)} ${unit}</span></div><div class="total"><span>Buy</span><span class="amount">${rolls} rolls</span></div>`;
+  }
+
+  // ---- Trim ----
+  function calcTrim(){
+    let L=parseFloat(document.getElementById('b-length').value)||0;
+    let W=parseFloat(document.getElementById('b-width').value)||0;
+    const doorways=parseFloat(document.getElementById('b-doorways').value)||0;
+    let doorwayWidth=parseFloat(document.getElementById('b-doorwaywidth').value)||0;
+    const waste=parseFloat(document.getElementById('b-waste').value)||0;
+    let boardLength=parseFloat(document.getElementById('b-boardlength').value)||8;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; doorwayWidth=doorwayWidth/FT_TO_M; boardLength=boardLength/FT_TO_M; }
+    const perimeter=2*(L+W), netLinear=Math.max(perimeter-(doorways*doorwayWidth),0), totalWithWaste=netLinear*(1+waste/100);
+    const boards=Math.ceil(totalWithWaste/boardLength);
+    let netOut=netLinear, totalOut=totalWithWaste, unit='ft';
+    if(unitSystem==='metric'){ netOut=netLinear*FT_TO_M; totalOut=totalWithWaste*FT_TO_M; unit='m'; }
+    document.getElementById('b-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Linear length needed</span><span>${netOut.toFixed(1)} ${unit}</span></div><div class="result-line"><span>With waste</span><span>${totalOut.toFixed(1)} ${unit}</span></div><div class="total"><span>Buy</span><span class="amount">${boards} boards</span></div>`;
+  }
+
+  // ---- Mulch ----
+  function calcMulch(){
+    let L=parseFloat(document.getElementById('m-length').value)||0;
+    let W=parseFloat(document.getElementById('m-width').value)||0;
+    let depthIn=parseFloat(document.getElementById('m-depth').value)||0;
+    let bagSize=parseFloat(document.getElementById('m-bagsize').value)||1;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; depthIn=depthIn/IN_TO_CM; bagSize=bagSize/CUFT_TO_L; }
+    const cubicFeet=L*W*(depthIn/12), cubicYards=cubicFeet/27, bags=Math.ceil(cubicFeet/bagSize);
+    let volOut=cubicFeet, volUnit='cu ft', yardOut=cubicYards, yardUnit='cu yd', yardLabel='In cubic yards';
+    if(unitSystem==='metric'){ volOut=cubicFeet*CUFT_TO_L; volUnit='L'; yardOut=cubicYards*CUYD_TO_M3; yardUnit='m\u00b3'; yardLabel='In cubic meters'; }
+    document.getElementById('m-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Volume needed</span><span>${volOut.toFixed(1)} ${volUnit}</span></div><div class="result-line"><span>${yardLabel}</span><span>${yardOut.toFixed(2)} ${yardUnit}</span></div><div class="total"><span>Buy</span><span class="amount">${bags} bags</span></div>`;
+  }
+
+  // ---- Concrete ----
+  function calcConcrete(){
+    let L=parseFloat(document.getElementById('c-length').value)||0;
+    let W=parseFloat(document.getElementById('c-width').value)||0;
+    let thickIn=parseFloat(document.getElementById('c-thickness').value)||0;
+    let bagSize=parseFloat(document.getElementById('c-bagsize').value)||0.6;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; thickIn=thickIn/IN_TO_CM; bagSize=bagSize/CUFT_TO_L; }
+    const cubicFeet=L*W*(thickIn/12), cubicYards=cubicFeet/27, bags=Math.ceil(cubicFeet/bagSize);
+    let volOut=cubicFeet, volUnit='cu ft', yardOut=cubicYards, yardUnit='cu yd', yardLabel='In cubic yards';
+    if(unitSystem==='metric'){ volOut=cubicFeet*CUFT_TO_L; volUnit='L'; yardOut=cubicYards*CUYD_TO_M3; yardUnit='m\u00b3'; yardLabel='In cubic meters'; }
+    document.getElementById('c-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Volume</span><span>${volOut.toFixed(1)} ${volUnit}</span></div><div class="result-line"><span>${yardLabel}</span><span>${yardOut.toFixed(2)} ${yardUnit}</span></div><div class="total"><span>Buy</span><span class="amount">${bags} bags</span></div>`;
+  }
+
+  // ---- Gravel ----
+  function calcGravel(){
+    let L=parseFloat(document.getElementById('g-length').value)||0;
+    let W=parseFloat(document.getElementById('g-width').value)||0;
+    let depthIn=parseFloat(document.getElementById('g-depth').value)||0;
+    let tonsPerYard=parseFloat(document.getElementById('g-tonsperyard').value)||1.4;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; depthIn=depthIn/IN_TO_CM; tonsPerYard=tonsPerYard/TONPERCUYD_TO_KGPERM3; }
+    const cubicFeet=L*W*(depthIn/12), cubicYards=cubicFeet/27, tons=cubicYards*tonsPerYard;
+    let yardOut=cubicYards, yardUnit='cu yd', weightOut=tons, weightUnit='tons';
+    if(unitSystem==='metric'){ yardOut=cubicYards*CUYD_TO_M3; yardUnit='m\u00b3'; weightOut=(tons*TON_TO_KG)/1000; weightUnit='tonnes'; }
+    document.getElementById('g-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Volume</span><span>${yardOut.toFixed(2)} ${yardUnit}</span></div><div class="total"><span>Buy</span><span class="amount">${weightOut.toFixed(1)} ${weightUnit}</span></div>`;
+  }
+
+  // ---- Fence ----
+  function calcFence(){
+    let length=parseFloat(document.getElementById('fc-length').value)||0;
+    let spacing=parseFloat(document.getElementById('fc-postspacing').value)||8;
+    let panelWidth=parseFloat(document.getElementById('fc-panelwidth').value)||8;
+    if(unitSystem==='metric'){ length=length/FT_TO_M; spacing=spacing/FT_TO_M; panelWidth=panelWidth/FT_TO_M; }
+    const posts=Math.ceil(length/spacing)+1, panels=Math.ceil(length/panelWidth);
+    document.getElementById('fc-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Posts needed</span><span>${posts}</span></div><div class="total"><span>Buy</span><span class="amount">${panels} panels</span></div>`;
+  }
+
+  // ---- Deck ----
+  function calcDeck(){
+    let L=parseFloat(document.getElementById('dk-length').value)||0;
+    let W=parseFloat(document.getElementById('dk-width').value)||0;
+    let boardWidthIn=parseFloat(document.getElementById('dk-boardwidth').value)||5.5;
+    let gapIn=parseFloat(document.getElementById('dk-gap').value)||0.125;
+    let boardLength=parseFloat(document.getElementById('dk-boardlength').value)||12;
+    const waste=parseFloat(document.getElementById('dk-waste').value)||0;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; boardWidthIn=boardWidthIn/IN_TO_CM; gapIn=gapIn/IN_TO_CM; boardLength=boardLength/FT_TO_M; }
+    const area=L*W, linearFtPerSqft=12/(boardWidthIn+gapIn), totalLinearFt=area*linearFtPerSqft*(1+waste/100);
+    const boards=Math.ceil(totalLinearFt/boardLength);
+    let areaOut=area, areaUnit='sq ft', lenOut=totalLinearFt, lenUnit='ft';
+    if(unitSystem==='metric'){ areaOut=area*SQFT_TO_M2; areaUnit='m\u00b2'; lenOut=totalLinearFt*FT_TO_M; lenUnit='m'; }
+    document.getElementById('dk-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Deck area</span><span>${areaOut.toFixed(1)} ${areaUnit}</span></div><div class="result-line"><span>Total board length</span><span>${lenOut.toFixed(1)} ${lenUnit}</span></div><div class="total"><span>Buy</span><span class="amount">${boards} boards</span></div>`;
+  }
+
+  // ---- Sod ----
+  function calcSod(){
+    let L=parseFloat(document.getElementById('s-length').value)||0;
+    let W=parseFloat(document.getElementById('s-width').value)||0;
+    const waste=parseFloat(document.getElementById('s-waste').value)||0;
+    let sqftPerPallet=parseFloat(document.getElementById('s-sqftperpallet').value)||450;
+    if(unitSystem==='metric'){ L=L/FT_TO_M; W=W/FT_TO_M; sqftPerPallet=sqftPerPallet/SQFT_TO_M2; }
+    const area=L*W, totalWithWaste=area*(1+waste/100), pallets=Math.ceil(totalWithWaste/sqftPerPallet);
+    let areaOut=area, unit='sq ft';
+    if(unitSystem==='metric'){ areaOut=area*SQFT_TO_M2; unit='m\u00b2'; }
+    document.getElementById('s-receipt').innerHTML=`<div class="label">Estimate</div><div class="result-line"><span>Lawn area</span><span>${areaOut.toFixed(1)} ${unit}</span></div><div class="total"><span>Buy</span><span class="amount">${pallets} pallets</span></div>`;
+  }
+
+  function recalcAll(){
+    calcPaint(); calcFlooring(); calcTile(); calcDrywall(); calcWallpaper(); calcTrim();
+    calcMulch(); calcConcrete(); calcGravel(); calcFence(); calcDeck(); calcSod();
+  }
+
+  const tickets=document.querySelectorAll('.ticket');
+  if('IntersectionObserver' in window){
+    const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, {threshold:0.15});
+    tickets.forEach(t=>obs.observe(t));
+  } else { tickets.forEach(t=>t.classList.add('visible')); }
+
+  window.addEventListener('DOMContentLoaded', recalcAll);
+
+  window.addEventListener('scroll', ()=>{
+    const btn=document.getElementById('back-to-top');
+    if(window.scrollY>400){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+  });
+</script>
+
+</body>
+</html>
