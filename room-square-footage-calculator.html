@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Square Footage Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F5F4EF;
+    --paper-line: #DCD7C8;
+    --card: #FFFFFF;
+    --ink: #23281F;
+    --ink-soft: #5B6156;
+    --accent: #1F4E5F;
+    --accent-soft: #E7EEEC;
+    --highlight: #E8A33D;
+    --danger: #B5502F;
+    --radius: 10px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+    padding: 48px 16px;
+  }
+
+  .wrap{
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  header{
+    margin-bottom: 28px;
+  }
+
+  h1{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.65rem;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+
+  header p{
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 46ch;
+    line-height: 1.5;
+  }
+
+  .card{
+    background: var(--card);
+    border: 1px solid var(--paper-line);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 1px 0 rgba(35,40,31,0.03);
+  }
+
+  .room{
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--paper-line);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .room:first-of-type{ padding-top: 0; }
+
+  .room-top{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .room-top input[type="text"]{
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid transparent;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
+    background: transparent;
+    padding: 4px 2px;
+  }
+
+  .room-top input[type="text"]:focus{
+    outline: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .remove-btn{
+    border: none;
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+
+  .remove-btn:hover{
+    color: var(--danger);
+    background: #F5EAE5;
+  }
+
+  .dims{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 18px;
+  }
+
+  .dim-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dim-group label{
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+
+  .dim-fields{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dim-fields input{
+    width: 56px;
+    padding: 8px 8px;
+    border: 1px solid var(--paper-line);
+    border-radius: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--accent-soft);
+  }
+
+  .dim-fields input:focus{
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .dim-fields span{
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .room-area{
+    margin-left: auto;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .room-area strong{
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .add-room{
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .add-room:hover{
+    background: var(--accent-soft);
+  }
+
+  .total-panel{
+    margin-top: 24px;
+    padding: 22px 20px;
+    background: var(--ink);
+    border-radius: var(--radius);
+    color: #F5F4EF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .total-panel .label{
+    font-size: 0.85rem;
+    color: #C9CFC5;
+  }
+
+  .total-panel .value{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: var(--highlight);
+    line-height: 1;
+  }
+
+  .total-panel .value span{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #C9CFC5;
+    margin-left: 4px;
+  }
+
+  .total-secondary{
+    text-align: right;
+  }
+
+  .total-secondary .value{
+    font-size: 1.3rem;
+    color: #F5F4EF;
+  }
+
+  footer{
+    margin-top: 18px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Room square footage calculator</h1>
+    <p>Enter each room's length and width to get its area, plus a running total for the whole space. Useful before ordering flooring, paint, or sod.</p>
+  </header>
+
+  <div class="card">
+    <div id="rooms"></div>
+    <button class="add-room" id="addRoomBtn" type="button">+ Add another room</button>
+  </div>
+
+  <div class="total-panel">
+    <div>
+      <div class="label">Total area</div>
+      <div class="value" id="totalSqft">0<span>sq ft</span></div>
+    </div>
+    <div class="total-secondary">
+      <div class="label">In square yards</div>
+      <div class="value" id="totalSqyd">0</div>
+    </div>
+  </div>
+
+  <footer>
+    Tip: 1 square yard = 9 square feet. Carpet, sod, and some flooring are priced by the square yard, so this conversion saves a step when you're getting quotes.
+  </footer>
+</div>
+
+<script>
+  const roomsEl = document.getElementById('rooms');
+  const totalSqftEl = document.getElementById('totalSqft');
+  const totalSqydEl = document.getElementById('totalSqyd');
+  let roomCount = 0;
+
+  function createRoom(name){
+    roomCount++;
+    const id = roomCount;
+    const room = document.createElement('div');
+    room.className = 'room';
+    room.dataset.id = id;
+    room.innerHTML = `
+      <div class="room-top">
+        <input type="text" class="room-name" value="${name || 'Room ' + id}">
+        <button class="remove-btn" type="button" title="Remove room">&times;</button>
+      </div>
+      <div class="dims">
+        <div class="dim-group">
+          <label>Length</label>
+          <div class="dim-fields">
+            <input type="number" class="len-ft" min="0" step="1" value="0"><span>ft</span>
+            <input type="number" class="len-in" min="0" max="11" step="1" value="0"><span>in</span>
+          </div>
+        </div>
+        <div class="dim-group">
+          <label>Width</label>
+          <div class="dim-fields">
+            <input type="number" class="wid-ft" min="0" step="1" value="0"><span>ft</span>
+            <input type="number" class="wid-in" min="0" max="11" step="1" value="0"><span>in</span>
+          </div>
+        </div>
+        <div class="room-area">= <strong class="area-val">0</strong> sq ft</div>
+      </div>
+    `;
+    roomsEl.appendChild(room);
+
+    room.querySelectorAll('input[type="number"]').forEach(input => {
+      input.addEventListener('input', recalc);
+    });
+    room.querySelector('.remove-btn').addEventListener('click', () => {
+      room.remove();
+      recalc();
+    });
+  }
+
+  function recalc(){
+    let totalSqft = 0;
+    document.querySelectorAll('.room').forEach(room => {
+      const lenFt = parseFloat(room.querySelector('.len-ft').value) || 0;
+      const lenIn = parseFloat(room.querySelector('.len-in').value) || 0;
+      const widFt = parseFloat(room.querySelector('.wid-ft').value) || 0;
+      const widIn = parseFloat(room.querySelector('.wid-in').value) || 0;
+
+      const lengthDec = lenFt + (lenIn / 12);
+      const widthDec = widFt + (widIn / 12);
+      const area = lengthDec * widthDec;
+
+      room.querySelector('.area-val').textContent = area.toFixed(1);
+      totalSqft += area;
+    });
+
+    totalSqftEl.innerHTML = totalSqft.toFixed(1) + '<span>sq ft</span>';
+    totalSqydEl.textContent = (totalSqft / 9).toFixed(1);
+  }
+
+  document.getElementById('addRoomBtn').addEventListener('click', () => {
+    createRoom();
+    recalc();
+  });
+
+  createRoom('Room 1');
+  recalc();
+</script>
+
+</body>
+</html>
