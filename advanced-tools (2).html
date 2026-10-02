@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Calculators — Electricity Cost, Amps &amp; Watts, Circuit Load, Wire Size, Generator Size</title>
+<meta name="description" content="Free electrical calculators for homeowners and DIYers: electricity cost, watts to amps, circuit breaker load, wire size and voltage drop, and generator sizing. Save or print your results on one sheet. Estimates only; electrical code varies by location.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16324A;
+    --navy-deep:#0F2436;
+    --cyan:#7FB3C7;
+    --chalk:#F3F1E8;
+    --orange:#E4572E;
+    --yellow:#F4B942;
+    --graphite:#2A2A28;
+    --graphite-soft:#5B5B57;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background-color:var(--navy); background-image:linear-gradient(rgba(127,179,199,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(127,179,199,0.09) 1px, transparent 1px); background-size:48px 48px; color:var(--chalk); font-family:'Inter',sans-serif; line-height:1.5; }
+  h1,h2,h3{ font-family:'Bebas Neue',sans-serif; letter-spacing:0.03em; margin:0; }
+  .mono{ font-family:'IBM Plex Mono',monospace; }
+  a{color:var(--yellow);}
+
+  .site-header{
+    background:var(--navy-deep);
+    border-bottom:1px solid rgba(127,179,199,0.25);
+  }
+  .site-header-inner{
+    max-width:1100px; margin:0 auto; padding:14px 24px;
+    display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:16px;
+  }
+  .brand{ justify-self:start; display:flex; align-items:center; text-decoration:none; }
+  .brand img{
+    height:52px; width:52px; display:block; border-radius:50%;
+    border:2px solid var(--chalk); box-shadow:0 0 0 1px rgba(0,0,0,0.25);
+  }
+  .site-nav{ grid-column:2; display:flex; align-items:center; flex-wrap:wrap; justify-content:center; }
+  .site-nav a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.07em; text-transform:uppercase;
+    color:var(--chalk); text-decoration:none; opacity:0.85; transition:color .15s ease, opacity .15s ease;
+    margin:4px 18px;
+  }
+  .site-nav a:hover{ color:var(--yellow); opacity:1; }
+  @media (max-width:640px){
+    .site-header-inner{ padding:12px 16px; grid-template-columns:auto 1fr; }
+    .brand img{ height:40px; width:40px; }
+    .site-nav{ grid-column:2; justify-content:flex-end; }
+    .site-nav a{ margin:4px 8px; font-size:10px; }
+    body{ background-color:#48647C; }
+  }
+
+  .unit-toggle{
+    position:fixed; top:82px; right:16px; z-index:50;
+    display:flex; align-items:center; background:var(--chalk); border-radius:20px;
+    padding:4px; box-shadow:0 8px 24px rgba(0,0,0,0.4); font-family:'IBM Plex Mono',monospace;
+  }
+  .unit-toggle button{
+    border:none; background:transparent; padding:8px 14px; font-size:11px; letter-spacing:0.06em;
+    text-transform:uppercase; font-weight:700; border-radius:16px; cursor:pointer; color:var(--graphite-soft);
+    transition:background .15s ease, color .15s ease;
+  }
+  .unit-toggle button.active{ background:var(--orange); color:#fff; }
+  @media (max-width:640px){ .unit-toggle{ top:auto; bottom:16px; left:16px; right:auto; } }
+
+  .back-to-top{
+    position:fixed; bottom:24px; right:max(20px, calc(50vw - 704px)); z-index:50;
+    width:180px; display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:12px 14px; border-radius:30px; background:var(--orange); color:#fff; border:none;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700;
+    cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,0.4); opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s, background .15s ease;
+  }
+  .back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  .back-to-top:hover{ background:#c8471f; }
+
+  .ruler{
+    position:relative; height:34px; margin:0 auto; max-width:1000px;
+    background-image:
+      repeating-linear-gradient(90deg, var(--cyan) 0, var(--cyan) 1px, transparent 1px, transparent 12px),
+      repeating-linear-gradient(90deg, var(--chalk) 0, var(--chalk) 2px, transparent 2px, transparent 60px);
+    background-position:0 100%, 0 100%; background-repeat:repeat-x; background-size:12px 12px, 60px 24px;
+    opacity:0.55;
+  }
+  .ruler::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--chalk); opacity:0.6; }
+
+  header{ padding:64px 24px 40px; text-align:center; }
+  .eyebrow{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--yellow); border:1px solid var(--yellow); padding:4px 10px;
+    border-radius:var(--radius); margin-bottom:20px;
+  }
+  header h1{ font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; color:var(--chalk); max-width:900px; margin:0 auto; }
+  header h1 span{color:var(--orange);}
+  header p{ max-width:600px; margin:22px auto 0; color:var(--cyan); font-size:1.05rem; }
+
+  main{max-width:1000px; margin:0 auto; padding:48px 20px 80px;}
+
+  nav.jump{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:40px 0 8px; }
+  nav.jump a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    text-decoration:none; color:var(--chalk); border:1px solid rgba(243,241,232,0.35); padding:8px 14px;
+    border-radius:var(--radius); transition:border-color .15s ease, color .15s ease;
+  }
+  nav.jump a:hover{border-color:var(--yellow); color:var(--yellow);}
+
+  .section-heading{ text-align:center; margin:70px 0 6px; }
+  .section-heading h2{ font-size:clamp(2rem, 5vw, 3rem); color:var(--chalk); }
+  .section-heading:first-of-type{ margin-top:20px; }
+
+  .ticket{
+    background:var(--chalk); color:var(--graphite); border-radius:6px; margin:36px 0; overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,0.28); opacity:0; transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .ticket.visible{opacity:1; transform:translateY(0);}
+  .ticket-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:22px 26px 18px;
+    border-bottom:2px dashed rgba(42,42,40,0.2);
+  }
+  .stamp{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--orange); border:1.5px solid var(--orange); padding:5px 9px; border-radius:var(--radius);
+    transform:rotate(-2deg); white-space:nowrap;
+  }
+  .ticket-head h2{ font-size:2rem; color:var(--navy); }
+  .ticket-head p{ margin:6px 0 0; color:var(--graphite-soft); font-size:0.95rem; max-width:480px; }
+
+  .ticket-body{ display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  @media (max-width:640px){ .ticket-body{grid-template-columns:1fr;} }
+
+  .calc-inputs{ padding:24px 26px 28px; }
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:0.82rem; font-weight:600; color:var(--graphite); margin-bottom:6px; }
+  .field .hint{ font-weight:400; color:var(--graphite-soft); font-size:0.78rem; }
+  .field input{
+    width:100%; padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:0.95rem;
+    border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); background:#fff; color:var(--graphite);
+  }
+  .field input:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .field-row{display:flex; gap:12px;}
+  .field-row .field{flex:1;}
+
+  .calc-btn{
+    margin-top:6px; width:100%; padding:13px 16px; background:var(--orange); color:var(--chalk); border:none;
+    border-radius:var(--radius); font-family:'IBM Plex Mono',monospace; font-size:0.85rem; letter-spacing:0.1em;
+    text-transform:uppercase; font-weight:600; cursor:pointer; transition:transform .08s ease, background .15s ease;
+  }
+  .calc-btn:hover{background:#c8471f;}
+  .calc-btn:active{transform:scale(0.97);}
+
+  .btn-outline{
+    display:block; width:100%; margin:4px 0 16px; padding:10px 14px; background:transparent; color:var(--navy);
+    border:1.5px solid var(--navy); border-radius:var(--radius); font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; cursor:pointer; text-align:center;
+    transition:background .15s ease;
+  }
+  .btn-outline:hover{background:rgba(22,50,74,0.08);}
+
+  .room-row{margin-bottom:10px;}
+  .room-row-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;}
+  .room-name{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--graphite-soft);}
+  .remove-room{
+    background:none; border:none; padding:0; font-family:'IBM Plex Mono',monospace; font-size:11px;
+    letter-spacing:0.05em; text-transform:uppercase; color:var(--graphite-soft); text-decoration:underline;
+    cursor:pointer;
+  }
+  .remove-room:hover{color:var(--orange);}
+
+  .receipt-wrap{ background:var(--navy-deep); padding:24px 26px; display:flex; align-items:center; }
+  .receipt{
+    background:#fff; color:var(--graphite); width:100%; padding:20px 18px; border-radius:var(--radius);
+    position:relative; font-family:'IBM Plex Mono',monospace;
+  }
+  .receipt::before{
+    content:""; position:absolute; top:-1px; left:0; right:0; height:1px;
+    background-image:repeating-linear-gradient(90deg, rgba(42,42,40,0.35) 0 6px, transparent 6px 12px);
+  }
+  .receipt .label{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--graphite-soft); }
+  .receipt .result-line{
+    display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dotted rgba(42,42,40,0.2); font-size:0.9rem;
+  }
+  .receipt .result-line:last-of-type{border-bottom:none;}
+  .receipt .total{
+    margin-top:10px; padding-top:10px; border-top:2px solid var(--graphite);
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .receipt .total .amount{ font-size:1.5rem; font-weight:600; color:var(--navy); }
+
+  .formula-note{
+    padding:18px 26px 26px; border-top:1px solid rgba(42,42,40,0.12); font-size:0.88rem;
+    color:var(--graphite-soft); grid-column:1 / -1;
+  }
+  .formula-note strong{color:var(--graphite);}
+
+  .guide-link{
+    margin:0 26px 24px; padding-top:16px; border-top:1px dashed rgba(42,42,40,0.2);
+  }
+  .guide-link a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--navy); text-decoration:none; border-bottom:2px solid var(--orange); padding-bottom:2px;
+  }
+  .guide-link a:hover{ color:var(--orange); }
+
+  .howto-box{
+    background:var(--navy-deep); border-radius:6px; padding:16px; margin-bottom:18px;
+  }
+  .howto-box svg{ width:100%; max-width:220px; height:auto; margin:0 auto 10px; display:block; }
+  .howto-box .howto-title{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--yellow); margin:0 0 8px; }
+  .howto-box ol{ margin:0; padding-left:18px; color:var(--chalk); font-size:0.85rem; line-height:1.55; }
+  .howto-box li{ margin-bottom:5px; }
+  .howto-box strong{ color:var(--yellow); }
+
+  footer{ text-align:center; padding:40px 20px 60px; color:var(--cyan); font-size:0.85rem; }
+  footer p{max-width:520px; margin:8px auto;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} .ticket{opacity:1; transform:none;} }
+
+  .field select{
+    width:100%; padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:0.95rem;
+    border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); background:#fff; color:var(--graphite);
+  }
+  .field select:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .safety-strip{
+    max-width:760px; margin:0 auto; padding:14px 18px; border:1.5px solid var(--yellow); border-radius:6px;
+    color:var(--chalk); font-size:0.92rem; background:rgba(15,36,54,0.6);
+  }
+  .safety-strip strong{color:var(--yellow);}
+  .ticket-warn{
+    grid-column:1 / -1; margin:0 26px 20px; padding:10px 12px; background:rgba(244,185,66,0.18);
+    border-left:4px solid var(--yellow); font-size:0.85rem; color:var(--graphite);
+  }
+  .status-ok{color:#2e7d32; font-weight:600;}
+  .status-warn{color:#b26a00; font-weight:600;}
+  .status-bad{color:#c62828; font-weight:600;}
+  .gen-list{display:grid; grid-template-columns:1fr; gap:6px; margin-bottom:14px;}
+  .gen-item{display:grid; grid-template-columns:auto 1fr 64px; align-items:center; gap:10px; font-size:0.88rem;}
+  .gen-item input[type=number]{padding:6px 8px; font-family:'IBM Plex Mono',monospace; font-size:0.85rem; border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); width:100%;}
+  .gen-item input[type=checkbox]{width:18px; height:18px; accent-color:var(--orange);}
+  .gen-item .w{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--graphite-soft);}
+  .disclaimer-box{
+    background:var(--chalk); color:var(--graphite); border-radius:6px; padding:24px 26px; margin:56px 0 0;
+    box-shadow:0 24px 60px rgba(0,0,0,0.28);
+  }
+  .disclaimer-box h2{color:var(--navy); font-size:2rem; margin-bottom:8px;}
+  .disclaimer-box p{margin:8px 0 0; font-size:0.92rem; line-height:1.6;}
+
+  /* ---- Save / print my results ---- */
+  header p.save-intro{ color:var(--chalk); margin-top:16px; }
+  header p.save-intro strong{ color:var(--yellow); font-weight:600; }
+
+  #save-dialog{
+    width:min(92vw, 420px); padding:0; border:none; border-radius:6px; background:var(--chalk); color:var(--graphite);
+    box-shadow:0 24px 60px rgba(0,0,0,0.45);
+  }
+  #save-dialog::backdrop{ background:rgba(15,36,54,0.7); }
+  .sd-inner{ padding:22px 24px 24px; }
+  .sd-inner h2{ font-size:1.9rem; color:var(--navy); margin:0 0 4px; }
+  .sd-on{ margin:0 0 18px; font-size:0.9rem; color:var(--graphite-soft); }
+  .sd-inner label{ display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px; }
+  .sd-inner label span{ font-weight:400; color:var(--graphite-soft); }
+  .sd-inner input{
+    width:100%; padding:11px 12px; font-family:'Inter',sans-serif; font-size:1rem; color:var(--graphite);
+    background:#fff; border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius);
+  }
+  .sd-inner input:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .sd-tip{ margin:12px 0 0; font-size:0.82rem; color:var(--graphite-soft); }
+  .sd-actions{ display:flex; gap:10px; margin-top:20px; }
+  .sd-actions button{ flex:1; margin:0; }
+  .sd-actions .btn-outline{ margin:0; }
+  .btn-outline.save-ticket-btn{ margin:10px 0 0; }
+
+  /* Unit switch on each calculator */
+  .ticket-side{ display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex:none; }
+  .ticket-units{
+    display:flex; background:var(--navy); border-radius:16px; padding:3px; font-family:'IBM Plex Mono',monospace;
+  }
+  .ticket-units button{
+    border:none; background:transparent; padding:6px 11px; font-size:10px; letter-spacing:0.06em;
+    text-transform:uppercase; font-weight:700; border-radius:13px; cursor:pointer; color:var(--chalk);
+    transition:background .15s ease, color .15s ease;
+  }
+  .ticket-units button.active{ background:var(--orange); color:#fff; }
+  .ticket-units button:focus-visible{ outline:2px solid var(--yellow); outline-offset:1px; }
+  @media (max-width:640px){
+    .ticket-head{ flex-direction:column; gap:12px; }
+    .ticket-side{ order:-1; width:100%; flex-direction:row; align-items:center; justify-content:space-between; }
+  }
+  .save-ticket-btn:focus-visible, .sd-actions button:focus-visible{ outline:2px solid var(--navy); outline-offset:2px; }
+
+  #print-sheet{ display:none; }
+  @media print{
+    @page{ margin:0.55in; }
+    html, body{ background:#fff !important; background-image:none !important; color:#111 !important; }
+    body > *:not(#print-sheet){ display:none !important; }
+    #print-sheet{ display:block !important; font-family:'Inter',Arial,sans-serif; color:#111; font-size:10.5pt; line-height:1.4; }
+    .ps-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; border-bottom:3px solid #16324A; padding-bottom:10px; margin-bottom:16px; }
+    .ps-brand{ display:flex; align-items:center; gap:10px; }
+    .ps-brand img{ width:58px; height:58px; border-radius:50%; }
+    .ps-title{ font-family:'Bebas Neue',Impact,sans-serif; font-size:34pt; letter-spacing:0.03em; color:#16324A; line-height:1; margin:0; }
+    .ps-site{ font-size:14pt; color:#222; margin:4px 0 0; font-weight:600; }
+    .ps-comeback{ margin-top:12px; text-align:center; font-family:'Bebas Neue',Impact,sans-serif; font-size:18pt; letter-spacing:0.03em; color:#16324A; }
+    .ps-meta{ text-align:right; font-size:9pt; color:#333; }
+    .ps-meta strong{ display:block; font-size:10.5pt; color:#111; }
+    .ps-calc{ break-inside:avoid; page-break-inside:avoid; border:1px solid #9a9a9a; border-radius:4px; padding:10px 14px 12px; margin:0 0 12px; }
+    .ps-calc h2{ font-family:'Bebas Neue',Impact,sans-serif; font-size:16pt; letter-spacing:0.03em; color:#16324A; margin:0 0 6px; }
+    .ps-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .ps-col-title{ font-size:8pt; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin:0 0 2px; font-weight:600; }
+    .ps-calc table{ width:100%; border-collapse:collapse; }
+    .ps-calc td{ padding:3px 0; border-bottom:1px dotted #bbb; vertical-align:top; }
+    .ps-calc td + td{ text-align:right; font-family:'IBM Plex Mono',monospace; padding-left:10px; white-space:nowrap; }
+    .ps-calc tr.ps-buy td{ font-weight:700; font-size:12pt; border-bottom:none; border-top:2px solid #111; padding-top:5px; }
+    .ps-end{ break-inside:avoid; page-break-inside:avoid; }
+    .ps-notes{ margin-top:16px; }
+    .ps-notes .ps-line{ border-bottom:1px solid #9a9a9a; height:24px; }
+    .ps-foot{ margin-top:14px; font-size:8.5pt; color:#555; }
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+    .ps-note{ margin:6px 0 0; font-size:9pt; color:#333; }
+  @media print{
+    .ps-warn{ border:1.5px solid #111; border-radius:4px; padding:8px 12px; margin:0 0 14px; font-size:9.5pt; }
+    .ps-calc .ps-note{ margin:6px 0 0; font-size:9pt; color:#333; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Advanced Tools</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr; Back to Top</button>
+
+<header>
+  <span class="eyebrow">Advanced tools &middot; Electrical</span>
+  <h1>Know the load.<br>Size it right.<br><span>Then call the pro.</span></h1>
+  <p>Electrical calculators for planning a project, checking a circuit, or sizing a generator before you buy.</p>
+  <p class="save-intro">Done checking? Tap <strong>Save or print results</strong> on any calculator. Every calculator you use goes onto one clean sheet you can print from a computer or save as a PDF on your phone to show your electrician.</p>
+</header>
+
+<div class="safety-strip" role="note">
+  <strong>Estimates only.</strong> Electrical code varies by city, county, and state. Check your local code and use a licensed electrician for any wiring work. <a href="#electrical-disclaimer">Read the full disclaimer</a>.
+</div>
+
+<div class="ruler" role="presentation" style="margin-top:40px"></div>
+
+<main>
+  <nav class="jump" aria-label="Jump to calculator">
+    <a href="#electricity-cost">Electricity Cost</a>
+    <a href="#watts-amps">Watts &amp; Amps</a>
+    <a href="#circuit-load">Circuit Load</a>
+    <a href="#wire-size">Wire Size &amp; Voltage Drop</a>
+    <a href="#generator">Generator Size</a>
+    <a href="index.html">Home Calculators</a>
+  </nav>
+
+  <div class="section-heading"><span class="eyebrow">Electrical</span><h2>Electrical Calculators</h2></div>
+
+  <!-- ================= ELECTRICITY COST ================= -->
+  <section class="ticket" id="electricity-cost">
+    <div class="ticket-head">
+      <div><h2>Electricity Cost Calculator</h2><p>See what an appliance costs to run per day, month, and year.</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="ec-watts">Appliance wattage <span class="hint">(on the label, e.g. 1500 for a space heater)</span></label><input type="number" id="ec-watts" min="0" step="1" value="1500"></div>
+        <div class="field-row">
+          <div class="field"><label for="ec-hours">Hours used per day</label><input type="number" id="ec-hours" min="0" max="24" step="0.5" value="8"></div>
+          <div class="field"><label for="ec-days">Days used per month</label><input type="number" id="ec-days" min="0" max="31" step="1" value="30"></div>
+        </div>
+        <div class="field"><label for="ec-rate">Electricity rate <span class="hint">($ per kWh, on your bill)</span></label><input type="number" id="ec-rate" min="0" step="0.01" value="0.15"></div>
+        <button class="calc-btn" onclick="calcElecCost()">Calculate cost</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="ec-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> watts &divide; 1,000 &times; hours = kWh per day. kWh &times; your rate = cost. <strong>Example:</strong> a 1,500 W space heater running 8 hours a day uses 12 kWh, about $1.80 a day at $0.15/kWh, or roughly $54 a month.</div>
+      <div class="ticket-warn">&#9888;&#65039; Estimates only. Actual use varies with thermostats, cycling, and your plan's fees.</div>
+    </div>
+  </section>
+
+  <!-- ================= WATTS & AMPS ================= -->
+  <section class="ticket" id="watts-amps">
+    <div class="ticket-head">
+      <div><h2>Watts, Amps &amp; Volts Calculator</h2><p>Convert between watts and amps for any device, like "how many amps is a 1,500 W heater?"</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="wa-mode">What do you want to find?</label>
+          <select id="wa-mode" onchange="waMode()"><option value="amps">Amps (I know the watts)</option><option value="watts">Watts (I know the amps)</option></select></div>
+        <div class="field"><label for="wa-volts">Voltage <span class="hint">(120 for most outlets, 240 for dryers, ranges &amp; AC)</span></label>
+          <select id="wa-volts"><option value="120">120 V</option><option value="240">240 V</option><option value="12">12 V (vehicle / RV)</option></select></div>
+        <div class="field" id="wa-watts-wrap"><label for="wa-watts">Watts</label><input type="number" id="wa-watts" min="0" step="1" value="1500"></div>
+        <div class="field" id="wa-amps-wrap" style="display:none"><label for="wa-amps">Amps</label><input type="number" id="wa-amps" min="0" step="0.1" value="15"></div>
+        <button class="calc-btn" onclick="calcWattsAmps()">Convert</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="wa-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> watts = volts &times; amps, so amps = watts &divide; volts. <strong>Example:</strong> a 1,500 W heater on a 120 V outlet draws 12.5 amps. That is fine on a 15 amp circuit by itself, but not with much else plugged in.</div>
+      <div class="ticket-warn">&#9888;&#65039; Estimates only. Motors can draw more when starting than their label shows.</div>
+    </div>
+  </section>
+
+  <!-- ================= CIRCUIT LOAD ================= -->
+  <section class="ticket" id="circuit-load">
+    <div class="ticket-head">
+      <div><h2>Circuit Load Calculator</h2><p>Add up what's plugged into one circuit and see if the breaker can handle it.</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="cl-breaker">Breaker size</label>
+            <select id="cl-breaker"><option value="15">15 amp</option><option value="20" selected>20 amp</option><option value="30">30 amp</option><option value="40">40 amp</option><option value="50">50 amp</option></select></div>
+          <div class="field"><label for="cl-volts">Voltage</label>
+            <select id="cl-volts"><option value="120">120 V</option><option value="240">240 V</option></select></div>
+        </div>
+        <div id="cl-devices"></div>
+        <button type="button" class="btn-outline" onclick="addDevice()">+ Add another device</button>
+        <button class="calc-btn" onclick="calcCircuit()">Check the circuit</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="cl-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> total watts &divide; volts = amps on the circuit. Things that run for 3 hours or more (heaters, chargers) should stay under 80% of the breaker, so a 20 amp circuit tops out at 16 amps of steady load. <strong>Example:</strong> a 1,500 W heater plus a 100 W TV and a 60 W lamp is 1,660 W, or 13.8 amps, which fits a 20 amp circuit but is over the steady-use limit on a 15 amp circuit.</div>
+      <div class="ticket-warn">&#9888;&#65039; Estimates only. If a breaker trips often, have an electrician check the circuit. Never swap in a bigger breaker without checking the wire size.</div>
+    </div>
+  </section>
+
+  <!-- ================= WIRE SIZE & VOLTAGE DROP ================= -->
+  <section class="ticket" id="wire-size">
+    <div class="ticket-head">
+      <div><h2>Wire Size &amp; Voltage Drop Calculator</h2><p>Check a wire run to a shed, garage, or RV hookup, and find the smallest wire that keeps voltage drop under 3%.</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="ws-amps">Load (amps)</label><input type="number" id="ws-amps" min="0" step="1" value="20"></div>
+          <div class="field"><label for="ws-volts">Voltage</label>
+            <select id="ws-volts"><option value="120">120 V</option><option value="240">240 V</option></select></div>
+        </div>
+        <div class="field"><label for="ws-length">One-way distance <span class="hint u" id="ws-length-unit">(feet, from the panel to the load)</span></label><input type="number" id="ws-length" min="0" step="1" value="100"></div>
+        <div class="field-row">
+          <div class="field"><label for="ws-metal">Wire type</label>
+            <select id="ws-metal"><option value="cu">Copper</option><option value="al">Aluminum</option></select></div>
+          <div class="field"><label for="ws-gauge">Wire you plan to use</label>
+            <select id="ws-gauge"><option value="14">14 AWG</option><option value="12" selected>12 AWG</option><option value="10">10 AWG</option><option value="8">8 AWG</option><option value="6">6 AWG</option><option value="4">4 AWG</option><option value="3">3 AWG</option><option value="2">2 AWG</option><option value="1">1 AWG</option><option value="1/0">1/0 AWG</option><option value="2/0">2/0 AWG</option></select></div>
+        </div>
+        <button class="calc-btn" onclick="calcWire()">Check the wire</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="ws-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> voltage drop = 2 &times; distance &times; wire resistance &times; amps. The suggested size is the smallest wire rated for your amps (using the common 60&deg;C table values for home wiring) that also keeps the drop at 3% or less. <strong>Example:</strong> 20 amps at 120 V over 100 feet of 12 AWG copper drops about 7.7 volts (6.4%), so 8 AWG is the smallest size that stays under 3%.</div>
+      <div class="ticket-warn">&#9888;&#65039; Estimates only. Wire size also depends on insulation type, temperature, conduit fill, and your local code. Have an electrician confirm before you buy.</div>
+    </div>
+  </section>
+
+  <!-- ================= GENERATOR SIZE ================= -->
+  <section class="ticket" id="generator">
+    <div class="ticket-head">
+      <div><h2>Generator Size Calculator</h2><p>Check off what you want to run during an outage and see how big a generator you need.</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="gen-list" id="gen-list"></div>
+        <div class="field-row">
+          <div class="field"><label for="gen-cw">Other item running watts</label><input type="number" id="gen-cw" min="0" step="10" value="0"></div>
+          <div class="field"><label for="gen-cs">Its starting watts</label><input type="number" id="gen-cs" min="0" step="10" value="0"></div>
+        </div>
+        <button class="calc-btn" onclick="calcGenerator()">Size my generator</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="gen-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> add up the running watts of everything on at once, then add the biggest extra jump from a motor starting up (only one usually starts at a time). The suggested size adds about 20% headroom. <strong>Example:</strong> a fridge, sump pump, lights, TV, and Wi-Fi run about 2,100 W, and the fridge's startup needs about 1,500 W more, so a generator rated around 2,600 running and 4,400 starting watts fits.</div>
+      <div class="ticket-warn">&#9888;&#65039; Watt values are typical. Check each appliance's label. Never plug a generator into a wall outlet. Use a transfer switch or interlock installed by a licensed electrician, and run generators outdoors, far from windows.</div>
+    </div>
+  </section>
+
+  <!-- ================= DISCLAIMER ================= -->
+  <section class="disclaimer-box" id="electrical-disclaimer">
+    <h2>Electrical Calculator Disclaimer</h2>
+    <p>The electrical calculators on CalcProject.org provide general estimates for planning and educational purposes only. Results are based on common standards and simplified formulas and may not account for every factor in your situation, such as wire type, temperature, conduit fill, or load type.</p>
+    <p>Electrical code requirements vary by city, county, and state, and local codes may differ from national standards like the National Electrical Code (NEC). Always check with your local building department and consult a licensed electrician before doing any electrical work.</p>
+    <p>Working with electricity can cause serious injury, death, or fire. CalcProject.org is not responsible for any damage, injury, or loss resulting from the use of these calculators.</p>
+  </section>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p>Electrical results are estimates. Code varies by location, so check with your local building department and a licensed electrician.</p>
+  <p><a href="index.html">Home Calculators</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+  let unitSystem='imperial';
+  const $=id=>document.getElementById(id);
+  const num=(id,d=0)=>{const v=parseFloat($(id).value);return isNaN(v)?d:v;};
+  const fmt=(n,d=0)=>n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const money=n=>'$'+fmt(n,2);
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const line=(a,b)=>`<div class="result-line"><span>${a}</span><span>${b}</span></div>`;
+
+  // ---- Electricity cost ----
+  function calcElecCost(){
+    const w=num('ec-watts'),h=Math.min(num('ec-hours'),24),d=Math.min(num('ec-days',30),31),r=num('ec-rate');
+    const kwhDay=w/1000*h, costDay=kwhDay*r, costMonth=costDay*d, costYear=costMonth*12;
+    $('ec-receipt').innerHTML=`<div class="label">Estimate</div>${line('Energy per day',fmt(kwhDay,2)+' kWh')}${line('Energy per month',fmt(kwhDay*d,1)+' kWh')}${line('Cost per day',money(costDay))}${line('Cost per year',money(costYear))}<div class="total"><span>Per month</span><span class="amount">${money(costMonth)}</span></div>`;
+  }
+
+  // ---- Watts & amps ----
+  function waMode(){
+    const m=$('wa-mode').value;
+    $('wa-watts-wrap').style.display=m==='amps'?'':'none';
+    $('wa-amps-wrap').style.display=m==='watts'?'':'none';
+    calcWattsAmps();
+  }
+  function calcWattsAmps(){
+    const m=$('wa-mode').value,v=parseFloat($('wa-volts').value);
+    if(m==='amps'){
+      const w=num('wa-watts'),a=v?w/v:0;
+      $('wa-receipt').innerHTML=`<div class="label">Result</div>${line('Watts',fmt(w)+' W')}${line('Voltage',v+' V')}<div class="total"><span>Amps</span><span class="amount">${fmt(a,2)} A</span></div>`;
+    }else{
+      const a=num('wa-amps'),w=a*v;
+      $('wa-receipt').innerHTML=`<div class="label">Result</div>${line('Amps',fmt(a,1)+' A')}${line('Voltage',v+' V')}${line('Kilowatts',fmt(w/1000,2)+' kW')}<div class="total"><span>Watts</span><span class="amount">${fmt(w)} W</span></div>`;
+    }
+  }
+
+  // ---- Circuit load ----
+  let devCount=0;
+  function addDevice(name='',watts=''){
+    devCount++;
+    const row=document.createElement('div');row.className='room-row';
+    row.innerHTML=`<div class="room-row-head"><span class="room-name">Device ${devCount}</span><button type="button" class="remove-room" onclick="this.closest('.room-row').remove();calcCircuit()">Remove</button></div>
+      <div class="field-row"><div class="field"><label>Name</label><input type="text" class="cl-name" value="${esc(name)}" placeholder="e.g. Space heater" style="width:100%;padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:0.95rem;border:1.5px solid rgba(42,42,40,0.25);border-radius:2px;"></div>
+      <div class="field"><label>Watts</label><input type="number" class="cl-watts" min="0" step="1" value="${watts}"></div></div>`;
+    $('cl-devices').appendChild(row);
+  }
+  function calcCircuit(){
+    const b=parseFloat($('cl-breaker').value),v=parseFloat($('cl-volts').value);
+    let total=0,lines='';
+    document.querySelectorAll('#cl-devices .room-row').forEach((r,i)=>{
+      const w=parseFloat(r.querySelector('.cl-watts').value)||0,n=r.querySelector('.cl-name').value.trim()||('Device '+(i+1));
+      total+=w; if(w) lines+=line(esc(n),fmt(w)+' W');
+    });
+    const amps=total/v,limit=b*0.8,pct=amps/b*100;
+    let status;
+    if(amps>b) status='<span class="status-bad">Over the breaker. It will likely trip.</span>';
+    else if(amps>limit) status='<span class="status-warn">OK for short use, but over the 80% limit for things that run 3+ hours.</span>';
+    else status='<span class="status-ok">Within the safe range for this breaker.</span>';
+    $('cl-receipt').innerHTML=`<div class="label">Circuit check</div>${lines}${line('Total watts',fmt(total)+' W')}${line('Breaker capacity',fmt(b*v)+' W')}${line('Steady-use limit (80%)',fmt(limit,1)+' A')}<div class="total"><span>Load</span><span class="amount">${fmt(amps,1)} A</span></div><p style="margin:10px 0 0;font-family:Inter,sans-serif;font-size:0.88rem">${fmt(pct)}% of the breaker. ${status}</p>`;
+  }
+
+  // ---- Wire size & voltage drop ----
+  const GAUGES=['14','12','10','8','6','4','3','2','1','1/0','2/0'];
+  const OHMS={cu:{'14':3.07,'12':1.93,'10':1.21,'8':0.764,'6':0.491,'4':0.308,'3':0.245,'2':0.194,'1':0.154,'1/0':0.122,'2/0':0.0967},
+              al:{'12':3.18,'10':2.00,'8':1.26,'6':0.808,'4':0.508,'3':0.403,'2':0.319,'1':0.253,'1/0':0.201,'2/0':0.159}};
+  const AMPACITY={cu:{'14':15,'12':20,'10':30,'8':40,'6':55,'4':70,'3':85,'2':95,'1':110,'1/0':125,'2/0':145},
+                  al:{'12':15,'10':25,'8':35,'6':40,'4':55,'3':65,'2':75,'1':85,'1/0':100,'2/0':115}};
+  function drop(metal,g,amps,len){return 2*len*(OHMS[metal][g]/1000)*amps;}
+  function calcWire(){
+    const amps=num('ws-amps'),v=parseFloat($('ws-volts').value),len=num('ws-length')/(unitSystem==='metric'?0.3048:1),metal=$('ws-metal').value,g=$('ws-gauge').value;
+    let out='<div class="label">Your wire</div>';
+    if(!OHMS[metal][g]){
+      out+=`<p style="margin:8px 0;font-family:Inter,sans-serif;font-size:0.9rem">${g} AWG aluminum isn't used for branch circuits. Pick 12 AWG or larger.</p>`;
+    }else{
+      const vd=drop(metal,g,amps,len),pct=vd/v*100,rated=amps<=AMPACITY[metal][g];
+      out+=line('Voltage drop',fmt(vd,2)+' V')+line('Drop percent',`<span class="${pct<=3?'status-ok':pct<=5?'status-warn':'status-bad'}">${fmt(pct,1)}%</span>`)+line('Voltage at the load',fmt(v-vd,1)+' V')+line('Rated for your amps?',rated?'<span class="status-ok">Yes</span>':'<span class="status-bad">No, too small</span>');
+    }
+    const best=GAUGES.find(x=>OHMS[metal][x]&&amps<=AMPACITY[metal][x]&&drop(metal,x,amps,len)/v*100<=3);
+    out+=`<div class="total"><span>Smallest wire for &le;3% drop</span><span class="amount">${best?best+' AWG':'Larger than 2/0'}</span></div>`;
+    out+=`<p style="margin:10px 0 0;font-family:Inter,sans-serif;font-size:0.82rem;color:var(--graphite-soft)">${metal==='cu'?'Copper':'Aluminum'} wire, ${unitSystem==='metric'?fmt(len*0.3048,1)+' m':fmt(len)+' ft'} one way. Drop over 3% can make motors run hot and lights dim.</p>`;
+    $('ws-receipt').innerHTML=out;
+  }
+
+  // ---- Generator size ----
+  const GEN=[
+    ['Refrigerator',700,2200,true],['Chest freezer',500,1500,false],['Sump pump (1/2 hp)',1050,2150,true],
+    ['Well pump (1/2 hp)',1000,2100,false],['Furnace fan (1/2 hp)',800,2350,false],['Window AC (10,000 BTU)',1200,3600,false],
+    ['Space heater',1500,1500,false],['Microwave',1000,1000,false],['Coffee maker',1000,1000,false],
+    ['Washing machine',1150,2250,false],['Electric water heater',4000,4000,false],['Lights (about 10 LED bulbs)',100,100,true],
+    ['TV',200,200,true],['Wi-Fi router and modem',50,50,true],['Phone and laptop charging',100,100,false],['CPAP machine',60,60,false]
+  ];
+  function buildGen(){
+    $('gen-list').innerHTML=GEN.map((g,i)=>`<label class="gen-item"><input type="checkbox" id="gen-${i}" ${g[3]?'checked':''} onchange="calcGenerator()"><span>${g[0]} <span class="w">${fmt(g[1])} W${g[2]>g[1]?' / '+fmt(g[2])+' start':''}</span></span><input type="number" id="genq-${i}" min="1" step="1" value="1" aria-label="How many ${g[0]}" oninput="calcGenerator()"></label>`).join('');
+  }
+  function calcGenerator(){
+    let run=0,surge=0,count=0;
+    GEN.forEach((g,i)=>{if($('gen-'+i).checked){const q=Math.max(1,parseInt($('genq-'+i).value)||1);run+=g[1]*q;surge=Math.max(surge,g[2]-g[1]);count+=q;}});
+    const cw=num('gen-cw'),cs=num('gen-cs');
+    if(cw>0){run+=cw;surge=Math.max(surge,Math.max(cs-cw,0));count++;}
+    const start=run+surge,recRun=Math.ceil(run*1.2/100)*100,recStart=Math.ceil(start*1.2/100)*100;
+    $('gen-receipt').innerHTML=`<div class="label">Estimate</div>${line('Items selected',count)}${line('Total running watts',fmt(run)+' W')}${line('Biggest startup jump',fmt(surge)+' W')}${line('Starting watts needed',fmt(start)+' W')}<div class="total"><span>Look for about</span><span class="amount">${fmt(recRun)} W</span></div><p style="margin:10px 0 0;font-family:Inter,sans-serif;font-size:0.85rem">Running watts, with at least <b>${fmt(recStart)} W</b> starting (peak) watts. Numbers include about 20% headroom.</p>`;
+  }
+
+  function recalcAll(){ calcElecCost(); calcWattsAmps(); calcCircuit(); calcWire(); calcGenerator(); }
+
+  window.addEventListener('DOMContentLoaded',()=>{
+    addDevice('Space heater',1500); addDevice('TV',100); addDevice('Lamp',60);
+    buildGen(); recalcAll();
+    document.querySelectorAll('.calc-inputs input, .calc-inputs select').forEach(el=>el.addEventListener('change',recalcAll));
+    $('cl-devices').addEventListener('input',calcCircuit);
+  });
+
+  const tickets=document.querySelectorAll('.ticket');
+  if('IntersectionObserver' in window){
+    const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, {threshold:0.15});
+    tickets.forEach(t=>obs.observe(t));
+  } else { tickets.forEach(t=>t.classList.add('visible')); }
+
+  window.addEventListener('scroll', ()=>{
+    const btn=document.getElementById('back-to-top');
+    if(window.scrollY>400){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+  });
+  // ---- Feet / meters switch (wire distance) ----
+  function setUnitSystem(sys){
+    if(sys===unitSystem) return;
+    const inp=$('ws-length'), v=parseFloat(inp.value);
+    if(!isNaN(v)) inp.value = sys==='metric' ? Math.round(v*0.3048*10)/10 : Math.round(v/0.3048);
+    unitSystem=sys;
+    $('ws-length-unit').textContent = sys==='metric' ? '(meters, from the panel to the load)' : '(feet, from the panel to the load)';
+    document.querySelectorAll('[data-unit-btn]').forEach(b=>{
+      const on=b.dataset.unitBtn===sys; b.classList.toggle('active',on); b.setAttribute('aria-pressed',on?'true':'false');
+    });
+    calcWire();
+  }
+
+  // ---- Save / print my results ----
+  const sessionUsed = new Set();
+  const calcTickets = [...document.querySelectorAll('.ticket')].filter(t=>t.querySelector('.calc-btn'));
+  function shortName(t){ return t.querySelector('.ticket-head h2').textContent.replace(/\s*Calculator\s*$/,'').trim(); }
+  function cleanText(el){
+    const c=el.cloneNode(true);
+    c.querySelectorAll('.hint:not(.u)').forEach(h=>h.remove());
+    return c.textContent.replace(/\s+/g,' ').trim();
+  }
+  function markUsed(t){ sessionUsed.add(t.id); }
+  function addRow(tbody,label,value,cls){
+    const tr=document.createElement('tr'); if(cls) tr.className=cls;
+    const a=document.createElement('td'); a.textContent=label;
+    const b=document.createElement('td'); b.textContent=value;
+    tr.append(a,b); tbody.appendChild(tr);
+  }
+  function makeCol(title){
+    const col=document.createElement('div');
+    const h=document.createElement('p'); h.className='ps-col-title'; h.textContent=title;
+    const table=document.createElement('table'), tbody=document.createElement('tbody');
+    table.appendChild(tbody); col.append(h,table);
+    return {col,tbody};
+  }
+  function fieldValue(el){
+    if(el.tagName==='SELECT') return el.options[el.selectedIndex] ? el.options[el.selectedIndex].text.replace(/\s*\(.*\)\s*$/,'') : '';
+    return el.value==='' ? '—' : el.value;
+  }
+
+  function buildSheet(){
+    recalcAll();
+    const sheet=$('print-sheet'); sheet.innerHTML='';
+    const date=new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+    const head=document.createElement('div'); head.className='ps-head';
+    head.innerHTML=`<div class="ps-brand"><img src="logo-header.png" alt="" onerror="this.remove()"><div><p class="ps-title">CalcProject.org</p><p class="ps-site" id="ps-project"></p></div></div><div class="ps-meta"><strong>${date}</strong>Electrical estimate</div>`;
+    sheet.appendChild(head);
+    const projectName=$('project-name').value.trim();
+    $('ps-project').textContent = projectName || 'My electrical estimate';
+    if(!window._origTitle) window._origTitle=document.title;
+    document.title='CalcProject.org - '+(projectName || 'My electrical estimate');
+
+    const warn=document.createElement('p'); warn.className='ps-warn';
+    warn.textContent='Estimates only. Electrical code varies by city, county, and state. Check your local code and use a licensed electrician for any wiring work.';
+    sheet.appendChild(warn);
+
+    calcTickets.filter(t=>sessionUsed.has(t.id)).forEach(t=>{
+      const box=document.createElement('section'); box.className='ps-calc';
+      const h=document.createElement('h2'); h.textContent=t.querySelector('.ticket-head h2').textContent.trim();
+      const grid=document.createElement('div'); grid.className='ps-grid';
+      const inp=makeCol('What you entered'), res=makeCol('Results');
+      const inputs=t.querySelector('.calc-inputs');
+
+      // Generator checklist
+      inputs.querySelectorAll('.gen-item').forEach(item=>{
+        const cb=item.querySelector('input[type=checkbox]'); if(!cb || !cb.checked) return;
+        const i=parseInt(cb.id.replace('gen-',''),10);
+        const q=item.querySelector('input[type=number]');
+        addRow(inp.tbody, GEN[i] ? GEN[i][0] : 'Item', '× ' + (q ? (parseInt(q.value)||1) : 1));
+      });
+      // Circuit devices
+      inputs.querySelectorAll('.room-row').forEach((row,i)=>{
+        const n=row.querySelector('.cl-name'), w=row.querySelector('.cl-watts');
+        if(!w) return;
+        addRow(inp.tbody, (n && n.value.trim()) || ('Device '+(i+1)), (w.value||'0')+' W');
+      });
+      // Normal fields
+      inputs.querySelectorAll('.field').forEach(f=>{
+        if(f.closest('.room-row') || f.closest('.gen-item')) return;
+        if(f.offsetParent===null && f.style.display==='none') return;
+        if(f.closest('[style*="display: none"], [style*="display:none"]')) return;
+        const el=f.querySelector('input, select'), label=f.querySelector('label');
+        if(!el || !label) return;
+        if((el.id==='gen-cw' || el.id==='gen-cs') && !(parseFloat(el.value)>0)) return;
+        addRow(inp.tbody, cleanText(label), fieldValue(el));
+      });
+
+      const receipt=t.querySelector('.receipt');
+      receipt.querySelectorAll('.result-line, .total').forEach(line=>{
+        const kids=[...line.children].filter(c=>c.tagName==='SPAN');
+        if(kids.length>=2) addRow(res.tbody, kids[0].textContent, kids[kids.length-1].textContent, line.classList.contains('total')?'ps-buy':'');
+      });
+      grid.append(inp.col,res.col);
+      box.append(h,grid);
+      receipt.querySelectorAll('p').forEach(p=>{
+        const n=document.createElement('p'); n.className='ps-note'; n.textContent=p.textContent.replace(/\s+/g,' ').trim(); box.appendChild(n);
+      });
+      const tw=t.querySelector('.ticket-warn');
+      if(tw){ const n=document.createElement('p'); n.className='ps-note'; n.textContent=tw.textContent.replace(/^\W+/,'').trim(); box.appendChild(n); }
+      sheet.appendChild(box);
+    });
+
+    const notes=document.createElement('div'); notes.className='ps-notes';
+    notes.innerHTML='<p class="ps-col-title">Notes for your electrician</p>'+'<div class="ps-line"></div>'.repeat(3);
+    const foot=document.createElement('p'); foot.className='ps-foot';
+    foot.textContent='These calculators give general estimates for planning only and may not account for every factor in your situation. Working with electricity can cause serious injury, death, or fire.';
+    const back=document.createElement('p'); back.className='ps-comeback'; back.textContent='Free calculators anytime at CalcProject.org';
+    const end=document.createElement('div'); end.className='ps-end'; end.append(notes,foot,back);
+    sheet.appendChild(end);
+  }
+
+  function doPrint(){
+    buildSheet();
+    if(typeof gtag==='function') gtag('event','save_or_print',{calculators:sessionUsed.size, page:'advanced'});
+    window.print();
+  }
+  function saveOrPrint(){
+    const dlg=$('save-dialog');
+    $('sd-on').textContent='On your sheet: '+calcTickets.filter(t=>sessionUsed.has(t.id)).map(shortName).join(', ');
+    if(!dlg || typeof dlg.showModal!=='function'){ doPrint(); return; }
+    dlg.showModal(); $('project-name').focus();
+  }
+  $('sd-cancel').addEventListener('click',()=>$('save-dialog').close());
+  $('sd-print').addEventListener('click',()=>{ $('save-dialog').close(); doPrint(); });
+  $('project-name').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); $('sd-print').click(); } });
+  $('save-dialog').addEventListener('click',e=>{ if(e.target.id==='save-dialog') e.target.close(); });
+
+  calcTickets.forEach(t=>{
+    if(t.id==='wire-size'){
+      const stamp=t.querySelector('.ticket-head .stamp');
+      const side=document.createElement('div'); side.className='ticket-side';
+      stamp.replaceWith(side); side.appendChild(stamp);
+      const sw=document.createElement('div'); sw.className='ticket-units'; sw.setAttribute('role','group'); sw.setAttribute('aria-label','Distance units');
+      [['imperial','Feet'],['metric','Meters']].forEach(([sys,lbl])=>{
+        const b=document.createElement('button'); b.type='button'; b.dataset.unitBtn=sys; b.textContent=lbl;
+        const on=unitSystem===sys; b.classList.toggle('active',on); b.setAttribute('aria-pressed',on?'true':'false');
+        b.addEventListener('click',()=>setUnitSystem(sys)); sw.appendChild(b);
+      });
+      side.appendChild(sw);
+    }
+    const btn=t.querySelector('.calc-btn');
+    t.addEventListener('input',()=>markUsed(t));
+    t.addEventListener('change',()=>markUsed(t));
+    btn.addEventListener('click',()=>markUsed(t));
+    const save=document.createElement('button'); save.type='button'; save.className='btn-outline save-ticket-btn'; save.textContent='Save or print results';
+    save.addEventListener('click',()=>{ markUsed(t); saveOrPrint(); });
+    btn.insertAdjacentElement('afterend',save);
+  });
+  window.addEventListener('beforeprint',buildSheet);
+  window.addEventListener('afterprint',()=>{ if(window._origTitle) document.title=window._origTitle; });
+</script>
+
+</body>
+</html>
