@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Math Calculators With Steps — Algebra, Calculus, Trig, Fractions | CalcProject.org</title>
+<meta name="description" content="Free math calculators with step-by-step solutions: linear equations, quadratic formula, slope, derivatives, integrals, Pythagorean theorem, right triangle trig, percentages, fractions, GCF/LCM and statistics. No login, no paywall.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16324A;
+    --navy-deep:#0F2436;
+    --cyan:#7FB3C7;
+    --chalk:#F3F1E8;
+    --orange:#E4572E;
+    --yellow:#F4B942;
+    --graphite:#2A2A28;
+    --graphite-soft:#5B5B57;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background-color:var(--navy); background-image:linear-gradient(rgba(127,179,199,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(127,179,199,0.09) 1px, transparent 1px); background-size:48px 48px; color:var(--chalk); font-family:'Inter',sans-serif; line-height:1.5; }
+  h1,h2,h3{ font-family:'Bebas Neue',sans-serif; letter-spacing:0.03em; margin:0; }
+  .mono{ font-family:'IBM Plex Mono',monospace; }
+  a{color:var(--yellow);}
+
+  .site-header{
+    background:var(--navy-deep);
+    border-bottom:1px solid rgba(127,179,199,0.25);
+  }
+  .site-header-inner{
+    max-width:1100px; margin:0 auto; padding:14px 24px;
+    display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:16px;
+  }
+  .brand{ justify-self:start; display:flex; align-items:center; text-decoration:none; }
+  .brand img{
+    height:52px; width:52px; display:block; border-radius:50%;
+    border:2px solid var(--chalk); box-shadow:0 0 0 1px rgba(0,0,0,0.25);
+  }
+  .site-nav{ grid-column:2; display:flex; align-items:center; flex-wrap:wrap; justify-content:center; }
+  .site-nav a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.07em; text-transform:uppercase;
+    color:var(--chalk); text-decoration:none; opacity:0.85; transition:color .15s ease, opacity .15s ease;
+    margin:4px 18px;
+  }
+  .site-nav a:hover{ color:var(--yellow); opacity:1; }
+  @media (max-width:640px){
+    .site-header-inner{ padding:12px 16px; grid-template-columns:auto 1fr; }
+    .brand img{ height:40px; width:40px; }
+    .site-nav{ grid-column:2; justify-content:flex-end; }
+    .site-nav a{ margin:4px 8px; font-size:10px; }
+    body{ background-color:#48647C; }
+  }
+
+  .unit-toggle{
+    position:fixed; top:82px; right:16px; z-index:50;
+    display:flex; align-items:center; background:var(--chalk); border-radius:20px;
+    padding:4px; box-shadow:0 8px 24px rgba(0,0,0,0.4); font-family:'IBM Plex Mono',monospace;
+  }
+  .unit-toggle button{
+    border:none; background:transparent; padding:8px 14px; font-size:11px; letter-spacing:0.06em;
+    text-transform:uppercase; font-weight:700; border-radius:16px; cursor:pointer; color:var(--graphite-soft);
+    transition:background .15s ease, color .15s ease;
+  }
+  .unit-toggle button.active{ background:var(--orange); color:#fff; }
+  @media (max-width:640px){ .unit-toggle{ top:auto; bottom:16px; left:16px; right:auto; } }
+
+  .back-to-top{
+    position:fixed; bottom:24px; right:max(20px, calc(50vw - 704px)); z-index:50;
+    width:180px; display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:12px 14px; border-radius:30px; background:var(--orange); color:#fff; border:none;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:700;
+    cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,0.4); opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s, background .15s ease;
+  }
+  .back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  .back-to-top:hover{ background:#c8471f; }
+
+  .ruler{
+    position:relative; height:34px; margin:0 auto; max-width:1000px;
+    background-image:
+      repeating-linear-gradient(90deg, var(--cyan) 0, var(--cyan) 1px, transparent 1px, transparent 12px),
+      repeating-linear-gradient(90deg, var(--chalk) 0, var(--chalk) 2px, transparent 2px, transparent 60px);
+    background-position:0 100%, 0 100%; background-repeat:repeat-x; background-size:12px 12px, 60px 24px;
+    opacity:0.55;
+  }
+  .ruler::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--chalk); opacity:0.6; }
+
+  header{ padding:64px 24px 40px; text-align:center; }
+  .eyebrow{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--yellow); border:1px solid var(--yellow); padding:4px 10px;
+    border-radius:var(--radius); margin-bottom:20px;
+  }
+  header h1{ font-size:clamp(2.4rem, 6vw, 4.2rem); line-height:1.02; color:var(--chalk); max-width:900px; margin:0 auto; }
+  header h1 span{color:var(--orange);}
+  header p{ max-width:600px; margin:22px auto 0; color:var(--cyan); font-size:1.05rem; }
+
+  main{max-width:1000px; margin:0 auto; padding:48px 20px 80px;}
+
+  nav.jump{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:40px 0 8px; }
+  nav.jump a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    text-decoration:none; color:var(--chalk); border:1px solid rgba(243,241,232,0.35); padding:8px 14px;
+    border-radius:var(--radius); transition:border-color .15s ease, color .15s ease;
+  }
+  nav.jump a:hover{border-color:var(--yellow); color:var(--yellow);}
+
+  .section-heading{ text-align:center; margin:70px 0 6px; }
+  .section-heading h2{ font-size:clamp(2rem, 5vw, 3rem); color:var(--chalk); }
+  .section-heading:first-of-type{ margin-top:20px; }
+
+  .ticket{
+    background:var(--chalk); color:var(--graphite); border-radius:6px; margin:36px 0; overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,0.28); opacity:0; transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .ticket.visible{opacity:1; transform:translateY(0);}
+  .ticket-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:22px 26px 18px;
+    border-bottom:2px dashed rgba(42,42,40,0.2);
+  }
+  .stamp{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--orange); border:1.5px solid var(--orange); padding:5px 9px; border-radius:var(--radius);
+    transform:rotate(-2deg); white-space:nowrap;
+  }
+  .ticket-head h2{ font-size:2rem; color:var(--navy); }
+  .ticket-head p{ margin:6px 0 0; color:var(--graphite-soft); font-size:0.95rem; max-width:480px; }
+
+  .ticket-body{ display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  @media (max-width:640px){ .ticket-body{grid-template-columns:1fr;} }
+
+  .calc-inputs{ padding:24px 26px 28px; }
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:0.82rem; font-weight:600; color:var(--graphite); margin-bottom:6px; }
+  .field .hint{ font-weight:400; color:var(--graphite-soft); font-size:0.78rem; }
+  .field input{
+    width:100%; padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:0.95rem;
+    border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); background:#fff; color:var(--graphite);
+  }
+  .field input:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .field-row{display:flex; gap:12px;}
+  .field-row .field{flex:1;}
+
+  .calc-btn{
+    margin-top:6px; width:100%; padding:13px 16px; background:var(--orange); color:var(--chalk); border:none;
+    border-radius:var(--radius); font-family:'IBM Plex Mono',monospace; font-size:0.85rem; letter-spacing:0.1em;
+    text-transform:uppercase; font-weight:600; cursor:pointer; transition:transform .08s ease, background .15s ease;
+  }
+  .calc-btn:hover{background:#c8471f;}
+  .calc-btn:active{transform:scale(0.97);}
+
+  .btn-outline{
+    display:block; width:100%; margin:4px 0 16px; padding:10px 14px; background:transparent; color:var(--navy);
+    border:1.5px solid var(--navy); border-radius:var(--radius); font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; cursor:pointer; text-align:center;
+    transition:background .15s ease;
+  }
+  .btn-outline:hover{background:rgba(22,50,74,0.08);}
+
+  .room-row{margin-bottom:10px;}
+  .room-row-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;}
+  .room-name{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--graphite-soft);}
+  .remove-room{
+    background:none; border:none; padding:0; font-family:'IBM Plex Mono',monospace; font-size:11px;
+    letter-spacing:0.05em; text-transform:uppercase; color:var(--graphite-soft); text-decoration:underline;
+    cursor:pointer;
+  }
+  .remove-room:hover{color:var(--orange);}
+
+  .receipt-wrap{ background:var(--navy-deep); padding:24px 26px; display:flex; align-items:center; }
+  .receipt{
+    background:#fff; color:var(--graphite); width:100%; padding:20px 18px; border-radius:var(--radius);
+    position:relative; font-family:'IBM Plex Mono',monospace;
+  }
+  .receipt::before{
+    content:""; position:absolute; top:-1px; left:0; right:0; height:1px;
+    background-image:repeating-linear-gradient(90deg, rgba(42,42,40,0.35) 0 6px, transparent 6px 12px);
+  }
+  .receipt .label{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--graphite-soft); }
+  .receipt .result-line{
+    display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dotted rgba(42,42,40,0.2); font-size:0.9rem;
+  }
+  .receipt .result-line:last-of-type{border-bottom:none;}
+  .receipt .total{
+    margin-top:10px; padding-top:10px; border-top:2px solid var(--graphite);
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .receipt .total .amount{ font-size:1.5rem; font-weight:600; color:var(--navy); }
+
+  .formula-note{
+    padding:18px 26px 26px; border-top:1px solid rgba(42,42,40,0.12); font-size:0.88rem;
+    color:var(--graphite-soft); grid-column:1 / -1;
+  }
+  .formula-note strong{color:var(--graphite);}
+
+  .guide-link{
+    margin:0 26px 24px; padding-top:16px; border-top:1px dashed rgba(42,42,40,0.2);
+  }
+  .guide-link a{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--navy); text-decoration:none; border-bottom:2px solid var(--orange); padding-bottom:2px;
+  }
+  .guide-link a:hover{ color:var(--orange); }
+
+  .howto-box{
+    background:var(--navy-deep); border-radius:6px; padding:16px; margin-bottom:18px;
+  }
+  .howto-box svg{ width:100%; max-width:220px; height:auto; margin:0 auto 10px; display:block; }
+  .howto-box .howto-title{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--yellow); margin:0 0 8px; }
+  .howto-box ol{ margin:0; padding-left:18px; color:var(--chalk); font-size:0.85rem; line-height:1.55; }
+  .howto-box li{ margin-bottom:5px; }
+  .howto-box strong{ color:var(--yellow); }
+
+  footer{ text-align:center; padding:40px 20px 60px; color:var(--cyan); font-size:0.85rem; }
+  footer p{max-width:520px; margin:8px auto;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} .ticket{opacity:1; transform:none;} }
+
+  .field select{
+    width:100%; padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:0.95rem;
+    border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); background:#fff; color:var(--graphite);
+  }
+  .field select:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .safety-strip{
+    max-width:760px; margin:0 auto; padding:14px 18px; border:1.5px solid var(--yellow); border-radius:6px;
+    color:var(--chalk); font-size:0.92rem; background:rgba(15,36,54,0.6);
+  }
+  .safety-strip strong{color:var(--yellow);}
+  .ticket-warn{
+    grid-column:1 / -1; margin:0 26px 20px; padding:10px 12px; background:rgba(244,185,66,0.18);
+    border-left:4px solid var(--yellow); font-size:0.85rem; color:var(--graphite);
+  }
+  .status-ok{color:#2e7d32; font-weight:600;}
+  .status-warn{color:#b26a00; font-weight:600;}
+  .status-bad{color:#c62828; font-weight:600;}
+  .gen-list{display:grid; grid-template-columns:1fr; gap:6px; margin-bottom:14px;}
+  .gen-item{display:grid; grid-template-columns:auto 1fr 64px; align-items:center; gap:10px; font-size:0.88rem;}
+  .gen-item input[type=number]{padding:6px 8px; font-family:'IBM Plex Mono',monospace; font-size:0.85rem; border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); width:100%;}
+  .gen-item input[type=checkbox]{width:18px; height:18px; accent-color:var(--orange);}
+  .gen-item .w{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--graphite-soft);}
+  .disclaimer-box{
+    background:var(--chalk); color:var(--graphite); border-radius:6px; padding:24px 26px; margin:56px 0 0;
+    box-shadow:0 24px 60px rgba(0,0,0,0.28);
+  }
+  .disclaimer-box h2{color:var(--navy); font-size:2rem; margin-bottom:8px;}
+  .disclaimer-box p{margin:8px 0 0; font-size:0.92rem; line-height:1.6;}
+
+  /* ---- Save / print my results ---- */
+  header p.save-intro{ color:var(--chalk); margin-top:16px; }
+  header p.save-intro strong{ color:var(--yellow); font-weight:600; }
+
+  #save-dialog{
+    width:min(92vw, 420px); padding:0; border:none; border-radius:6px; background:var(--chalk); color:var(--graphite);
+    box-shadow:0 24px 60px rgba(0,0,0,0.45);
+  }
+  #save-dialog::backdrop{ background:rgba(15,36,54,0.7); }
+  .sd-inner{ padding:22px 24px 24px; }
+  .sd-inner h2{ font-size:1.9rem; color:var(--navy); margin:0 0 4px; }
+  .sd-on{ margin:0 0 18px; font-size:0.9rem; color:var(--graphite-soft); }
+  .sd-inner label{ display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px; }
+  .sd-inner label span{ font-weight:400; color:var(--graphite-soft); }
+  .sd-inner input{
+    width:100%; padding:11px 12px; font-family:'Inter',sans-serif; font-size:1rem; color:var(--graphite);
+    background:#fff; border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius);
+  }
+  .sd-inner input:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .sd-tip{ margin:12px 0 0; font-size:0.82rem; color:var(--graphite-soft); }
+  .sd-actions{ display:flex; gap:10px; margin-top:20px; }
+  .sd-actions button{ flex:1; margin:0; }
+  .sd-actions .btn-outline{ margin:0; }
+  .btn-outline.save-ticket-btn{ margin:10px 0 0; }
+
+  /* Unit switch on each calculator */
+  .ticket-side{ display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex:none; }
+  .ticket-units{
+    display:flex; background:var(--navy); border-radius:16px; padding:3px; font-family:'IBM Plex Mono',monospace;
+  }
+  .ticket-units button{
+    border:none; background:transparent; padding:6px 11px; font-size:10px; letter-spacing:0.06em;
+    text-transform:uppercase; font-weight:700; border-radius:13px; cursor:pointer; color:var(--chalk);
+    transition:background .15s ease, color .15s ease;
+  }
+  .ticket-units button.active{ background:var(--orange); color:#fff; }
+  .ticket-units button:focus-visible{ outline:2px solid var(--yellow); outline-offset:1px; }
+  @media (max-width:640px){
+    .ticket-head{ flex-direction:column; gap:12px; }
+    .ticket-side{ order:-1; width:100%; flex-direction:row; align-items:center; justify-content:space-between; }
+  }
+  .save-ticket-btn:focus-visible, .sd-actions button:focus-visible{ outline:2px solid var(--navy); outline-offset:2px; }
+
+  #print-sheet{ display:none; }
+  @media print{
+    @page{ margin:0.55in; }
+    html, body{ background:#fff !important; background-image:none !important; color:#111 !important; }
+    body > *:not(#print-sheet){ display:none !important; }
+    #print-sheet{ display:block !important; font-family:'Inter',Arial,sans-serif; color:#111; font-size:10.5pt; line-height:1.4; }
+    .ps-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; border-bottom:3px solid #16324A; padding-bottom:10px; margin-bottom:16px; }
+    .ps-brand{ display:flex; align-items:center; gap:10px; }
+    .ps-brand img{ width:58px; height:58px; border-radius:50%; }
+    .ps-title{ font-family:'Bebas Neue',Impact,sans-serif; font-size:34pt; letter-spacing:0.03em; color:#16324A; line-height:1; margin:0; }
+    .ps-site{ font-size:14pt; color:#222; margin:4px 0 0; font-weight:600; }
+    .ps-comeback{ margin-top:12px; text-align:center; font-family:'Bebas Neue',Impact,sans-serif; font-size:18pt; letter-spacing:0.03em; color:#16324A; }
+    .ps-meta{ text-align:right; font-size:9pt; color:#333; }
+    .ps-meta strong{ display:block; font-size:10.5pt; color:#111; }
+    .ps-calc{ break-inside:avoid; page-break-inside:avoid; border:1px solid #9a9a9a; border-radius:4px; padding:10px 14px 12px; margin:0 0 12px; }
+    .ps-calc h2{ font-family:'Bebas Neue',Impact,sans-serif; font-size:16pt; letter-spacing:0.03em; color:#16324A; margin:0 0 6px; }
+    .ps-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .ps-col-title{ font-size:8pt; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin:0 0 2px; font-weight:600; }
+    .ps-calc table{ width:100%; border-collapse:collapse; }
+    .ps-calc td{ padding:3px 0; border-bottom:1px dotted #bbb; vertical-align:top; }
+    .ps-calc td + td{ text-align:right; font-family:'IBM Plex Mono',monospace; padding-left:10px; white-space:nowrap; }
+    .ps-calc tr.ps-buy td{ font-weight:700; font-size:12pt; border-bottom:none; border-top:2px solid #111; padding-top:5px; }
+    .ps-end{ break-inside:avoid; page-break-inside:avoid; }
+    .ps-notes{ margin-top:16px; }
+    .ps-notes .ps-line{ border-bottom:1px solid #9a9a9a; height:24px; }
+    .ps-foot{ margin-top:14px; font-size:8.5pt; color:#555; }
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+    .ps-note{ margin:6px 0 0; font-size:9pt; color:#333; }
+  @media print{
+    .ps-warn{ border:1.5px solid #111; border-radius:4px; padding:8px 12px; margin:0 0 14px; font-size:9.5pt; }
+    .ps-calc .ps-note{ margin:6px 0 0; font-size:9pt; color:#333; }
+  }
+
+  /* ---- Math tools additions ---- */
+  .steps-note{ grid-column:1 / -1; padding:20px 26px 22px; border-top:1px solid rgba(42,42,40,0.12); color:var(--graphite); }
+  .steps-note h3{ font-family:'Bebas Neue',sans-serif; font-size:1.7rem; letter-spacing:0.03em; color:var(--navy); margin:0 0 8px; font-weight:400; }
+  .steps-note ol{ margin:0; padding:0; list-style:none; counter-reset:s; }
+  .steps-note li{ counter-increment:s; position:relative; padding:9px 0 9px 42px; border-bottom:1px dotted rgba(42,42,40,0.2); font-size:0.95rem; line-height:1.5; }
+  .steps-note li:last-child{ border-bottom:none; }
+  .steps-note li::before{ content:counter(s); position:absolute; left:0; top:8px; width:27px; height:27px; border-radius:50%; background:var(--orange); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; font-weight:600; display:grid; place-items:center; }
+  details.formula-note summary{ cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--navy); font-weight:600; }
+  details.formula-note[open] summary{ margin-bottom:10px; }
+  details.formula-note p, details.formula-note li{ color:var(--graphite); }
+  details.formula-note code{ font-family:'IBM Plex Mono',monospace; background:rgba(22,50,74,0.08); padding:1px 6px; border-radius:2px; font-size:0.9em; }
+  .receipt .err{ color:#a3260c; font-weight:600; font-size:0.9rem; margin-top:8px; }
+  .receipt .result-line span:last-child{ text-align:right; word-break:break-word; padding-left:12px; }
+  .receipt .total .amount{ text-align:right; word-break:break-word; padding-left:12px; }
+  @media print{
+    .ps-steps{ margin:8px 0 0; padding-left:18px; font-size:9.5pt; }
+    .ps-steps li{ margin-bottom:2px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Advanced Tools</a>
+      <a href="math-tools.html" class="adv-nav">Math Tools</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr; Back to Top</button>
+
+<header>
+  <span class="eyebrow">Math tools &middot; Algebra &amp; Calculus</span>
+  <h1>Type it in.<br>See every step.<br><span>Then check your work.</span></h1>
+  <p>Free math calculators for algebra, calculus, trig, fractions and more. Every answer comes with the full step-by-step solution, with no login and no paywall.</p>
+  <p class="save-intro">Done solving? Tap <strong>Save or print results</strong> on any calculator. Everything you solved goes onto one clean sheet you can print or save as a PDF for your notes.</p>
+</header>
+
+<div class="ruler" role="presentation" style="margin-top:40px"></div>
+
+<main>
+  <nav class="jump" aria-label="Jump to calculator">
+    <a href="#linear">Linear Equation Solver</a><a href="#quadratic">Quadratic Formula Calculator</a><a href="#slope">Slope Calculator</a><a href="#derivative">Derivative Calculator</a><a href="#integral">Integral Calculator</a><a href="#pythagorean">Pythagorean Theorem Calculator</a><a href="#trig">Right Triangle Trig Calculator</a><a href="#percent">Percentage Calculator</a><a href="#fraction">Fraction Calculator</a><a href="#gcf-lcm">GCF &amp; LCM Calculator</a><a href="#statistics">Mean, Median &amp; Mode Calculator</a>
+    <a href="index.html">Home Calculators</a>
+  </nav>
+
+  <div class="section-heading" id="algebra"><span class="eyebrow">Math</span><h2>Algebra</h2></div>
+  <section class="ticket" id="linear" data-tid="linear">
+    <div class="ticket-head">
+      <div><h2>Linear Equation Solver</h2><p>Solve ax + b = c for x.</p></div>
+      <span class="stamp">Job: Algebra</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="linear-l-a">a (number in front of x)</label><input type="number" id="linear-l-a" data-f="a" step="any" inputmode="decimal" value="2" autocomplete="off"></div><div class="field"><label for="linear-l-b">b</label><input type="number" id="linear-l-b" data-f="b" step="any" inputmode="decimal" value="3" autocomplete="off"></div><div class="field"><label for="linear-l-c">c</label><input type="number" id="linear-l-c" data-f="c" step="any" inputmode="decimal" value="11" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>To solve <code>ax + b = c</code> you undo the operations in reverse order. First move <code>b</code> to the other side by subtracting it from both sides. Then divide both sides by <code>a</code>.</p><p>Example: <code>2x + 3 = 11</code>. Subtract 3: <code>2x = 8</code>. Divide by 2: <code>x = 4</code>. Check: 2 &times; 4 + 3 = 11. &check;</p><p>Whatever you do to one side of an equation, you must do to the other. That is the one rule behind all of algebra.</p><p><strong>What if my equation has x on both sides?</strong><br>Move the x terms to one side first. For 5x + 2 = 2x + 11, subtract 2x and 2 from both sides to get 3x = 9, then enter a = 3, b = 0, c = 9.</p><p><strong>Why can&#x27;t a be 0?</strong><br>Then the x disappears and you do not have an equation to solve for x.</p><p><strong>Does it handle negatives and decimals?</strong><br>Yes.</p></details>
+      
+    </div>
+  </section>
+  <section class="ticket" id="quadratic" data-tid="quadratic">
+    <div class="ticket-head">
+      <div><h2>Quadratic Formula Calculator</h2><p>Solve ax² + bx + c = 0, with discriminant and vertex.</p></div>
+      <span class="stamp">Job: Algebra</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="quadratic-q-a">a</label><input type="number" id="quadratic-q-a" data-f="a" step="any" inputmode="decimal" value="1" autocomplete="off"></div><div class="field"><label for="quadratic-q-b">b</label><input type="number" id="quadratic-q-b" data-f="b" step="any" inputmode="decimal" value="-3" autocomplete="off"></div><div class="field"><label for="quadratic-q-c">c</label><input type="number" id="quadratic-q-c" data-f="c" step="any" inputmode="decimal" value="2" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>The quadratic formula is <code>x = (&minus;b &plusmn; &radic;(b&sup2; &minus; 4ac)) &divide; 2a</code>. The part under the square root, <code>b&sup2; &minus; 4ac</code>, is the <strong>discriminant</strong>. It tells you how many real solutions exist.</p><ul><li>Positive discriminant: two real solutions.</li><li>Zero: one repeated solution.</li><li>Negative: no real solutions, but two complex ones.</li></ul><p>Example: <code>x&sup2; &minus; 3x + 2 = 0</code> has a = 1, b = &minus;3, c = 2. The discriminant is 9 &minus; 8 = 1, so x = (3 &plusmn; 1) &divide; 2, giving x = 2 and x = 1.</p><p>The vertex of the parabola sits at x = &minus;b &divide; 2a.</p><p><strong>My equation is not in the form ax² + bx + c = 0. What now?</strong><br>Move everything to one side first so the other side is 0. For x² = 5x - 6, subtract 5x and add 6 to get x² - 5x + 6 = 0.</p><p><strong>What does a complex answer mean?</strong><br>The parabola never touches the x-axis. The solutions involve i, the square root of -1.</p><p><strong>What if there is no x term?</strong><br>Enter b = 0. A missing c is also 0.</p></details>
+      
+    </div>
+  </section>
+  <section class="ticket" id="slope" data-tid="slope">
+    <div class="ticket-head">
+      <div><h2>Slope Calculator</h2><p>Slope, line equation, distance and midpoint from two points.</p></div>
+      <span class="stamp">Job: Graphing</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="slope-m-x1">x1</label><input type="number" id="slope-m-x1" data-f="x1" step="any" inputmode="decimal" value="1" autocomplete="off"></div><div class="field"><label for="slope-m-y1">y1</label><input type="number" id="slope-m-y1" data-f="y1" step="any" inputmode="decimal" value="2" autocomplete="off"></div><div class="field"><label for="slope-m-x2">x2</label><input type="number" id="slope-m-x2" data-f="x2" step="any" inputmode="decimal" value="4" autocomplete="off"></div><div class="field"><label for="slope-m-y2">y2</label><input type="number" id="slope-m-y2" data-f="y2" step="any" inputmode="decimal" value="8" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>Slope measures steepness: <code>m = (y2 &minus; y1) &divide; (x2 &minus; x1)</code>, which is rise over run.</p><p>Once you have m, the y-intercept is <code>b = y1 &minus; m &times; x1</code>, giving the line <code>y = mx + b</code>.</p><p>Example: points (1, 2) and (4, 8). Rise = 6, run = 3, so m = 2. Then b = 2 &minus; 2 &times; 1 = 0, so the line is <code>y = 2x</code>.</p><p>We also give you the distance, &radic;(run&sup2; + rise&sup2;), and the midpoint, the average of the two x's and the two y's.</p><p><strong>What if the line is vertical?</strong><br>The run is 0 and you cannot divide by 0, so the slope is undefined. The equation is x = a constant.</p><p><strong>What does a negative slope mean?</strong><br>The line goes down as you move to the right.</p><p><strong>What if the line is horizontal?</strong><br>The rise is 0, so the slope is 0 and the equation is y = a constant.</p></details>
+      
+    </div>
+  </section>
+  <div class="section-heading" id="calculus"><span class="eyebrow">Math</span><h2>Calculus</h2></div>
+  <section class="ticket" id="derivative" data-tid="derivative">
+    <div class="ticket-head">
+      <div><h2>Derivative Calculator</h2><p>Differentiate polynomials with the power rule, step by step.</p></div>
+      <span class="stamp">Job: Calculus</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="derivative-d-poly">f(x) = <span class="hint">(Use ^ for powers, like x^3. Polynomials only for now.)</span></label><input type="text" id="derivative-d-poly" data-f="poly" value="3x^4 - 2x^2 + 5x - 7" autocomplete="off"></div><div class="field"><label for="derivative-d-at">Evaluate at x = (optional)</label><input type="number" id="derivative-d-at" data-f="at" step="any" inputmode="decimal" value="2" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>The <strong>power rule</strong> says the derivative of <code>c&middot;x^n</code> is <code>c&middot;n&middot;x^(n&minus;1)</code>. Multiply by the power, then lower the power by one. The derivative of a plain number is 0.</p><p>Example: <code>f(x) = 3x^4 &minus; 2x^2 + 5x &minus; 7</code>. Term by term: 3x^4 &rarr; 12x^3, &minus;2x^2 &rarr; &minus;4x, 5x &rarr; 5, &minus;7 &rarr; 0. So <code>f'(x) = 12x^3 &minus; 4x + 5</code>.</p><p>The derivative tells you the slope of the curve at any point. Evaluating at x = 2 gives the slope of the tangent line there.</p><p><strong>Heads up:</strong> this version handles polynomials. Trig, exponential and product/quotient rules are on the roadmap.</p><p><strong>Can it do sin, cos, e^x or ln?</strong><br>Not yet. This first version covers polynomials, which is most of an intro calculus course.</p><p><strong>How do I type x squared?</strong><br>x^2. A term like 5x^3 can be typed 5x^3 or 5*x^3.</p><p><strong>What does the derivative mean?</strong><br>It is the instantaneous rate of change, the slope of the tangent line at each point.</p></details>
+      <div class="ticket-warn">&#9888;&#65039; This version handles polynomials (like 3x^4 &minus; 2x^2 + 5x &minus; 7). Trig, exponential, and log functions are coming later.</div>
+    </div>
+  </section>
+  <section class="ticket" id="integral" data-tid="integral">
+    <div class="ticket-head">
+      <div><h2>Integral Calculator</h2><p>Antiderivatives and definite integrals of polynomials.</p></div>
+      <span class="stamp">Job: Calculus</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="integral-i-poly">f(x) = <span class="hint">(Use ^ for powers, like x^3. Polynomials only for now.)</span></label><input type="text" id="integral-i-poly" data-f="poly" value="3x^2 + 2x" autocomplete="off"></div><div class="field"><label for="integral-i-lo">Lower limit (optional)</label><input type="number" id="integral-i-lo" data-f="lo" step="any" inputmode="decimal" value="0" autocomplete="off"></div><div class="field"><label for="integral-i-hi">Upper limit (optional)</label><input type="number" id="integral-i-hi" data-f="hi" step="any" inputmode="decimal" value="2" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>The <strong>reverse power rule</strong> says the integral of <code>c&middot;x^n</code> is <code>c&middot;x^(n+1) &divide; (n+1)</code>, plus a constant <code>C</code>. Raise the power by one, then divide by the new power.</p><p>Example: <code>&int; (3x^2 + 2x) dx = x^3 + x^2 + C</code>.</p><p>For a <strong>definite integral</strong>, compute F(upper) &minus; F(lower). From 0 to 2: F(2) = 8 + 4 = 12 and F(0) = 0, so the answer is 12. This is the area under the curve.</p><p><strong>Heads up:</strong> this version handles polynomials. More function types are on the roadmap.</p><p><strong>Why is there a + C?</strong><br>Many functions share the same derivative; they differ only by a constant. C stands for that unknown constant.</p><p><strong>Does the definite integral need + C?</strong><br>No. It cancels when you subtract.</p><p><strong>Can it integrate 1/x or sin(x)?</strong><br>Not yet. This first version covers polynomials.</p></details>
+      <div class="ticket-warn">&#9888;&#65039; This version handles polynomials (like 3x^4 &minus; 2x^2 + 5x &minus; 7). Trig, exponential, and log functions are coming later.</div>
+    </div>
+  </section>
+  <div class="section-heading" id="geometry-trig"><span class="eyebrow">Math</span><h2>Geometry &amp; Trig</h2></div>
+  <section class="ticket" id="pythagorean" data-tid="pythagorean">
+    <div class="ticket-head">
+      <div><h2>Pythagorean Theorem Calculator</h2><p>Find a missing side of a right triangle.</p></div>
+      <span class="stamp">Job: Geometry</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="pythagorean-mode">What do you want to find?</label><select id="pythagorean-mode" class="mode-sel"><option value="h">Find hypotenuse</option><option value="l">Find a leg</option></select></div><div class="field" data-mode="h"><label for="pythagorean-h-a">Leg a</label><input type="number" id="pythagorean-h-a" data-f="a" step="any" inputmode="decimal" value="3" autocomplete="off"></div><div class="field" data-mode="h"><label for="pythagorean-h-b">Leg b</label><input type="number" id="pythagorean-h-b" data-f="b" step="any" inputmode="decimal" value="4" autocomplete="off"></div><div class="field" data-mode="l"><label for="pythagorean-l-a">Known leg a</label><input type="number" id="pythagorean-l-a" data-f="a" step="any" inputmode="decimal" value="5" autocomplete="off"></div><div class="field" data-mode="l"><label for="pythagorean-l-c">Hypotenuse c</label><input type="number" id="pythagorean-l-c" data-f="c" step="any" inputmode="decimal" value="13" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>In any right triangle, <code>a&sup2; + b&sup2; = c&sup2;</code>, where c is the longest side (the hypotenuse, opposite the right angle).</p><p>To find c: square both legs, add, take the square root. For legs 3 and 4: 9 + 16 = 25, and &radic;25 = 5.</p><p>To find a leg: rearrange to <code>b&sup2; = c&sup2; &minus; a&sup2;</code>. For a = 5 and c = 13: 169 &minus; 25 = 144, and &radic;144 = 12.</p><p><strong>Does this only work for right triangles?</strong><br>Yes. For other triangles you need the law of cosines.</p><p><strong>Which side is the hypotenuse?</strong><br>The longest one, directly across from the 90 degree angle.</p><p><strong>Can I use any units?</strong><br>Yes, as long as every side uses the same unit.</p></details>
+      
+    </div>
+  </section>
+  <section class="ticket" id="trig" data-tid="trig">
+    <div class="ticket-head">
+      <div><h2>Right Triangle Trig Calculator</h2><p>Sine, cosine and tangent to find sides and angles.</p></div>
+      <span class="stamp">Job: Trigonometry</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="trig-mode">What do you want to find?</label><select id="trig-mode" class="mode-sel"><option value="s">Find sides</option><option value="a">Find angle</option></select></div><div class="field" data-mode="s"><label for="trig-s-angle">Angle A (degrees)</label><input type="number" id="trig-s-angle" data-f="angle" step="any" inputmode="decimal" value="30" autocomplete="off"></div><div class="field" data-mode="s"><label for="trig-s-known">Side you know</label><select id="trig-s-known" data-f="known"><option value="opposite">Opposite A</option><option value="adjacent">Adjacent to A</option><option value="hypotenuse">Hypotenuse</option></select></div><div class="field" data-mode="s"><label for="trig-s-len">Length of that side</label><input type="number" id="trig-s-len" data-f="len" step="any" inputmode="decimal" value="5" autocomplete="off"></div><div class="field" data-mode="a"><label for="trig-a-opp">Opposite side</label><input type="number" id="trig-a-opp" data-f="opp" step="any" inputmode="decimal" value="3" autocomplete="off"></div><div class="field" data-mode="a"><label for="trig-a-adj">Adjacent side</label><input type="number" id="trig-a-adj" data-f="adj" step="any" inputmode="decimal" value="4" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>Remember <strong>SOH-CAH-TOA</strong>: sine = opposite &divide; hypotenuse, cosine = adjacent &divide; hypotenuse, tangent = opposite &divide; adjacent.</p><p>Example: angle 30&deg; with the opposite side 5. Since sin 30&deg; = 0.5, the hypotenuse is 5 &divide; 0.5 = 10.</p><p>To go the other way, use an inverse function. If opposite = 3 and adjacent = 4, then tan A = 0.75 and A = tan&sup1;&#8315;(0.75) &asymp; 36.87&deg;.</p><p>The two non-right angles always add to 90&deg;.</p><p><strong>Opposite and adjacent to what?</strong><br>To the angle you are working with. Opposite is across from it; adjacent is the non-hypotenuse side touching it.</p><p><strong>Degrees or radians?</strong><br>This calculator uses degrees.</p><p><strong>Why must the angle be under 90?</strong><br>One angle is already 90 degrees, and the three angles add to 180.</p></details>
+      
+    </div>
+  </section>
+  <div class="section-heading" id="everyday-math"><span class="eyebrow">Math</span><h2>Everyday Math</h2></div>
+  <section class="ticket" id="percent" data-tid="percent">
+    <div class="ticket-head">
+      <div><h2>Percentage Calculator</h2><p>Percent of a number, what percent, and percent change.</p></div>
+      <span class="stamp">Job: Arithmetic</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="percent-mode">What do you want to find?</label><select id="percent-mode" class="mode-sel"><option value="of">% of a number</option><option value="is">What % is it?</option><option value="chg">% change</option></select></div><div class="field" data-mode="of"><label for="percent-of-x">What percent?</label><input type="number" id="percent-of-x" data-f="x" step="any" inputmode="decimal" value="20" autocomplete="off"></div><div class="field" data-mode="of"><label for="percent-of-y">Of what number?</label><input type="number" id="percent-of-y" data-f="y" step="any" inputmode="decimal" value="150" autocomplete="off"></div><div class="field" data-mode="is"><label for="percent-is-x">The part</label><input type="number" id="percent-is-x" data-f="x" step="any" inputmode="decimal" value="30" autocomplete="off"></div><div class="field" data-mode="is"><label for="percent-is-y">Out of (the whole)</label><input type="number" id="percent-is-y" data-f="y" step="any" inputmode="decimal" value="120" autocomplete="off"></div><div class="field" data-mode="chg"><label for="percent-chg-x">Old value</label><input type="number" id="percent-chg-x" data-f="x" step="any" inputmode="decimal" value="50" autocomplete="off"></div><div class="field" data-mode="chg"><label for="percent-chg-y">New value</label><input type="number" id="percent-chg-y" data-f="y" step="any" inputmode="decimal" value="65" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p><strong>Percent of a number:</strong> divide the percent by 100, then multiply. 20% of 150 is 0.20 &times; 150 = 30.</p><p><strong>What percent is it?</strong> divide the part by the whole, then multiply by 100. 30 out of 120 is 30 &divide; 120 = 0.25, which is 25%.</p><p><strong>Percent change:</strong> subtract old from new, divide by the old value, multiply by 100. Going from 50 to 65 is (65 &minus; 50) &divide; 50 = 0.30, a 30% increase.</p><p><strong>How do I calculate a discount?</strong><br>Use the first tab. A 25% discount on a $80 jacket: 25% of 80 = 20, so you save $20 and pay $60.</p><p><strong>Why can&#x27;t the old value be zero in percent change?</strong><br>Percent change measures growth relative to where you started. Starting from zero, any growth is infinite in relative terms, so the math has no answer.</p><p><strong>Can the answer be over 100%?</strong><br>Yes. If the part is bigger than the whole, or a value more than doubles, the percent is over 100.</p></details>
+      
+    </div>
+  </section>
+  <section class="ticket" id="fraction" data-tid="fraction">
+    <div class="ticket-head">
+      <div><h2>Fraction Calculator</h2><p>Add, subtract, multiply and divide fractions.</p></div>
+      <span class="stamp">Job: Arithmetic</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="fraction-f-n1">First fraction: top</label><input type="number" id="fraction-f-n1" data-f="n1" step="any" inputmode="decimal" value="1" autocomplete="off"></div><div class="field"><label for="fraction-f-d1">First fraction: bottom</label><input type="number" id="fraction-f-d1" data-f="d1" step="any" inputmode="decimal" value="2" autocomplete="off"></div><div class="field"><label for="fraction-f-op">Operation</label><select id="fraction-f-op" data-f="op"><option value="add">Add (+)</option><option value="sub">Subtract (-)</option><option value="mul">Multiply (x)</option><option value="div">Divide (/)</option></select></div><div class="field"><label for="fraction-f-n2">Second fraction: top</label><input type="number" id="fraction-f-n2" data-f="n2" step="any" inputmode="decimal" value="1" autocomplete="off"></div><div class="field"><label for="fraction-f-d2">Second fraction: bottom</label><input type="number" id="fraction-f-d2" data-f="d2" step="any" inputmode="decimal" value="3" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p><strong>Adding and subtracting</strong> need a common denominator. Find the least common multiple of the two bottoms, rewrite both fractions over it, then add or subtract the tops. 1/2 + 1/3 becomes 3/6 + 2/6 = 5/6.</p><p><strong>Multiplying</strong> is straight across: tops times tops, bottoms times bottoms.</p><p><strong>Dividing</strong> means multiplying by the reciprocal. Flip the second fraction, then multiply.</p><p>The answer is always reduced by dividing the top and bottom by their greatest common factor. Improper fractions also get shown as mixed numbers.</p><p><strong>How do I enter a mixed number like 2 1/2?</strong><br>Convert it first: 2 1/2 = (2 &times; 2 + 1)/2 = 5/2. Then enter 5 on top and 2 on the bottom.</p><p><strong>How do I enter a whole number?</strong><br>Put it over 1. For example, 3 is 3/1.</p><p><strong>Why does the calculator say the bottom cannot be 0?</strong><br>Dividing by zero is undefined, so a fraction with 0 on the bottom has no value.</p></details>
+      
+    </div>
+  </section>
+  <section class="ticket" id="gcf-lcm" data-tid="gcf-lcm">
+    <div class="ticket-head">
+      <div><h2>GCF &amp; LCM Calculator</h2><p>Greatest common factor and least common multiple.</p></div>
+      <span class="stamp">Job: Number theory</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="gcf-lcm-g-list">Numbers (separated by commas or spaces)</label><input type="text" id="gcf-lcm-g-list" data-f="list" value="12, 18, 24" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p>The <strong>greatest common factor (GCF)</strong> is the biggest number that divides all of your numbers evenly. The <strong>least common multiple (LCM)</strong> is the smallest number that all of them divide into evenly.</p><p>We find the GCF with Euclid's method: divide the bigger number by the smaller, then repeat with the remainder until it hits 0. The last divisor is the GCF. Then LCM(a, b) = a &times; b &divide; GCF(a, b).</p><p>Example: for 12 and 18, 18 = 1 &times; 12 + 6 and 12 = 2 &times; 6 + 0, so the GCF is 6 and the LCM is 12 &times; 18 &divide; 6 = 36.</p><p><strong>What is the GCF used for?</strong><br>Simplifying fractions. Divide the top and bottom by their GCF to reduce to lowest terms.</p><p><strong>What is the LCM used for?</strong><br>Finding a common denominator when adding or subtracting fractions, and for scheduling problems like when two repeating events line up.</p><p><strong>Can I use more than two numbers?</strong><br>Yes, up to ten at once.</p></details>
+      
+    </div>
+  </section>
+  <section class="ticket" id="statistics" data-tid="statistics">
+    <div class="ticket-head">
+      <div><h2>Mean, Median &amp; Mode Calculator</h2><p>Average, middle value, mode, range and standard deviation.</p></div>
+      <span class="stamp">Job: Statistics</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="statistics-s-list">Numbers (separated by commas or spaces)</label><input type="text" id="statistics-s-list" data-f="list" value="3, 7, 7, 2, 9" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note"><summary>How it works, examples and FAQ</summary><p><strong>Mean</strong> (the average) is the sum divided by how many numbers there are. <strong>Median</strong> is the middle number once sorted; with an even count it is the average of the two middle numbers. <strong>Mode</strong> is the value that appears most often. <strong>Range</strong> is largest minus smallest.</p><p><strong>Standard deviation</strong> measures how spread out the numbers are. Use the population version when your list is the whole group and the sample version when it is a sample drawn from a bigger group.</p><p>Example: for 3, 7, 7, 2, 9 the sorted list is 2, 3, 7, 7, 9. The sum is 28, so the mean is 5.6. The median is 7 and the mode is 7.</p><p><strong>What if two values tie for most common?</strong><br>Both are modes. The calculator lists them all.</p><p><strong>What if no value repeats?</strong><br>Then there is no mode.</p><p><strong>Population or sample standard deviation?</strong><br>Homework usually says which one. If it does not, and your numbers are a sample of something larger, use the sample version.</p></details>
+      
+    </div>
+  </section>
+
+  <section class="disclaimer-box" id="math-notes">
+    <h2>About These Math Calculators</h2>
+    <p>These calculators show the method as well as the answer, so you can learn the steps and check your own work. Answers are rounded to six decimal places. Use them to check homework, not to replace understanding it.</p>
+    <p>The derivative and integral calculators currently handle polynomials. Trig, exponential, logarithm, product-rule and chain-rule problems are not supported yet, and an unsupported expression will show a message instead of a wrong answer. If you ever get a result that looks wrong, tell us on the <a href="about.html">Contact page</a> with the numbers you entered.</p>
+  </section>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p>Results are for learning and checking your work. Always double-check anything important.</p>
+  <p><a href="index.html">Home Calculators</a> &middot; <a href="advanced-tools.html">Advanced Tools</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name this sheet <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Algebra homework, Chapter 4" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script src="math-engine.js"></script>
+<script>
+  const FN={"linear": {"l": "linear"}, "quadratic": {"q": "quadratic"}, "slope": {"m": "slope"}, "derivative": {"d": "derivative"}, "integral": {"i": "integral"}, "pythagorean": {"h": "pythagHyp", "l": "pythagLeg"}, "trig": {"s": "trig", "a": "trigAngle"}, "percent": {"of": "percentOf", "is": "percentIs", "chg": "percentChange"}, "fraction": {"f": "fraction"}, "gcf-lcm": {"g": "gcdlcm"}, "statistics": {"s": "stats"}};
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const tickets=[...document.querySelectorAll('.ticket')];
+  const used=new Set();
+
+  function mode(t){ const s=t.querySelector('.mode-sel'); return s?s.value:Object.keys(FN[t.dataset.tid])[0]; }
+  function showMode(t){
+    const m=mode(t);
+    t.querySelectorAll('.field[data-mode]').forEach(f=>{ f.style.display=(f.dataset.mode===m)?'':'none'; });
+  }
+  function values(t){
+    const m=mode(t), v={};
+    t.querySelectorAll('.field').forEach(f=>{
+      if(f.dataset.mode && f.dataset.mode!==m) return;
+      const el=f.querySelector('[data-f]'); if(!el) return;
+      const raw=el.value.trim();
+      v[el.dataset.f]=(el.tagName==='SELECT'||el.type==='text')?raw:(raw===''?NaN:Number(raw));
+    });
+    return v;
+  }
+  function solve(t){
+    const fn=FN[t.dataset.tid][mode(t)], r=window.CalcMath[fn](values(t));
+    const rc=t.querySelector('[data-receipt]'), st=t.querySelector('[data-steps]');
+    if(r.error){
+      rc.innerHTML='<div class="label">Check your numbers</div><div class="err">'+esc(r.error)+'</div>';
+      st.style.display='none'; st.innerHTML=''; t._last=null; return;
+    }
+    const first=r.answers[0], rest=r.answers.slice(1);
+    let h='<div class="label">Your answer</div><div class="total"><span>'+esc(first.label)+'</span><span class="amount">'+esc(first.value)+'</span></div>';
+    rest.forEach(a=>{ h+='<div class="result-line"><span>'+esc(a.label)+'</span><span>'+esc(a.value)+'</span></div>'; });
+    rc.innerHTML=h;
+    st.innerHTML='<h3>Step-by-step solution</h3><ol>'+r.steps.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol>';
+    st.style.display='block';
+    t._last={inputs:inputsText(t),answers:r.answers,steps:r.steps,mode:mode(t)};
+    used.add(t.id);
+    if(typeof gtag==='function') gtag('event','math_solve',{calculator:t.id});
+  }
+  function inputsText(t){
+    const m=mode(t), rows=[];
+    const s=t.querySelector('.mode-sel'); if(s) rows.push(['Finding',s.options[s.selectedIndex].text]);
+    t.querySelectorAll('.field').forEach(f=>{
+      if(f.dataset.mode && f.dataset.mode!==m) return;
+      const el=f.querySelector('[data-f]'); if(!el) return;
+      const lab=f.querySelector('label').childNodes[0].textContent.trim();
+      rows.push([lab, el.tagName==='SELECT'?el.options[el.selectedIndex].text:(el.value||'—')]);
+    });
+    return rows;
+  }
+  tickets.forEach(t=>{
+    showMode(t);
+    const s=t.querySelector('.mode-sel'); if(s) s.addEventListener('change',()=>{ showMode(t); });
+    t.querySelector('[data-solve]').addEventListener('click',()=>solve(t));
+    t.querySelectorAll('input').forEach(i=>i.addEventListener('keydown',e=>{ if(e.key==='Enter') solve(t); }));
+    t.querySelector('[data-save]').addEventListener('click',()=>{ solve(t); saveOrPrint(); });
+  });
+
+  // ---- Save / print ----
+  function buildSheet(){
+    const sheet=$('print-sheet'); sheet.innerHTML='';
+    const date=new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+    const name=$('project-name').value.trim();
+    const head=document.createElement('div'); head.className='ps-head';
+    head.innerHTML='<div class="ps-brand"><img src="logo-header.png" alt="" onerror="this.remove()"><div><p class="ps-title">CalcProject.org</p><p class="ps-site">'+esc(name||'My math solutions')+'</p></div></div><div class="ps-meta"><strong>'+date+'</strong>Math solutions</div>';
+    sheet.appendChild(head);
+    if(!window._origTitle) window._origTitle=document.title;
+    document.title='CalcProject.org - '+(name||'My math solutions');
+    tickets.filter(t=>used.has(t.id)&&t._last).forEach(t=>{
+      const box=document.createElement('section'); box.className='ps-calc';
+      const h=document.createElement('h2'); h.textContent=t.querySelector('.ticket-head h2').textContent.trim(); box.appendChild(h);
+      const grid=document.createElement('div'); grid.className='ps-grid';
+      const mk=(title,rows,total)=>{
+        const col=document.createElement('div');
+        col.innerHTML='<p class="ps-col-title">'+title+'</p>';
+        const tb=document.createElement('table'), body=document.createElement('tbody'); tb.appendChild(body);
+        rows.forEach((r,i)=>{ const tr=document.createElement('tr'); if(total&&i===0) tr.className='ps-buy'; const a=document.createElement('td'); a.textContent=r[0]; const b=document.createElement('td'); b.textContent=r[1]; tr.append(a,b); body.appendChild(tr); });
+        col.appendChild(tb); return col;
+      };
+      grid.append(mk('What you entered',t._last.inputs,false), mk('Answer',t._last.answers.map(a=>[a.label,a.value]),true));
+      box.appendChild(grid);
+      const ol=document.createElement('ol'); ol.className='ps-steps';
+      t._last.steps.forEach(s=>{ const li=document.createElement('li'); li.textContent=s; ol.appendChild(li); });
+      box.appendChild(ol); sheet.appendChild(box);
+    });
+    const back=document.createElement('p'); back.className='ps-comeback'; back.textContent='Free math calculators with steps at CalcProject.org';
+    sheet.appendChild(back);
+  }
+  function doPrint(){ buildSheet(); window.print(); }
+  function saveOrPrint(){
+    const dlg=$('save-dialog');
+    $('sd-on').textContent='On your sheet: '+tickets.filter(t=>used.has(t.id)&&t._last).map(t=>t.querySelector('.ticket-head h2').textContent.trim()).join(', ');
+    if(!dlg||typeof dlg.showModal!=='function'){ doPrint(); return; }
+    dlg.showModal(); $('project-name').focus();
+  }
+  $('sd-cancel').addEventListener('click',()=>$('save-dialog').close());
+  $('sd-print').addEventListener('click',()=>{ $('save-dialog').close(); doPrint(); });
+  $('project-name').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); $('sd-print').click(); } });
+  window.addEventListener('afterprint',()=>{ if(window._origTitle) document.title=window._origTitle; });
+
+  // fade-in + back to top
+  if('IntersectionObserver' in window){
+    const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }); },{threshold:0.15});
+    tickets.forEach(t=>obs.observe(t));
+  } else { tickets.forEach(t=>t.classList.add('visible')); }
+  window.addEventListener('scroll',()=>{ const b=$('back-to-top'); if(window.scrollY>400) b.classList.add('show'); else b.classList.remove('show'); });
+</script>
+</body>
+</html>
