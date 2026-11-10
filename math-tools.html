@@ -17,7 +17,13 @@
 <meta name="description" content="Free math calculators with step-by-step solutions: linear equations, quadratic formula, slope, derivatives, integrals, Pythagorean theorem, right triangle trig, percentages, fractions, GCF/LCM and statistics. No login, no paywall.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="snap-apple-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#16324A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Snap Math">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -341,6 +347,41 @@
   }
 
   /* ---- Math tools additions ---- */
+
+  /* Snap a Problem */
+  .snap-install{ grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:14px 20px; padding:18px 26px; border-top:1px solid rgba(42,42,40,0.12); background:#ece9dc; }
+  .snap-install[hidden], .snap-install-help[hidden]{ display:none; }
+  .snap-install-text{ flex:1 1 260px; font-size:.9rem; line-height:1.45; color:var(--graphite); }
+  .snap-install-text strong{ display:block; color:var(--navy); font-size:1rem; margin-bottom:2px; }
+  .snap-install .btn-outline{ flex:0 0 auto; width:auto; padding:12px 20px; margin:0; }
+  .snap-install-help{ flex:1 1 100%; font-size:.88rem; line-height:1.55; color:var(--graphite); background:#fff; border-radius:var(--radius); padding:12px 16px; border:1px solid rgba(42,42,40,0.15); }
+  .snap-install-help ol{ margin:6px 0 0; padding-left:20px; }
+  .snap-cta{ text-align:center; margin:26px auto 6px; }
+  .snap-cta-btn{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:15px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    background:var(--orange); color:#fff; text-decoration:none; padding:15px 26px; border-radius:6px; border:2px solid var(--orange);
+  }
+  .snap-cta-btn span{ font-size:11px; font-weight:500; opacity:.9; margin-left:8px; padding:2px 6px; border:1px solid rgba(255,255,255,.7); border-radius:3px; }
+  .snap-cta-btn:hover{ background:#c8471f; border-color:#c8471f; }
+
+  .snap-pick{ display:block; text-align:center; box-sizing:border-box; }
+  .snap-pick:focus-within{ outline:3px solid var(--yellow); outline-offset:2px; }
+  .snap-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  #snap-prev{ display:block; max-width:100%; max-height:170px; margin:14px 0 0; border-radius:6px; border:1.5px solid rgba(42,42,40,0.2); }
+  #snap-prev[hidden], #snap-status[hidden]{ display:none; }
+  #snap-status{ margin:14px 0 0; font-size:0.85rem; color:var(--graphite); }
+  .snap-bar{ height:6px; background:rgba(42,42,40,0.12); border-radius:3px; margin-top:6px; overflow:hidden; }
+  .snap-bar span{ display:block; height:100%; width:0; background:var(--orange); transition:width .25s ease; }
+  #snap-text{
+    width:100%; box-sizing:border-box; padding:10px 12px; font-family:'IBM Plex Mono',monospace; font-size:0.95rem; line-height:1.5;
+    border:1.5px solid rgba(42,42,40,0.25); border-radius:var(--radius); background:#fff; color:var(--graphite); resize:vertical;
+  }
+  #snap-text:focus{ outline:2px solid var(--navy); outline-offset:1px; }
+  .snap-step{ margin:18px 0 6px; }
+  .snap-small{ font-family:Inter,sans-serif; font-size:.85rem; line-height:1.5; color:#5B5B57; margin:10px 0 0; }
+  .snap-small code, #snap-msg li code{ font-size:.82rem; background:rgba(42,42,40,0.07); padding:1px 5px; border-radius:3px; }
+  #snap-msg ul{ margin:10px 0 0; padding-left:18px; font-family:Inter,sans-serif; font-size:.85rem; line-height:1.6; color:#2a2a28; }
+  #snap-msg .snap-beta{ display:inline-block; margin-top:12px; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--orange); border:1px solid var(--orange); border-radius:3px; padding:2px 6px; }
   .steps-note{ grid-column:1 / -1; padding:20px 26px 22px; border-top:1px solid rgba(42,42,40,0.12); color:var(--graphite); }
   .steps-note h3{ font-family:'Bebas Neue',sans-serif; font-size:1.7rem; letter-spacing:0.03em; color:var(--navy); margin:0 0 8px; font-weight:400; }
   .steps-note ol{ margin:0; padding:0; list-style:none; counter-reset:s; }
@@ -383,16 +424,62 @@
   <span class="eyebrow">Math tools &middot; Algebra &amp; Calculus</span>
   <h1>Type it in.<br>See every step.<br><span>Then check your work.</span></h1>
   <p>Free math calculators for algebra, calculus, trig, fractions and more. Every answer comes with the full step-by-step solution, with no login and no paywall.</p>
-  <p class="save-intro">Done solving? Tap <strong>Save or print results</strong> on any calculator. Everything you solved goes onto one clean sheet you can print or save as a PDF for your notes.</p>
+<div class="snap-cta"><a href="#snap" class="snap-cta-btn">Snap a Problem <span>new &middot; beta</span></a></div>
+    <p class="save-intro">Done solving? Tap <strong>Save or print results</strong> on any calculator. Everything you solved goes onto one clean sheet you can print or save as a PDF for your notes.</p>
 </header>
 
 <div class="ruler" role="presentation" style="margin-top:40px"></div>
 
 <main>
   <nav class="jump" aria-label="Jump to calculator">
-    <a href="#linear">Linear Equation Solver</a><a href="#quadratic">Quadratic Formula Calculator</a><a href="#slope">Slope Calculator</a><a href="#derivative">Derivative Calculator</a><a href="#integral">Integral Calculator</a><a href="#pythagorean">Pythagorean Theorem Calculator</a><a href="#trig">Right Triangle Trig Calculator</a><a href="#percent">Percentage Calculator</a><a href="#fraction">Fraction Calculator</a><a href="#gcf-lcm">GCF &amp; LCM Calculator</a><a href="#statistics">Mean, Median &amp; Mode Calculator</a>
+    <a href="#snap">Snap a Problem</a><a href="#linear">Linear Equation Solver</a><a href="#quadratic">Quadratic Formula Calculator</a><a href="#slope">Slope Calculator</a><a href="#derivative">Derivative Calculator</a><a href="#integral">Integral Calculator</a><a href="#pythagorean">Pythagorean Theorem Calculator</a><a href="#trig">Right Triangle Trig Calculator</a><a href="#percent">Percentage Calculator</a><a href="#fraction">Fraction Calculator</a><a href="#gcf-lcm">GCF &amp; LCM Calculator</a><a href="#statistics">Mean, Median &amp; Mode Calculator</a>
     <a href="index.html">Home Calculators</a>
   </nav>
+
+  <div class="section-heading" id="snap-top"><span class="eyebrow">New &middot; Beta</span><h2>Snap a Problem</h2></div>
+  <section class="ticket" id="snap">
+    <div class="ticket-head">
+      <div><h2>Snap a Problem</h2><p>Take a picture of one math problem. We read it, solve it and show every step.</p></div>
+      <span class="stamp">Job: Photo</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field snap-step"><label for="snap-file">Step 1: take or choose a photo</label>
+          <label class="calc-btn snap-pick" for="snap-file" style="margin-top:0">Take or choose a photo</label>
+          <input type="file" id="snap-file" class="snap-hidden" accept="image/*">
+          <img id="snap-prev" alt="Your photo" hidden>
+          <div id="snap-status" role="status" aria-live="polite" hidden><span class="snap-st"></span><div class="snap-bar"><span></span></div></div>
+        </div>
+        <div class="field snap-step"><label for="snap-text">Step 2: check what we read <span class="hint">(fix anything that looks wrong, or just type your problem here)</span></label>
+          <textarea id="snap-text" rows="3" placeholder="Example: 2x + 3 = 11" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+        </div>
+        <button class="calc-btn" type="button" id="snap-go">Solve this problem</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="snap-msg" aria-live="polite">
+        <div class="label">What it can solve</div>
+        <ul>
+          <li>Equations: <code>2x + 3 = 11</code>, <code>x^2 - 3x + 2 = 0</code></li>
+          <li>Derivatives: <code>derivative of 3x^4 - 2x^2 + 5x</code></li>
+          <li>Integrals: <code>integral of 3x^2 from 0 to 2</code></li>
+          <li>Percent: <code>20% of 150</code></li>
+          <li>Fractions: <code>1/2 + 1/3</code></li>
+          <li>Slope: <code>(1, 2) and (3, 6)</code></li>
+        </ul>
+        <span class="snap-beta">Beta</span>
+        <p class="snap-small">Your photo is read right on your device. It is never uploaded or saved.</p>
+      </div></div>
+      <div class="snap-install" id="snap-install" hidden>
+        <div class="snap-install-text"><strong>Use Snap a Problem like an app</strong><span>Add it to your home screen. It opens right on the photo button, with no app store and no download fee.</span></div>
+        <button type="button" class="btn-outline" id="snap-install-btn">Add to home screen</button>
+        <div class="snap-install-help" id="snap-install-help" hidden></div>
+      </div>
+      <details class="formula-note"><summary>Tips for a good photo, and what to expect</summary>
+        <p>The photo reader works best on <strong>printed</strong> problems and neat handwriting. Math symbols are hard for any reader, so always check the text in Step 2 and fix anything that looks wrong before you trust the answer.</p>
+        <ul><li>Photograph just <strong>one problem</strong> and crop out the rest of the page.</li><li>Use bright, even light and hold the camera steady and straight on.</li><li>Powers are written with <code>^</code>, like <code>x^2</code>. A small raised 2 is often read as <code>x2</code>, so we turn that into <code>x^2</code> for you.</li><li>The first photo takes a little longer because the reader has to download (about 10 MB). After that it is quick.</li><li>You can skip the photo and just type your problem in the box.</li></ul>
+        <p>Word problems, trig inside an equation, and equations above x&sup2; are not supported yet. You can still use any calculator below by hand.</p>
+      </details>
+    </div>
+  </section>
 
   <div class="section-heading" id="algebra"><span class="eyebrow">Math</span><h2>Algebra</h2></div>
   <section class="ticket" id="linear" data-tid="linear">
@@ -621,7 +708,7 @@
   const FN={"linear": {"l": "linear"}, "quadratic": {"q": "quadratic"}, "slope": {"m": "slope"}, "derivative": {"d": "derivative"}, "integral": {"i": "integral"}, "pythagorean": {"h": "pythagHyp", "l": "pythagLeg"}, "trig": {"s": "trig", "a": "trigAngle"}, "percent": {"of": "percentOf", "is": "percentIs", "chg": "percentChange"}, "fraction": {"f": "fraction"}, "gcf-lcm": {"g": "gcdlcm"}, "statistics": {"s": "stats"}};
   const $=id=>document.getElementById(id);
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const tickets=[...document.querySelectorAll('.ticket')];
+  const tickets=[...document.querySelectorAll('.ticket[data-tid]')];
   const used=new Set();
 
   function mode(t){ const s=t.querySelector('.mode-sel'); return s?s.value:Object.keys(FN[t.dataset.tid])[0]; }
@@ -720,9 +807,10 @@
   // fade-in + back to top
   if('IntersectionObserver' in window){
     const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }); },{threshold:0.15});
-    tickets.forEach(t=>obs.observe(t));
-  } else { tickets.forEach(t=>t.classList.add('visible')); }
+    document.querySelectorAll('.ticket').forEach(t=>obs.observe(t));
+  } else { document.querySelectorAll('.ticket').forEach(t=>t.classList.add('visible')); }
   window.addEventListener('scroll',()=>{ const b=$('back-to-top'); if(window.scrollY>400) b.classList.add('show'); else b.classList.remove('show'); });
 </script>
+<script src="snap-problem.js"></script>
 </body>
 </html>

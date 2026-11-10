@@ -1,0 +1,21 @@
+{
+  "id": "/math-tools.html",
+  "name": "CalcProject Snap a Problem",
+  "short_name": "Snap Math",
+  "description": "Take a photo of a math problem and get the answer with every step. Free, no account.",
+  "start_url": "/math-tools.html?source=app#snap",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#16324A",
+  "theme_color": "#16324A",
+  "categories": ["education", "utilities"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Snap a Problem", "url": "/math-tools.html?source=shortcut#snap", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
