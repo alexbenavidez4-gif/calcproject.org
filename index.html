@@ -242,6 +242,15 @@
     0%,100%{ box-shadow:0 0 0 0 rgba(244,185,66,0); transform:scale(1); }
     50%{ box-shadow:0 0 0 6px rgba(244,185,66,0.55), 0 0 18px 4px rgba(228,87,46,0.7); transform:scale(1.06); }
   }
+  /* Electrical + Math tool buttons under the intro */
+  .tool-buttons{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin:26px auto 14px; }
+  .tool-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+    background:var(--orange); border:2px solid var(--orange); color:#fff; text-decoration:none;
+    padding:14px 24px; border-radius:6px; min-width:220px; text-align:center; animation:advPulse 1.6s ease-in-out 0s 8;
+  }
+  .tool-btn:hover{ background:#c8471f; border-color:#c8471f; color:#fff; }
+  @media (prefers-reduced-motion: reduce){ .tool-btn{ animation:none; } }
   .site-nav a.adv-nav{ color:var(--yellow); opacity:1; }
   @media (prefers-reduced-motion: reduce){ nav.jump a.adv-flash{ animation:none; } }
 
@@ -347,6 +356,10 @@
   <span class="eyebrow">Free &middot; No sign-up &middot; No app</span>
   <h1>Measure once.<br>Calculate once.<br><span>Buy it right.<br>Get it done.</span></h1>
   <p>More than thirty free calculators for every part of the project — indoor, outdoor, <a href="advanced-tools.html">advanced electrical tools</a> for circuit load, wire size, and generator sizing, and new <a href="math-tools.html">math tools</a> for algebra and calculus that show every step. Switch to metric in the corner if you measure in meters and liters.</p>
+  <div class="tool-buttons">
+    <a href="advanced-tools.html" class="tool-btn">&#9889; Electrical Tools</a>
+    <a href="math-tools.html" class="tool-btn">&#8721; Math Tools</a>
+  </div>
   <p class="save-intro">Done measuring? Tap <strong>Save or print results</strong> on any calculator instead of writing it down. Every calculator you use goes onto one clean sheet you can print from a computer or save as a PDF on your phone to pull up at the store.</p>
 </header>
 
@@ -369,8 +382,6 @@
     <a href="#sod">Sod</a>
     <a href="#roofing">Roofing</a>
     <a href="#siding">Siding</a>
-    <a href="advanced-tools.html" class="adv-flash">&#9889; Advanced Tools</a>
-    <a href="math-tools.html" class="adv-flash">&#8721; Math Tools</a>
     <a href="guides.html">Guides</a>
   </nav>
 
