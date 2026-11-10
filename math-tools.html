@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Math Calculators With Steps — Algebra, Calculus, Trig, Fractions | CalcProject.org</title>
-<meta name="description" content="Free math calculators with step-by-step solutions: linear equations, quadratic formula, slope, derivatives, integrals, Pythagorean theorem, right triangle trig, percentages, fractions, GCF/LCM and statistics. No login, no paywall.">
+<meta name="description" content="Free math calculators with step-by-step solutions: linear equations, quadratic formula, slope, derivatives, integrals, Pythagorean theorem, right triangle trig, percentages, fractions, GCF/LCM and statistics. No login, no paywall. Snap a photo of a problem and get it solved with every step.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="snap-apple-icon.png">
@@ -348,6 +348,10 @@
 
   /* ---- Math tools additions ---- */
 
+  nav.jump a.snap-flash{ background:var(--orange); border-color:var(--orange); color:#fff; font-weight:600; animation:snapPulse 1.6s ease-in-out 0s 8; }
+  nav.jump a.snap-flash:hover{ background:#c8471f; border-color:#c8471f; color:#fff; }
+  @keyframes snapPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(244,185,66,0); transform:scale(1); } 50%{ box-shadow:0 0 0 6px rgba(244,185,66,0.55), 0 0 18px 4px rgba(228,87,46,0.7); transform:scale(1.06); } }
+  @media (prefers-reduced-motion: reduce){ nav.jump a.snap-flash{ animation:none; } }
   /* Snap a Problem */
   .snap-install{ grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:14px 20px; padding:18px 26px; border-top:1px solid rgba(42,42,40,0.12); background:#ece9dc; }
   .snap-install[hidden], .snap-install-help[hidden]{ display:none; }
@@ -423,7 +427,7 @@
 <header>
   <span class="eyebrow">Math tools &middot; Algebra &amp; Calculus</span>
   <h1>Type it in.<br>See every step.<br><span>Then check your work.</span></h1>
-  <p>Free math calculators for algebra, calculus, trig, fractions and more. Every answer comes with the full step-by-step solution, with no login and no paywall.</p>
+  <p>Free math calculators for algebra, calculus, trig, fractions and more. Every answer comes with the full step-by-step solution, with no login and no paywall. Or skip the typing: <a href="#snap" style="color:var(--yellow)">snap a photo of your problem</a> and we will read it, solve it and show every step.</p>
 <div class="snap-cta"><a href="#snap" class="snap-cta-btn">Snap a Problem <span>new &middot; beta</span></a></div>
     <p class="save-intro">Done solving? Tap <strong>Save or print results</strong> on any calculator. Everything you solved goes onto one clean sheet you can print or save as a PDF for your notes.</p>
 </header>
@@ -432,7 +436,7 @@
 
 <main>
   <nav class="jump" aria-label="Jump to calculator">
-    <a href="#snap">Snap a Problem</a><a href="#linear">Linear Equation Solver</a><a href="#quadratic">Quadratic Formula Calculator</a><a href="#slope">Slope Calculator</a><a href="#derivative">Derivative Calculator</a><a href="#integral">Integral Calculator</a><a href="#pythagorean">Pythagorean Theorem Calculator</a><a href="#trig">Right Triangle Trig Calculator</a><a href="#percent">Percentage Calculator</a><a href="#fraction">Fraction Calculator</a><a href="#gcf-lcm">GCF &amp; LCM Calculator</a><a href="#statistics">Mean, Median &amp; Mode Calculator</a>
+    <a href="#snap" class="snap-flash">Snap a Problem</a><a href="#linear">Linear Equation Solver</a><a href="#quadratic">Quadratic Formula Calculator</a><a href="#slope">Slope Calculator</a><a href="#derivative">Derivative Calculator</a><a href="#integral">Integral Calculator</a><a href="#pythagorean">Pythagorean Theorem Calculator</a><a href="#trig">Right Triangle Trig Calculator</a><a href="#percent">Percentage Calculator</a><a href="#fraction">Fraction Calculator</a><a href="#gcf-lcm">GCF &amp; LCM Calculator</a><a href="#statistics">Mean, Median &amp; Mode Calculator</a>
     <a href="index.html">Home Calculators</a>
   </nav>
 
