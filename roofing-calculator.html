@@ -113,6 +113,7 @@
     <p class="formula">Actual roof area = footprint &times; pitch multiplier (accounts for slope), plus waste, divided by bundle coverage. A 6/12 pitch multiplies footprint by about 1.118.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 1,500 sq ft footprint at a 6/12 pitch works out to about 1,677 sq ft of actual roof &mdash; roughly 60 bundles at 33.3 sq ft each." data-met="a 139 m&sup2; footprint at a 6/12 pitch works out to about 156 m&sup2; of actual roof &mdash; roughly 60 bundles at 3.1 m&sup2; each.">a 1,500 sq ft footprint at a 6/12 pitch works out to about 1,677 sq ft of actual roof &mdash; roughly 60 bundles at 33.3 sq ft each.</span></p>
+    
     <h2>Good to know</h2>
     <ul><li>A roofing square is 100 square feet. Most architectural shingles come three bundles to a square.</li><li>You also need starter strip, ridge caps, underlayment, drip edge, and nails.</li><li>Use the roof pitch calculator if you do not know your pitch.</li></ul>
 
@@ -128,7 +129,7 @@
       <ul><li><a href="roofing-squares-and-bundles-guide.html">Roofing Squares and Bundles: How to Estimate Shingles Without Guessing</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="roof-pitch-calculator.html"><strong>Roof Pitch Calculator</strong><span>Pitch, angle in degrees, and rafter length from rise and run.</span></a><a class="calc-card" href="siding-calculator.html"><strong>Siding Calculator</strong><span>Panels or squares of siding for a house.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="insulation-calculator.html"><strong>Insulation Calculator</strong><span>Packages of batt or roll insulation for an attic, wall, or floor.</span></a></div>
-    <p class="cat-more"><a href="index.html#exterior">More decks, fences & exterior calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -136,8 +137,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -158,7 +159,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "roofing", title: "Roofing Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "roofing", title: "Roofing Calculator", calc: function (v) {
 var m=Math.sqrt(1+Math.pow(v.pitch/12,2)),a=v.footprint*m,t=a*(1+v.waste/100);
 return {rows:[['Actual roof area',a,'sqft',0],['Pitch multiplier',m,'x',3],['Roofing squares',t/100,'squares',1,'imp']],total:['Buy',Math.ceil(t/(v.bundlecoverage||33.3)),'bundles',0]};
 } };

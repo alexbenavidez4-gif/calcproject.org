@@ -99,6 +99,7 @@
     <p class="formula">Each room's area = length &times; width; add every room together for the total, then divide by 9 for square yards.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 12&times;10 ft room (120 sq ft) plus a 10&times;8 ft room (80 sq ft) adds up to 200 sq ft &mdash; about 22.2 square yards." data-met="a 3.7&times;3 m room (11.1 m&sup2;) plus a 3&times;2.4 m room (7.4 m&sup2;) adds up to 18.6 m&sup2;.">a 12&times;10 ft room (120 sq ft) plus a 10&times;8 ft room (80 sq ft) adds up to 200 sq ft &mdash; about 22.2 square yards.</span></p>
+    
     <h2>Good to know</h2>
     <ul><li>Round each measurement up to the next inch before converting to feet. Short numbers cost you a trip back to the store.</li><li>To convert inches to feet, divide by 12. A wall that is 11 ft 6 in is 11.5 ft.</li><li>Closets, alcoves, and under-stair spaces count toward flooring even when they do not count toward listed living area.</li></ul>
 
@@ -114,7 +115,7 @@
       <ul><li><a href="how-to-measure-a-room-guide.html">How to Measure a Room for Square Footage (Even If It&#x27;s Not a Rectangle)</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="paint-calculator.html"><strong>Paint Calculator</strong><span>Gallons of paint for a room, with doors, windows, and coats.</span></a><a class="calc-card" href="carpet-calculator.html"><strong>Carpet Calculator</strong><span>Square yards of carpet and pad for a room.</span></a><a class="calc-card" href="cubic-yard-calculator.html"><strong>Cubic Yard Calculator</strong><span>Turn length, width, and depth into cubic yards.</span></a></div>
-    <p class="cat-more"><a href="index.html#measure">More measuring & area calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -122,8 +123,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -144,7 +145,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "square-footage", title: "Square Footage Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "square-footage", title: "Square Footage Calculator", calc: function (v) {
 var t=0,rows=[];(v.rooms||[]).forEach(function(r,i){var a=r[0]*r[1];t+=a;rows.push(['Room '+(i+1),a,'sqft',1]);});
 rows.push(['In square yards',t/9,'sq yd',1,'imp']);
 return {rows:rows,total:['Total area',t,'sqft',1]};

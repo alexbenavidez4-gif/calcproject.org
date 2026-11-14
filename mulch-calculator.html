@@ -91,6 +91,7 @@
     <p class="formula">Volume = length &times; width &times; depth, then converted to bags or bulk units.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 20&times;6 ft bed at 3 inches deep needs about 1.1 cubic yards &mdash; roughly 15 bags at 2 cubic ft each." data-met="a 6.1&times;1.8 m bed at 7.6 cm deep needs about 0.84 cubic meters &mdash; roughly 15 bags at 56.6 liters each.">a 20&times;6 ft bed at 3 inches deep needs about 1.1 cubic yards &mdash; roughly 15 bags at 2 cubic ft each.</span></p>
+    
     <h2>Good to know</h2>
     <ul><li>Bulk mulch is usually cheaper once you need more than about 1.5 cubic yards (20 bags of 2 cu ft).</li><li>Keep mulch a few inches back from tree trunks and house siding.</li><li>For a round bed, multiply 3.14 by the radius squared for the area, then enter that as the length with a width of 1.</li></ul>
 
@@ -106,7 +107,7 @@
       <ul><li><a href="mulch-and-topsoil-depth-guide.html">Mulch and Topsoil Depth: How Many Cubic Yards or Bags You Really Need</a></li><li><a href="gravel-vs-mulch-guide.html">Gravel vs. Mulch — Which Is Right for Your Yard?</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="topsoil-calculator.html"><strong>Topsoil Calculator</strong><span>Cubic yards and bags of topsoil, garden soil, or compost.</span></a><a class="calc-card" href="gravel-calculator.html"><strong>Gravel Calculator</strong><span>Tons and cubic yards of gravel for a driveway, path, or base.</span></a><a class="calc-card" href="raised-bed-soil-calculator.html"><strong>Raised Bed Soil Calculator</strong><span>Soil to fill one or more raised garden beds.</span></a><a class="calc-card" href="cubic-yard-calculator.html"><strong>Cubic Yard Calculator</strong><span>Turn length, width, and depth into cubic yards.</span></a></div>
-    <p class="cat-more"><a href="index.html#yard">More yard & garden calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -114,8 +115,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -136,7 +137,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "mulch", title: "Mulch Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "mulch", title: "Mulch Calculator", calc: function (v) {
 var cf=v.length*v.width*(v.depth/12);
 return {rows:[['Volume needed',cf,'cuft',1],['In cubic yards',cf/27,'cuyd',2]],total:['Buy',Math.ceil(cf/(v.bagsize||1)),'bags',0]};
 } };

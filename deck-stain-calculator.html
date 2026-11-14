@@ -88,6 +88,7 @@
     <p class="formula">Gallons = deck area (length &times; width), plus a percentage for railings and stairs, &times; number of coats, &divide; coverage per gallon, rounded up.</p>
     <h3>Worked example</h3>
     <p>A 16 &times; 12 ft deck is 192 sq ft. Adding 20 percent for railings and two coats gives 460.8 sq ft to cover. At 250 sq ft per gallon, buy 2 gallons.</p>
+    
     <h2>Good to know</h2>
     <ul><li>Rough or weathered wood drinks stain. Use 150 to 200 sq ft per gallon for old decks and for the first coat on new rough-sawn wood.</li><li>Many semi-transparent stains call for one coat only. Read the label before applying a second.</li><li>Stain when the wood is dry and no rain is due for 24 to 48 hours.</li></ul>
 
@@ -103,7 +104,7 @@
       <ul><li><a href="deck-board-spacing-guide.html">Deck Board Spacing: Why That Small Gap Matters More Than You Think</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="deck-calculator.html"><strong>Deck Calculator</strong><span>Decking boards for the deck surface, with gap spacing.</span></a><a class="calc-card" href="paint-calculator.html"><strong>Paint Calculator</strong><span>Gallons of paint for a room, with doors, windows, and coats.</span></a><a class="calc-card" href="fence-calculator.html"><strong>Fence Calculator</strong><span>Posts and panels for a fence line.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a></div>
-    <p class="cat-more"><a href="index.html#exterior">More decks, fences & exterior calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -111,8 +112,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -133,7 +134,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "deck-stain", title: "Deck Stain Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "deck-stain", title: "Deck Stain Calculator", calc: function (v) {
 var a=v.length*v.width,t=a*(1+v.extra/100)*(v.coats||1);
 return {rows:[['Deck floor area',a,'sqft',1],['Total area to coat',t,'sqft',1]],total:['Buy',Math.ceil(t/(v.coverage||250)),'gal',0]};
 } };
