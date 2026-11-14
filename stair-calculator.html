@@ -87,7 +87,6 @@
     <p class="formula">Number of risers = total rise &divide; target riser height, rounded, and never fewer than total rise &divide; 7.75. Riser height = total rise &divide; number of risers. Treads = risers &minus; 1. Total run = treads &times; tread depth. Stringer length = square root of (rise&sup2; + run&sup2;).</p>
     <h3>Worked example</h3>
     <p>A 108 inch total rise with a 7.5 inch target gives 14 risers at 7.71 inches each and 13 treads. With 10 inch treads the total run is 10.83 ft and the stringer is about 14.08 ft.</p>
-    
     <h2>Good to know</h2>
     <ul><li>Every riser in a flight must be the same height within 3/8 inch, or people trip.</li><li>Measure the rise where the stairs will actually land. Ground and floors are rarely level.</li><li>A comfortable stair has a riser plus tread total of 17 to 18 inches.</li></ul>
 
@@ -101,7 +100,7 @@
       
     <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="deck-calculator.html"><strong>Deck Calculator</strong><span>Decking boards for the deck surface, with gap spacing.</span></a><a class="calc-card" href="carpet-calculator.html"><strong>Carpet Calculator</strong><span>Square yards of carpet and pad for a room.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a><a class="calc-card" href="roof-pitch-calculator.html"><strong>Roof Pitch Calculator</strong><span>Pitch, angle in degrees, and rafter length from rise and run.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#floors">More flooring, tile & stairs calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -110,7 +109,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -131,7 +130,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "stair", title: "Stair Calculator", calc: function (v) {
+window.CP_CALC = { id: "stair", title: "Stair Calculator", label: "Estimate", calc: function (v) {
 var n=Math.max(Math.round(v.rise/(v.target||7.5)),Math.ceil(v.rise/7.75),1),r=v.rise/n,t=n-1,run=t*v.tread,st=Math.sqrt(v.rise*v.rise+run*run);
 var note=(v.tread<10?'Tread depth is under the 10 in minimum in the International Residential Code. ':'')+'Check your local building code before you cut.';
 return {rows:[['Number of risers',n,'',0],['Number of treads',t,'',0],['Total run',run/12,'ft',2],['Stringer length',st/12,'ft',2],['Stair angle',run>0?Math.atan(v.rise/run)*180/Math.PI:90,'degrees',1]],total:['Each riser',r,'inch',2],note:note};

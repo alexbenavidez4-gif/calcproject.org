@@ -87,7 +87,6 @@
     <p class="formula">Square yards = room length (ft) &times; width (ft), plus waste, divided by 9.</p>
     <h3>Worked example</h3>
     <p>A 14 &times; 12 ft room is 168 sq ft. With 10 percent waste that is 184.8 sq ft, or 20.53 square yards of carpet and pad.</p>
-    
     <h2>Good to know</h2>
     <ul><li>Carpet comes in rolls 12 ft wide, sometimes 15 ft. A room wider than the roll needs a seam and more waste.</li><li>Patterned carpet needs extra length so the pattern lines up at seams.</li><li>For stairs, plan about 1 square yard for every 2 steps on a standard 3 ft wide stair.</li></ul>
 
@@ -103,7 +102,7 @@
       <ul><li><a href="how-to-measure-a-room-guide.html">How to Measure a Room for Square Footage (Even If It&#x27;s Not a Rectangle)</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="stair-calculator.html"><strong>Stair Calculator</strong><span>Number of steps, riser height, total run, and stringer length.</span></a><a class="calc-card" href="baseboard-trim-calculator.html"><strong>Baseboard &amp; Trim Calculator</strong><span>Linear feet and boards of baseboard or crown molding.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#floors">More flooring, tile & stairs calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -112,7 +111,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -133,7 +132,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "carpet", title: "Carpet Calculator", calc: function (v) {
+window.CP_CALC = { id: "carpet", title: "Carpet Calculator", label: "Estimate", calc: function (v) {
 var a=v.length*v.width,t=a*(1+v.waste/100);
 return {rows:[['Room area',a,'sqft',1],['With waste',t,'sqft',1]],total:['Buy',t/9,'sqyd',2]};
 } };

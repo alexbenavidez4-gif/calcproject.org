@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plywood Calculator With Formula and Example</title>
+<meta name="description" content="Free Plywood Calculator. Sheets of plywood or OSB for a floor, wall, or roof deck. Shows the formula and a worked example. No sign-up needed.">
+<link rel="canonical" href="https://calcproject.org/plywood-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Plywood Calculator With Formula and Example">
+<meta property="og:description" content="Free Plywood Calculator. Sheets of plywood or OSB for a floor, wall, or roof deck. Shows the formula and a worked example. No sign-up needed.">
+<meta property="og:url" content="https://calcproject.org/plywood-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Plywood Calculator", "url": "https://calcproject.org/plywood-calculator.html", "description": "Free Plywood Calculator. Sheets of plywood or OSB for a floor, wall, or roof deck. Shows the formula and a worked example. No sign-up needed.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Measuring & Area", "item": "https://calcproject.org/index.html#measure"}, {"@type": "ListItem", "position": 3, "name": "Plywood Calculator", "item": "https://calcproject.org/plywood-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many square feet is a sheet of plywood?", "acceptedAnswer": {"@type": "Answer", "text": "A standard 4 × 8 ft sheet covers 32 square feet."}}, {"@type": "Question", "name": "How many sheets of plywood do I need for 1,000 square feet?", "acceptedAnswer": {"@type": "Answer", "text": "A thousand square feet is 31.25 sheets. With 10 percent waste, buy 35 sheets of 4 × 8."}}, {"@type": "Question", "name": "Is OSB the same size as plywood?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. OSB and plywood sheathing both come in 4 × 8 ft sheets, so the count is the same."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#measure">Measuring &amp; Area</a> &rsaquo; <span>Plywood Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Plywood Calculator</h1>
+  <p class="lead">Sheets of plywood or OSB for a floor, wall, or roof deck.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Plywood Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Plywood</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="any" value="24" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-width" min="0" step="any" value="16" data-factor="0.3048" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field"><label for="c-sheet">Sheet size</label><select id="c-sheet"><option value="32" selected>4 x 8 ft</option><option value="40">4 x 10 ft</option></select></div><div class="field"><label for="c-waste">Waste allowance <span class="hint">(%)</span></label><input type="number" id="c-waste" step="any" value="10" inputmode="decimal"></div></div>
+        <button type="button" class="calc-btn">Calculate</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use this calculator</h2>
+    <ol><li>Fill in Area length, Area width, Sheet size and Waste allowance.</li><li>Use the Imperial and Metric switch if you measure in meters and centimeters.</li><li>The result updates as you type. Tap <strong>Calculate</strong> to run it again.</li><li>Tap <strong>Save or print results</strong> to keep a copy or add it to your project sheet.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Sheets = area (length &times; width), plus waste, divided by the sheet size (32 sq ft for a 4x8), rounded up.</p>
+    <h3>Worked example</h3>
+    <p>With the starting numbers on this page (Area length: 24 ft; Area width: 16 ft; Sheet size: 4 x 8 ft; Waste allowance: 10), the result is <strong>Buy 14 sheets</strong>. It also shows Area: 384.0 sq ft.</p>
+    <h2>Good to know</h2>
+    <ul><li>For roof sheathing, use the real roof area, not the footprint. Multiply the footprint by the pitch multiplier first.</li><li>Leave a 1/8 inch gap between sheets so they can swell without buckling.</li><li>Common thicknesses: 7/16 inch OSB or 1/2 inch plywood for roofs and walls, and 3/4 inch tongue-and-groove for subfloors.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How many square feet is a sheet of plywood?</h3>
+      <p>A standard 4 &times; 8 ft sheet covers 32 square feet.</p>
+      <h3>How many sheets of plywood do I need for 1,000 square feet?</h3>
+      <p>A thousand square feet is 31.25 sheets. With 10 percent waste, buy 35 sheets of 4 &times; 8.</p>
+      <h3>Is OSB the same size as plywood?</h3>
+      <p>Yes. OSB and plywood sheathing both come in 4 &times; 8 ft sheets, so the count is the same.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="cubic-yard-calculator.html"><strong>Cubic Yard Calculator</strong><span>Turn length, width, and depth into cubic yards.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a><a class="calc-card" href="roof-pitch-calculator.html"><strong>Roof Pitch Calculator</strong><span>Pitch, angle in degrees, and rafter length from rise and run.</span></a></div>
+    <p class="cat-more"><a href="index.html#measure">More measuring & area calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "plywood", title: "Plywood Calculator", label: "Estimate", calc: function (v) {
+var H = window.CPH, R = function (rows, total, note) { return { rows: rows, total: total, note: note || "" }; };
+var a=v.length*v.width;return R([['Area',a,'sqft',1]],['Buy',Math.ceil(a*(1+v.waste/100)/v.sheet),'sheets',0]);
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battery Runtime Calculator With Formula and Example</title>
+<meta name="description" content="Free Battery Runtime Calculator. How long a battery will run a load. Shows the formula and a worked example. No sign-up needed.">
+<link rel="canonical" href="https://calcproject.org/battery-runtime-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Battery Runtime Calculator With Formula and Example">
+<meta property="og:description" content="Free Battery Runtime Calculator. How long a battery will run a load. Shows the formula and a worked example. No sign-up needed.">
+<meta property="og:url" content="https://calcproject.org/battery-runtime-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Battery Runtime Calculator", "url": "https://calcproject.org/battery-runtime-calculator.html", "description": "Free Battery Runtime Calculator. How long a battery will run a load. Shows the formula and a worked example. No sign-up needed.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Electrical & Cooling", "item": "https://calcproject.org/index.html#electrical"}, {"@type": "ListItem", "position": 3, "name": "Battery Runtime Calculator", "item": "https://calcproject.org/battery-runtime-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long will a 100Ah battery last?", "acceptedAnswer": {"@type": "Answer", "text": "A 12 volt, 100 amp-hour battery stores 1,200 watt-hours. At 85 percent usable it runs a 120 watt load for about 8.5 hours."}}, {"@type": "Question", "name": "How do I convert amp-hours to watt-hours?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply amp-hours by the battery voltage. A 100 amp-hour battery at 12 volts holds 1,200 watt-hours."}}, {"@type": "Question", "name": "How much of a battery can I use?", "acceptedAnswer": {"@type": "Answer", "text": "About 50 percent of a lead-acid battery and 80 to 100 percent of a lithium iron phosphate battery without shortening its life."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#electrical">Electrical &amp; Cooling</a> &rsaquo; <span>Battery Runtime Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up</span>
+  <h1>Battery Runtime Calculator</h1>
+  <p class="lead">How long a battery will run a load.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Battery Runtime Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Battery Runtime</span>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-ah">Battery capacity <span class="hint">(amp-hours)</span></label><input type="number" id="c-ah" step="any" value="100" inputmode="decimal"></div><div class="field"><label for="c-volts">Battery voltage</label><input type="number" id="c-volts" step="any" value="12" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field"><label for="c-load">Load <span class="hint">(watts)</span></label><input type="number" id="c-load" step="any" value="120" inputmode="decimal"></div><div class="field"><label for="c-eff">Usable share <span class="hint">(%)</span></label><input type="number" id="c-eff" step="any" value="85" inputmode="decimal"></div></div>
+        <button type="button" class="calc-btn">Calculate</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use this calculator</h2>
+    <ol><li>Fill in Battery capacity, Battery voltage, Load and Usable share.</li><li>The result updates as you type. Tap <strong>Calculate</strong> to run it again.</li><li>Tap <strong>Save or print results</strong> to keep a copy or add it to your project sheet.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Runtime (hours) = amp-hours &times; volts &times; usable share &divide; load in watts.</p>
+    <h3>Worked example</h3>
+    <p>With the starting numbers on this page (Battery capacity: 100; Battery voltage: 12; Load: 120; Usable share: 85), the result is <strong>Runtime 8.5 hours</strong>. It also shows Usable energy: 1,020 Wh; Current draw: 10.0 amps.</p>
+    <h2>Good to know</h2>
+    <ul><li>Lead-acid batteries should only be drained to about 50 percent. Lithium (LiFePO4) batteries can use 80 to 100 percent. The usable share also covers inverter losses.</li><li>Runtime drops in cold weather and as a battery ages.</li><li>Motors and compressors draw several times their running watts for a moment at start-up, so size the inverter for the surge.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How long will a 100Ah battery last?</h3>
+      <p>A 12 volt, 100 amp-hour battery stores 1,200 watt-hours. At 85 percent usable it runs a 120 watt load for about 8.5 hours.</p>
+      <h3>How do I convert amp-hours to watt-hours?</h3>
+      <p>Multiply amp-hours by the battery voltage. A 100 amp-hour battery at 12 volts holds 1,200 watt-hours.</p>
+      <h3>How much of a battery can I use?</h3>
+      <p>About 50 percent of a lead-acid battery and 80 to 100 percent of a lithium iron phosphate battery without shortening its life.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="cfm-calculator.html"><strong>CFM Calculator</strong><span>Airflow in cubic feet per minute to ventilate a room.</span></a><a class="calc-card" href="electricity-cost-calculator.html"><strong>Electricity Cost Calculator</strong><span>What an appliance costs to run per day, month, and year.</span></a><a class="calc-card" href="watts-amps-calculator.html"><strong>Watts to Amps Calculator</strong><span>Convert between watts, amps, and volts for any device.</span></a><a class="calc-card" href="circuit-load-calculator.html"><strong>Circuit Load Calculator</strong><span>Add up devices on one circuit and check the breaker.</span></a></div>
+    <p class="cat-more"><a href="index.html#electrical">More electrical & cooling calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "battery-runtime", title: "Battery Runtime Calculator", label: "Estimate", calc: function (v) {
+var H = window.CPH, R = function (rows, total, note) { return { rows: rows, total: total, note: note || "" }; };
+var wh=v.ah*v.volts*(v.eff/100);return R([['Usable energy',wh,'Wh',0],['Current draw',v.load/(v.volts||12),'amps',1]],['Runtime',wh/(v.load||1),'hours',1]);
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>
