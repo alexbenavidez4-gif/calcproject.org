@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watts to Amps Calculator: Convert Watts, Amps and Volts</title>
+<meta name="description" content="Free watts to amps calculator. Convert watts to amps or amps to watts at 120 V, 240 V, or 12 V to see how much current a device draws.">
+<link rel="canonical" href="https://calcproject.org/watts-amps-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Watts to Amps Calculator: Convert Watts, Amps and Volts">
+<meta property="og:description" content="Free watts to amps calculator. Convert watts to amps or amps to watts at 120 V, 240 V, or 12 V to see how much current a device draws.">
+<meta property="og:url" content="https://calcproject.org/watts-amps-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Watts to Amps Calculator", "url": "https://calcproject.org/watts-amps-calculator.html", "description": "Free watts to amps calculator. Convert watts to amps or amps to watts at 120 V, 240 V, or 12 V to see how much current a device draws.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Electrical & Cooling", "item": "https://calcproject.org/index.html#electrical"}, {"@type": "ListItem", "position": 3, "name": "Watts to Amps Calculator", "item": "https://calcproject.org/watts-amps-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert watts to amps?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the watts by the volts. A 1,500 W heater on a 120 V outlet draws 1,500 ÷ 120 = 12.5 amps."}}, {"@type": "Question", "name": "How many watts can a 15 amp circuit handle?", "acceptedAnswer": {"@type": "Answer", "text": "A 15 amp, 120 V circuit carries 1,800 watts at most, and 1,440 watts for loads that run 3 hours or more (80 percent of the breaker rating)."}}, {"@type": "Question", "name": "How many amps does a 1,500 watt heater use?", "acceptedAnswer": {"@type": "Answer", "text": "About 12.5 amps at 120 volts. That nearly fills a 15 amp circuit, so run it on a circuit with little else plugged in."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#electrical">Electrical &amp; Cooling</a> &rsaquo; <span>Watts to Amps Calculator</span></nav>
+  <span class="eyebrow">Electrical &middot; Estimates only</span>
+  <h1>Watts to Amps Calculator</h1>
+  <p class="lead">Convert watts to amps, or amps to watts, at 120, 240, or 12 volts. Use it to check whether a device fits on a circuit.</p>
+</header>
+
+<div class="safety-strip" role="note" style="margin-top:22px">
+  <strong>Estimates only.</strong> Electrical code varies by city, county, and state. Check your local code and use a licensed electrician for any wiring work.
+</div>
+
+<main class="calc-main">
+  <section class="ticket static" id="watts-amps">
+    <div class="ticket-head">
+      <div><h2>Enter your numbers</h2><p>Convert between watts and amps for any device, like "how many amps is a 1,500 W heater?"</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="wa-mode">What do you want to find?</label>
+          <select id="wa-mode" onchange="waMode()"><option value="amps">Amps (I know the watts)</option><option value="watts">Watts (I know the amps)</option></select></div>
+        <div class="field"><label for="wa-volts">Voltage <span class="hint">(120 for most outlets, 240 for dryers, ranges &amp; AC)</span></label>
+          <select id="wa-volts"><option value="120">120 V</option><option value="240">240 V</option><option value="12">12 V (vehicle / RV)</option></select></div>
+        <div class="field" id="wa-watts-wrap"><label for="wa-watts">Watts</label><input type="number" id="wa-watts" min="0" step="1" value="1500"></div>
+        <div class="field" id="wa-amps-wrap" style="display:none"><label for="wa-amps">Amps</label><input type="number" id="wa-amps" min="0" step="0.1" value="15"></div>
+        <button class="calc-btn" onclick="calcWattsAmps()">Convert</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="wa-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> watts = volts &times; amps, so amps = watts &divide; volts. <strong>Example:</strong> a 1,500 W heater on a 120 V outlet draws 12.5 amps. That is fine on a 15 amp circuit by itself, but not with much else plugged in.</div>
+      <div class="ticket-warn">&#9888;&#65039; Estimates only. Motors can draw more when starting than their label shows.</div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>Common questions</h2>
+      <h3>How do I convert watts to amps?</h3>
+      <p>Divide the watts by the volts. A 1,500 W heater on a 120 V outlet draws 1,500 &divide; 120 = 12.5 amps.</p>
+      <h3>How many watts can a 15 amp circuit handle?</h3>
+      <p>A 15 amp, 120 V circuit carries 1,800 watts at most, and 1,440 watts for loads that run 3 hours or more (80 percent of the breaker rating).</p>
+      <h3>How many amps does a 1,500 watt heater use?</h3>
+      <p>About 12.5 amps at 120 volts. That nearly fills a 15 amp circuit, so run it on a circuit with little else plugged in.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="electricity-cost-calculator.html"><strong>Electricity Cost Calculator</strong><span>What an appliance costs to run per day, month, and year.</span></a><a class="calc-card" href="circuit-load-calculator.html"><strong>Circuit Load Calculator</strong><span>Add up devices on one circuit and check the breaker.</span></a><a class="calc-card" href="wire-size-calculator.html"><strong>Wire Size &amp; Voltage Drop Calculator</strong><span>Voltage drop and the smallest wire for a long run.</span></a><a class="calc-card" href="air-conditioner-btu-calculator.html"><strong>Air Conditioner BTU Calculator</strong><span>BTUs needed to cool a room with a window or portable AC.</span></a></div>
+    <p class="cat-more"><a href="advanced-tools.html">All electrical calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <h2 id="electrical-disclaimer">Electrical calculator disclaimer</h2>
+    <p>The electrical calculators on CalcProject.org provide general estimates for planning and educational purposes only. Results are based on common standards and simplified formulas and may not account for every factor in your situation, such as wire type, temperature, conduit fill, or load type.</p>
+    <p>Electrical code requirements vary by city, county, and state, and local codes may differ from national standards like the National Electrical Code (NEC). Always check with your local building department and consult a licensed electrician before doing any electrical work.</p>
+    <p>Working with electricity can cause serious injury, death, or fire. CalcProject.org is not responsible for any damage, injury, or loss resulting from the use of these calculators.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Electrical results are estimates. Code varies by location, so check with your local building department and a licensed electrician.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Garage subpanel, storm prep" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script src="electrical.js"></script>
+</body>
+</html>

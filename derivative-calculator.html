@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derivative Calculator With Steps (Power Rule)</title>
+<meta name="description" content="Free derivative calculator for polynomials. Enter a function to see its derivative worked out step by step with the power rule.">
+<link rel="canonical" href="https://calcproject.org/derivative-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Derivative Calculator With Steps (Power Rule)">
+<meta property="og:description" content="Free derivative calculator for polynomials. Enter a function to see its derivative worked out step by step with the power rule.">
+<meta property="og:url" content="https://calcproject.org/derivative-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Derivative Calculator", "url": "https://calcproject.org/derivative-calculator.html", "description": "Free derivative calculator for polynomials. Enter a function to see its derivative worked out step by step with the power rule.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Math Tools", "item": "https://calcproject.org/index.html#math"}, {"@type": "ListItem", "position": 3, "name": "Derivative Calculator", "item": "https://calcproject.org/derivative-calculator.html"}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#math">Math Tools</a> &rsaquo; <span>Derivative Calculator</span></nav>
+  <span class="eyebrow">Math &middot; Every step shown</span>
+  <h1>Derivative Calculator</h1>
+  <p class="lead">Differentiate polynomials with the power rule, step by step. Free, with the full step-by-step solution and no login.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="derivative" data-tid="derivative">
+    <div class="ticket-head">
+      <div><h2>Enter your numbers</h2><p>Press Solve with steps to see the answer and how to get it.</p></div>
+      <span class="stamp">Job: Calculus</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="derivative-d-poly">f(x) = <span class="hint">(Use ^ for powers, like x^3. Polynomials only for now.)</span></label><input type="text" id="derivative-d-poly" data-f="poly" value="3x^4 - 2x^2 + 5x - 7" autocomplete="off"></div><div class="field"><label for="derivative-d-at">Evaluate at x = (optional)</label><input type="number" id="derivative-d-at" data-f="at" step="any" inputmode="decimal" value="2" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note" open><summary>How it works, examples and FAQ</summary><p>The <strong>power rule</strong> says the derivative of <code>c&middot;x^n</code> is <code>c&middot;n&middot;x^(n&minus;1)</code>. Multiply by the power, then lower the power by one. The derivative of a plain number is 0.</p><p>Example: <code>f(x) = 3x^4 &minus; 2x^2 + 5x &minus; 7</code>. Term by term: 3x^4 &rarr; 12x^3, &minus;2x^2 &rarr; &minus;4x, 5x &rarr; 5, &minus;7 &rarr; 0. So <code>f'(x) = 12x^3 &minus; 4x + 5</code>.</p><p>The derivative tells you the slope of the curve at any point. Evaluating at x = 2 gives the slope of the tangent line there.</p><p><strong>Heads up:</strong> this version handles polynomials. Trig, exponential and product/quotient rules are on the roadmap.</p><p><strong>Can it do sin, cos, e^x or ln?</strong><br>Not yet. This first version covers polynomials, which is most of an intro calculus course.</p><p><strong>How do I type x squared?</strong><br>x^2. A term like 5x^3 can be typed 5x^3 or 5*x^3.</p><p><strong>What does the derivative mean?</strong><br>It is the instantaneous rate of change, the slope of the tangent line at each point.</p></details>
+      <div class="ticket-warn">&#9888;&#65039; This version handles polynomials (like 3x^4 &minus; 2x^2 + 5x &minus; 7). Trig, exponential, and log functions are coming later.</div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>More math calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="integral-calculator.html"><strong>Integral Calculator</strong><span>Antiderivatives and definite integrals of polynomials.</span></a><a class="calc-card" href="pythagorean-theorem-calculator.html"><strong>Pythagorean Theorem Calculator</strong><span>Find a missing side of a right triangle.</span></a><a class="calc-card" href="right-triangle-calculator.html"><strong>Right Triangle Trig Calculator</strong><span>Sides and angles with sine, cosine, and tangent.</span></a><a class="calc-card" href="percentage-calculator.html"><strong>Percentage Calculator</strong><span>Percent of a number, what percent, and percent change.</span></a></div>
+    <p class="cat-more"><a href="math-tools.html#snap">Snap a photo of a problem &rarr;</a> &nbsp; <a href="math-tools.html">All math tools &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">These calculators show the method as well as the answer, so you can learn the steps and check your own work. Answers are rounded to six decimal places. If a result ever looks wrong, tell us on the <a href="about.html">Contact page</a> with the numbers you entered.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Results are for learning and checking your work. Always double-check anything important.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name this sheet <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Algebra homework, Chapter 4" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script src="math-engine.js"></script>
+<script src="math-page.js"></script>
+</body>
+</html>

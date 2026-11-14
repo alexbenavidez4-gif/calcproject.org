@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insulation Calculator: Batts and Rolls by Square Foot</title>
+<meta name="description" content="Free insulation calculator. Enter the attic, floor, or wall area and the coverage per package to see how many bags of batts or rolls to buy.">
+<link rel="canonical" href="https://calcproject.org/insulation-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Insulation Calculator: Batts and Rolls by Square Foot">
+<meta property="og:description" content="Free insulation calculator. Enter the attic, floor, or wall area and the coverage per package to see how many bags of batts or rolls to buy.">
+<meta property="og:url" content="https://calcproject.org/insulation-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Insulation Calculator", "url": "https://calcproject.org/insulation-calculator.html", "description": "Free insulation calculator. Enter the attic, floor, or wall area and the coverage per package to see how many bags of batts or rolls to buy.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Paint, Walls & Insulation", "item": "https://calcproject.org/index.html#walls"}, {"@type": "ListItem", "position": 3, "name": "Insulation Calculator", "item": "https://calcproject.org/insulation-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What R-value do I need?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your climate zone and where the insulation goes. The US Department of Energy publishes recommended R-values by zone for attics, walls, and floors."}}, {"@type": "Question", "name": "How many square feet does a bag of insulation cover?", "acceptedAnswer": {"@type": "Answer", "text": "It varies with R-value and width. Common packages cover roughly 40 to 90 square feet. The exact figure is printed on the bag."}}, {"@type": "Question", "name": "Should I subtract the framing from the area?", "acceptedAnswer": {"@type": "Answer", "text": "No. Batt coverage figures already assume framing at standard spacing, so use the full area."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#walls">Paint, Walls &amp; Insulation</a> &rsaquo; <span>Insulation Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Insulation Calculator</h1>
+  <p class="lead">Enter the area you are insulating and the square feet printed on the package to see how many bags of batts or rolls to buy.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Insulation Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Insulation</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="0.1" value="40" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-width" min="0" step="0.1" value="30" data-factor="0.3048" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field"><label for="c-coverage">Coverage per package (<span class="u" data-imp="sq ft" data-met="m&sup2;">sq ft</span>) <span class="hint">(printed on the bag)</span></label><input type="number" id="c-coverage" min="0" step="0.01" value="58.67" data-factor="0.09290304" inputmode="decimal"></div><div class="field"><label for="c-waste">Waste allowance (%)</label><input type="number" id="c-waste" min="0" step="1" value="5" inputmode="decimal"></div></div>
+        <button type="button" class="calc-btn">Calculate packages</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the insulation calculator</h2>
+    <ol><li>Measure the length and width of the attic floor, wall, or crawl space.</li><li>Find the coverage in square feet on the package for the R-value and width you are buying.</li><li>For walls, enter the wall length as the length and the wall height as the width.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Packages = area (length &times; width) plus waste, divided by the square feet each package covers, rounded up.</p>
+    <h3>Worked example</h3>
+    <p>A 40 &times; 30 ft attic is 1,200 sq ft. With 5 percent waste that is 1,260 sq ft, or 22 packages at 58.67 sq ft each.</p>
+    <p class="source">Source: <a href="https://www.energy.gov/energysaver/insulation" rel="noopener" target="_blank">US Department of Energy: Insulation and recommended R-values</a></p>
+      <h2>Good to know</h2>
+    <ul><li>Match batt width to your framing: 15 inch batts for studs 16 inches on center, 23 inch for 24 inches on center.</li><li>Do not compress batts to fit. Squeezed insulation loses R-value.</li><li>Blown-in insulation is figured from the coverage chart on the bag, which lists bags per 1,000 sq ft for each R-value.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>What R-value do I need?</h3>
+      <p>It depends on your climate zone and where the insulation goes. The US Department of Energy publishes recommended R-values by zone for attics, walls, and floors.</p>
+      <h3>How many square feet does a bag of insulation cover?</h3>
+      <p>It varies with R-value and width. Common packages cover roughly 40 to 90 square feet. The exact figure is printed on the bag.</p>
+      <h3>Should I subtract the framing from the area?</h3>
+      <p>No. Batt coverage figures already assume framing at standard spacing, so use the full area.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="wall-framing-calculator.html"><strong>Wall Framing Calculator</strong><span>Studs and plates for framing a wall.</span></a><a class="calc-card" href="drywall-calculator.html"><strong>Drywall Calculator</strong><span>Sheets of drywall for the walls of a room.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="air-conditioner-btu-calculator.html"><strong>Air Conditioner BTU Calculator</strong><span>BTUs needed to cool a room with a window or portable AC.</span></a></div>
+    <p class="cat-more"><a href="index.html#walls">More paint, walls & insulation calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "insulation", title: "Insulation Calculator", label: "Estimate", calc: function (v) {
+var a=v.length*v.width,t=a*(1+v.waste/100);
+return {rows:[['Area to insulate',a,'sqft',1],['With waste',t,'sqft',1]],total:['Buy',Math.ceil(t/(v.coverage||58.67)),'packages',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

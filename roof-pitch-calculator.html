@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roof Pitch Calculator: Pitch, Angle and Rafter Length</title>
+<meta name="description" content="Free roof pitch calculator. Enter rise and run to get pitch in x/12, the angle in degrees, the area multiplier, and rafter length.">
+<link rel="canonical" href="https://calcproject.org/roof-pitch-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Roof Pitch Calculator: Pitch, Angle and Rafter Length">
+<meta property="og:description" content="Free roof pitch calculator. Enter rise and run to get pitch in x/12, the angle in degrees, the area multiplier, and rafter length.">
+<meta property="og:url" content="https://calcproject.org/roof-pitch-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Roof Pitch Calculator", "url": "https://calcproject.org/roof-pitch-calculator.html", "description": "Free roof pitch calculator. Enter rise and run to get pitch in x/12, the angle in degrees, the area multiplier, and rafter length.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Measuring & Area", "item": "https://calcproject.org/index.html#measure"}, {"@type": "ListItem", "position": 3, "name": "Roof Pitch Calculator", "item": "https://calcproject.org/roof-pitch-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a 6/12 roof pitch mean?", "acceptedAnswer": {"@type": "Answer", "text": "The roof rises 6 inches for every 12 inches it runs horizontally. That is an angle of about 26.6 degrees."}}, {"@type": "Question", "name": "How do I convert roof pitch to degrees?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the rise by the run and take the arctangent. A 4/12 pitch is 18.4 degrees, 8/12 is 33.7 degrees, and 12/12 is 45 degrees."}}, {"@type": "Question", "name": "Why does pitch matter for buying shingles?", "acceptedAnswer": {"@type": "Answer", "text": "A steeper roof has more surface than its footprint. A 6/12 roof has about 11.8 percent more area than the flat footprint, and a 12/12 roof has 41.4 percent more."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#measure">Measuring &amp; Area</a> &rsaquo; <span>Roof Pitch Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Roof Pitch Calculator</h1>
+  <p class="lead">Measure how far the roof rises over a level run and get the pitch in x/12, the angle in degrees, and the multiplier that turns a flat footprint into real roof area.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Roof Pitch Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Roof Pitch</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-rise">Rise (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="c-rise" min="0" step="0.25" value="6" data-factor="2.54" inputmode="decimal"></div><div class="field"><label for="c-run">Run (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="c-run" min="0" step="0.25" value="12" data-factor="2.54" inputmode="decimal"></div></div>
+        <div class="field"><label for="c-span">Horizontal run to the ridge (<span class="u" data-imp="ft" data-met="m">ft</span>) <span class="hint">(optional, for rafter length)</span></label><input type="number" id="c-span" min="0" step="0.1" value="12" data-factor="0.3048" inputmode="decimal"></div>
+        <button type="button" class="calc-btn">Calculate pitch</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the roof pitch calculator</h2>
+    <ol><li>Hold a level flat against the underside of a rafter or on the roof surface.</li><li>Mark 12 inches along the level, then measure straight down from that mark to the roof. That is the rise.</li><li>Enter the rise and a 12 inch run. Add the horizontal distance from wall to ridge for rafter length.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Pitch = rise &divide; run &times; 12, written as x/12. Angle = arctangent of rise &divide; run. The area multiplier is the square root of 1 + (rise &divide; run)&sup2;, and rafter length = horizontal run &times; that multiplier.</p>
+    <h3>Worked example</h3>
+    <p>A roof that rises 6 inches over a 12 inch run is a 6/12 pitch, a 26.57 degree angle, and a 1.118 multiplier. Over a 12 ft run to the ridge, the rafter is about 13.42 ft before any overhang.</p>
+    <h2>Good to know</h2>
+    <ul><li>Measuring from inside the attic along a rafter is safer than climbing on the roof.</li><li>Roofs at 4/12 to 9/12 are considered conventional. Below 2/12 needs low-slope roofing, not standard shingles.</li><li>Rafter length here stops at the outside wall line. Add your overhang separately.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>What does a 6/12 roof pitch mean?</h3>
+      <p>The roof rises 6 inches for every 12 inches it runs horizontally. That is an angle of about 26.6 degrees.</p>
+      <h3>How do I convert roof pitch to degrees?</h3>
+      <p>Divide the rise by the run and take the arctangent. A 4/12 pitch is 18.4 degrees, 8/12 is 33.7 degrees, and 12/12 is 45 degrees.</p>
+      <h3>Why does pitch matter for buying shingles?</h3>
+      <p>A steeper roof has more surface than its footprint. A 6/12 roof has about 11.8 percent more area than the flat footprint, and a 12/12 roof has 41.4 percent more.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="roofing-squares-and-bundles-guide.html">Roofing Squares and Bundles: How to Estimate Shingles Without Guessing</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="roofing-calculator.html"><strong>Roofing Calculator</strong><span>Shingle bundles from your roof footprint and pitch.</span></a><a class="calc-card" href="siding-calculator.html"><strong>Siding Calculator</strong><span>Panels or squares of siding for a house.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a></div>
+    <p class="cat-more"><a href="index.html#measure">More measuring & area calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "roof-pitch", title: "Roof Pitch Calculator", label: "Estimate", calc: function (v) {
+var run=v.run||12,m=Math.sqrt(1+Math.pow(v.rise/run,2)),p=v.rise/run*12;
+var ps=(Math.round(p*100)/100)+'/12';
+return {rows:[['Angle',Math.atan(v.rise/run)*180/Math.PI,'degrees',2],['Slope',v.rise/run*100,'%',1],['Roof area multiplier',m,'x',3],['Rafter length',v.span*m,'ft',2]],total:['Pitch',ps,'',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

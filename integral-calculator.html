@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integral Calculator With Steps for Polynomials</title>
+<meta name="description" content="Free integral calculator for polynomials. Get the antiderivative or a definite integral between two limits, with every step shown.">
+<link rel="canonical" href="https://calcproject.org/integral-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Integral Calculator With Steps for Polynomials">
+<meta property="og:description" content="Free integral calculator for polynomials. Get the antiderivative or a definite integral between two limits, with every step shown.">
+<meta property="og:url" content="https://calcproject.org/integral-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Integral Calculator", "url": "https://calcproject.org/integral-calculator.html", "description": "Free integral calculator for polynomials. Get the antiderivative or a definite integral between two limits, with every step shown.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Math Tools", "item": "https://calcproject.org/index.html#math"}, {"@type": "ListItem", "position": 3, "name": "Integral Calculator", "item": "https://calcproject.org/integral-calculator.html"}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#math">Math Tools</a> &rsaquo; <span>Integral Calculator</span></nav>
+  <span class="eyebrow">Math &middot; Every step shown</span>
+  <h1>Integral Calculator</h1>
+  <p class="lead">Antiderivatives and definite integrals of polynomials. Free, with the full step-by-step solution and no login.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="integral" data-tid="integral">
+    <div class="ticket-head">
+      <div><h2>Enter your numbers</h2><p>Press Solve with steps to see the answer and how to get it.</p></div>
+      <span class="stamp">Job: Calculus</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field"><label for="integral-i-poly">f(x) = <span class="hint">(Use ^ for powers, like x^3. Polynomials only for now.)</span></label><input type="text" id="integral-i-poly" data-f="poly" value="3x^2 + 2x" autocomplete="off"></div><div class="field"><label for="integral-i-lo">Lower limit (optional)</label><input type="number" id="integral-i-lo" data-f="lo" step="any" inputmode="decimal" value="0" autocomplete="off"></div><div class="field"><label for="integral-i-hi">Upper limit (optional)</label><input type="number" id="integral-i-hi" data-f="hi" step="any" inputmode="decimal" value="2" autocomplete="off"></div>
+        <button class="calc-btn" type="button" data-solve>Solve with steps</button>
+        <button class="btn-outline save-ticket-btn" type="button" data-save>Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" data-receipt><div class="label">Your answer</div><p style="margin:8px 0 0;font-family:Inter,sans-serif;font-size:.88rem;color:#5B5B57">Press <strong>Solve with steps</strong> to see the answer and every step.</p></div></div>
+      <div class="steps-note" data-steps style="display:none"></div>
+      <details class="formula-note" open><summary>How it works, examples and FAQ</summary><p>The <strong>reverse power rule</strong> says the integral of <code>c&middot;x^n</code> is <code>c&middot;x^(n+1) &divide; (n+1)</code>, plus a constant <code>C</code>. Raise the power by one, then divide by the new power.</p><p>Example: <code>&int; (3x^2 + 2x) dx = x^3 + x^2 + C</code>.</p><p>For a <strong>definite integral</strong>, compute F(upper) &minus; F(lower). From 0 to 2: F(2) = 8 + 4 = 12 and F(0) = 0, so the answer is 12. This is the area under the curve.</p><p><strong>Heads up:</strong> this version handles polynomials. More function types are on the roadmap.</p><p><strong>Why is there a + C?</strong><br>Many functions share the same derivative; they differ only by a constant. C stands for that unknown constant.</p><p><strong>Does the definite integral need + C?</strong><br>No. It cancels when you subtract.</p><p><strong>Can it integrate 1/x or sin(x)?</strong><br>Not yet. This first version covers polynomials.</p></details>
+      <div class="ticket-warn">&#9888;&#65039; This version handles polynomials (like 3x^4 &minus; 2x^2 + 5x &minus; 7). Trig, exponential, and log functions are coming later.</div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>More math calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="pythagorean-theorem-calculator.html"><strong>Pythagorean Theorem Calculator</strong><span>Find a missing side of a right triangle.</span></a><a class="calc-card" href="right-triangle-calculator.html"><strong>Right Triangle Trig Calculator</strong><span>Sides and angles with sine, cosine, and tangent.</span></a><a class="calc-card" href="percentage-calculator.html"><strong>Percentage Calculator</strong><span>Percent of a number, what percent, and percent change.</span></a><a class="calc-card" href="fraction-calculator.html"><strong>Fraction Calculator</strong><span>Add, subtract, multiply, and divide fractions.</span></a></div>
+    <p class="cat-more"><a href="math-tools.html#snap">Snap a photo of a problem &rarr;</a> &nbsp; <a href="math-tools.html">All math tools &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">These calculators show the method as well as the answer, so you can learn the steps and check your own work. Answers are rounded to six decimal places. If a result ever looks wrong, tell us on the <a href="about.html">Contact page</a> with the numbers you entered.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Results are for learning and checking your work. Always double-check anything important.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name this sheet <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Algebra homework, Chapter 4" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script src="math-engine.js"></script>
+<script src="math-page.js"></script>
+</body>
+</html>

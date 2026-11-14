@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baseboard Calculator: Linear Feet and Boards of Trim</title>
+<meta name="description" content="Free baseboard and trim calculator. Enter room size and doorways to get linear feet and the number of boards to buy, with waste for miter cuts.">
+<link rel="canonical" href="https://calcproject.org/baseboard-trim-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Baseboard Calculator: Linear Feet and Boards of Trim">
+<meta property="og:description" content="Free baseboard and trim calculator. Enter room size and doorways to get linear feet and the number of boards to buy, with waste for miter cuts.">
+<meta property="og:url" content="https://calcproject.org/baseboard-trim-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Baseboard & Trim Calculator", "url": "https://calcproject.org/baseboard-trim-calculator.html", "description": "Free baseboard and trim calculator. Enter room size and doorways to get linear feet and the number of boards to buy, with waste for miter cuts.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Paint, Walls & Insulation", "item": "https://calcproject.org/index.html#walls"}, {"@type": "ListItem", "position": 3, "name": "Baseboard & Trim Calculator", "item": "https://calcproject.org/baseboard-trim-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate linear feet of baseboard?", "acceptedAnswer": {"@type": "Answer", "text": "Add the length of every wall, then subtract the width of each doorway. A 12 × 10 ft room has a 44 ft perimeter; with one 3 ft doorway you need 41 linear feet before waste."}}, {"@type": "Question", "name": "How much extra baseboard should I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Buy about 10 percent extra for a simple room and 15 percent for a room with many corners or if you are new to cutting miters."}}, {"@type": "Question", "name": "What lengths does baseboard come in?", "acceptedAnswer": {"@type": "Answer", "text": "Common lengths are 8, 12, and 16 feet. Primed MDF and finger-jointed pine are often sold in 16 ft lengths."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#walls">Paint, Walls &amp; Insulation</a> &rsaquo; <span>Baseboard &amp; Trim Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Baseboard &amp; Trim Calculator</h1>
+  <p class="lead">Turn the room perimeter into linear feet of baseboard, crown, or quarter round, then into the number of boards to buy.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Baseboard &amp; Trim Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Trim</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="b-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-length" min="0" step="0.1" value="12" data-factor="0.3048"></div>
+          <div class="field"><label for="b-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-width" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="b-doorways">Doorways</label><input type="number" id="b-doorways" min="0" step="1" value="1"></div>
+          <div class="field"><label for="b-doorwaywidth">Avg. doorway width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-doorwaywidth" min="0" step="0.1" value="3" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="b-waste">Waste allowance (%)</label><input type="number" id="b-waste" min="0" step="1" value="10"></div>
+          <div class="field"><label for="b-boardlength">Board length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="b-boardlength" min="1" step="1" value="8" data-factor="0.3048"></div>
+        </div>
+        <button type="button" class="calc-btn">Calculate boards</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the baseboard &amp; trim calculator</h2>
+    <ol><li>Measure the room length and width.</li><li>Count the doorways and enter their average width. Baseboard stops at door casings.</li><li>Set a waste allowance. Ten percent covers miter cuts in a simple room.</li><li>Enter the board length your store stocks: 8, 12, or 16 ft.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Perimeter minus doorway widths, plus waste, divided by board length.</p>
+    <h3>Worked example</h3>
+    <p>For example, <span class="u" data-imp="a 12&times;10 ft room with one 3 ft doorway needs about 6 boards at 8 ft each." data-met="a 3.7&times;3 m room with one 0.9 m doorway needs about 6 boards at 2.4 m each.">a 12&times;10 ft room with one 3 ft doorway needs about 6 boards at 8 ft each.</span></p>
+    <h2>Good to know</h2>
+    <ul><li>For crown molding, set doorways to 0, because crown runs across the top of every wall.</li><li>Longer boards mean fewer joints. Use one full board per wall where you can.</li><li>Rooms with many inside and outside corners need closer to 15 percent waste.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How do I calculate linear feet of baseboard?</h3>
+      <p>Add the length of every wall, then subtract the width of each doorway. A 12 &times; 10 ft room has a 44 ft perimeter; with one 3 ft doorway you need 41 linear feet before waste.</p>
+      <h3>How much extra baseboard should I buy?</h3>
+      <p>Buy about 10 percent extra for a simple room and 15 percent for a room with many corners or if you are new to cutting miters.</p>
+      <h3>What lengths does baseboard come in?</h3>
+      <p>Common lengths are 8, 12, and 16 feet. Primed MDF and finger-jointed pine are often sold in 16 ft lengths.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="baseboard-corners-guide.html">Baseboard Corners: Cope vs Miter and Why It Changes Your Board Count</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="paint-calculator.html"><strong>Paint Calculator</strong><span>Gallons of paint for a room, with doors, windows, and coats.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a></div>
+    <p class="cat-more"><a href="index.html#walls">More paint, walls & insulation calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "baseboard-trim", title: "Baseboard & Trim Calculator", label: "Estimate", calc: function (v) {
+var per=2*(v.length+v.width),net=Math.max(per-v.doorways*v.doorwaywidth,0),tot=net*(1+v.waste/100);
+return {rows:[['Linear length needed',net,'ft',1],['With waste',tot,'ft',1]],total:['Buy',Math.ceil(tot/(v.boardlength||8)),'boards',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wall Framing Calculator: How Many Studs Do I Need?</title>
+<meta name="description" content="Free stud calculator. Enter wall length, stud spacing, corners, and openings to get the number of studs and linear feet of plates to buy.">
+<link rel="canonical" href="https://calcproject.org/wall-framing-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Wall Framing Calculator: How Many Studs Do I Need?">
+<meta property="og:description" content="Free stud calculator. Enter wall length, stud spacing, corners, and openings to get the number of studs and linear feet of plates to buy.">
+<meta property="og:url" content="https://calcproject.org/wall-framing-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Wall Framing Calculator", "url": "https://calcproject.org/wall-framing-calculator.html", "description": "Free stud calculator. Enter wall length, stud spacing, corners, and openings to get the number of studs and linear feet of plates to buy.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Paint, Walls & Insulation", "item": "https://calcproject.org/index.html#walls"}, {"@type": "ListItem", "position": 3, "name": "Wall Framing Calculator", "item": "https://calcproject.org/wall-framing-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many studs do I need for a 10 foot wall?", "acceptedAnswer": {"@type": "Answer", "text": "At 16 inches on center, a 10 ft wall needs 120 ÷ 16 = 7.5, rounded up to 8, plus 1 for the end: 9 studs before corners and openings."}}, {"@type": "Question", "name": "How far apart should wall studs be?", "acceptedAnswer": {"@type": "Answer", "text": "Sixteen inches on center is standard for most walls. Twenty-four inches on center is allowed for some non-load-bearing and 2x6 walls. Check your local code."}}, {"@type": "Question", "name": "What does on center mean?", "acceptedAnswer": {"@type": "Answer", "text": "It means the distance from the center of one stud to the center of the next. It keeps the edges of 4 ft wide sheets landing on a stud."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#walls">Paint, Walls &amp; Insulation</a> &rsaquo; <span>Wall Framing Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Wall Framing Calculator</h1>
+  <p class="lead">Count the studs and plate lumber for a framed wall at 16 or 24 inches on center, with extras for corners and door or window openings.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Wall Framing Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Framing</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Wall length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="0.1" value="20" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-spacing">Stud spacing</label><select id="c-spacing"><option value="12">12 in on center</option><option value="16" selected>16 in on center</option><option value="24">24 in on center</option></select></div></div>
+        <div class="field-row"><div class="field"><label for="c-corners">Corners or wall ends <span class="hint">(2 extra studs each)</span></label><input type="number" id="c-corners" min="0" step="1" value="2" inputmode="decimal"></div><div class="field"><label for="c-openings">Doors and windows <span class="hint">(2 extra studs each)</span></label><input type="number" id="c-openings" min="0" step="1" value="1" inputmode="decimal"></div></div>
+        <div class="field"><label for="c-waste">Waste allowance (%)</label><input type="number" id="c-waste" min="0" step="1" value="10" inputmode="decimal"></div>
+        <button type="button" class="calc-btn">Calculate studs</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the wall framing calculator</h2>
+    <ol><li>Measure the wall length along the floor.</li><li>Choose the stud spacing. Most walls are framed 16 inches on center.</li><li>Count the corners or wall ends and the door and window openings.</li><li>Buy plate lumber in the longest lengths you can carry to cut down on splices.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Studs = wall length (in) &divide; spacing, rounded up, plus 1 for the end. Add 2 studs for each corner or wall end and 2 for each door or window, then add waste. Plates = wall length &times; 3 (one bottom plate and a double top plate).</p>
+    <h3>Worked example</h3>
+    <p>A 20 ft wall at 16 inches on center needs 240 &divide; 16 + 1 = 16 studs. Two corners and one doorway add 6 more, for 22. With 10 percent waste, buy 25 studs and 60 linear feet of plate.</p>
+    <h2>Good to know</h2>
+    <ul><li>Use pressure-treated lumber for any bottom plate that sits on concrete.</li><li>Headers, cripples, and sills for wide openings are extra. Add them from your plan.</li><li>A quick check used by framers: one stud per linear foot of wall covers studs, corners, and openings at 16 inches on center.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How many studs do I need for a 10 foot wall?</h3>
+      <p>At 16 inches on center, a 10 ft wall needs 120 &divide; 16 = 7.5, rounded up to 8, plus 1 for the end: 9 studs before corners and openings.</p>
+      <h3>How far apart should wall studs be?</h3>
+      <p>Sixteen inches on center is standard for most walls. Twenty-four inches on center is allowed for some non-load-bearing and 2x6 walls. Check your local code.</p>
+      <h3>What does on center mean?</h3>
+      <p>It means the distance from the center of one stud to the center of the next. It keeps the edges of 4 ft wide sheets landing on a stud.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="drywall-calculator.html"><strong>Drywall Calculator</strong><span>Sheets of drywall for the walls of a room.</span></a><a class="calc-card" href="insulation-calculator.html"><strong>Insulation Calculator</strong><span>Packages of batt or roll insulation for an attic, wall, or floor.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a></div>
+    <p class="cat-more"><a href="index.html#walls">More paint, walls & insulation calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "wall-framing", title: "Wall Framing Calculator", label: "Estimate", calc: function (v) {
+var base=Math.ceil(v.length*12/(v.spacing||16))+1,extra=v.corners*2+v.openings*2,tot=Math.ceil((base+extra)*(1+v.waste/100));
+return {rows:[['Studs along the wall',base,'',0],['Extra for corners and openings',extra,'',0],['Top and bottom plates',v.length*3,'ft',1]],total:['Buy',tot,'studs',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>
