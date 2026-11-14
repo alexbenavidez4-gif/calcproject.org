@@ -87,6 +87,7 @@
     <p class="formula">Pounds of seed = lawn area (sq ft) &divide; 1,000 &times; seeding rate (lb per 1,000 sq ft). Overseeding uses about half the new-lawn rate.</p>
     <h3>Worked example</h3>
     <p>A 40 &times; 30 ft lawn is 1,200 sq ft. At 7 lb per 1,000 sq ft, a new lawn needs 8.4 lb of seed. Overseeding the same lawn needs 4.2 lb.</p>
+    
     <h2>Good to know</h2>
     <ul><li>Typical new-lawn rates per 1,000 sq ft: tall fescue 6 to 8 lb, perennial ryegrass 6 to 8 lb, Kentucky bluegrass 2 to 3 lb, bermuda 1 to 2 lb.</li><li>More seed is not better. Crowded seedlings compete and thin out.</li><li>Split the seed in half and spread it in two passes at right angles for even coverage.</li></ul>
 
@@ -102,7 +103,7 @@
       <ul><li><a href="sod-vs-seed-guide.html">Sod vs. Seed: When Each One Actually Makes Sense</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="sod-calculator.html"><strong>Sod Calculator</strong><span>Pallets of sod for a new lawn.</span></a><a class="calc-card" href="topsoil-calculator.html"><strong>Topsoil Calculator</strong><span>Cubic yards and bags of topsoil, garden soil, or compost.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="mulch-calculator.html"><strong>Mulch Calculator</strong><span>Bags and cubic yards of mulch for beds and borders.</span></a></div>
-    <p class="cat-more"><a href="index.html#yard">More yard & garden calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -110,8 +111,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -132,7 +133,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "grass-seed", title: "Grass Seed Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "grass-seed", title: "Grass Seed Calculator", calc: function (v) {
 var a=v.length*v.width;
 return {rows:[['Lawn area',a,'sqft',0]],total:['Buy',a/1000*v.rate*(v.job||1),'lb',1]};
 } };

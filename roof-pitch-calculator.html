@@ -87,6 +87,7 @@
     <p class="formula">Pitch = rise &divide; run &times; 12, written as x/12. Angle = arctangent of rise &divide; run. The area multiplier is the square root of 1 + (rise &divide; run)&sup2;, and rafter length = horizontal run &times; that multiplier.</p>
     <h3>Worked example</h3>
     <p>A roof that rises 6 inches over a 12 inch run is a 6/12 pitch, a 26.57 degree angle, and a 1.118 multiplier. Over a 12 ft run to the ridge, the rafter is about 13.42 ft before any overhang.</p>
+    
     <h2>Good to know</h2>
     <ul><li>Measuring from inside the attic along a rafter is safer than climbing on the roof.</li><li>Roofs at 4/12 to 9/12 are considered conventional. Below 2/12 needs low-slope roofing, not standard shingles.</li><li>Rafter length here stops at the outside wall line. Add your overhang separately.</li></ul>
 
@@ -102,7 +103,7 @@
       <ul><li><a href="roofing-squares-and-bundles-guide.html">Roofing Squares and Bundles: How to Estimate Shingles Without Guessing</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="roofing-calculator.html"><strong>Roofing Calculator</strong><span>Shingle bundles from your roof footprint and pitch.</span></a><a class="calc-card" href="siding-calculator.html"><strong>Siding Calculator</strong><span>Panels or squares of siding for a house.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a></div>
-    <p class="cat-more"><a href="index.html#measure">More measuring & area calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -110,8 +111,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -132,7 +133,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "roof-pitch", title: "Roof Pitch Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "roof-pitch", title: "Roof Pitch Calculator", calc: function (v) {
 var run=v.run||12,m=Math.sqrt(1+Math.pow(v.rise/run,2)),p=v.rise/run*12;
 var ps=(Math.round(p*100)/100)+'/12';
 return {rows:[['Angle',Math.atan(v.rise/run)*180/Math.PI,'degrees',2],['Slope',v.rise/run*100,'%',1],['Roof area multiplier',m,'x',3],['Rafter length',v.span*m,'ft',2]],total:['Pitch',ps,'',0]};

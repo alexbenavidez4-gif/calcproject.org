@@ -89,7 +89,8 @@
     <h3>Worked example</h3>
     <p>A 15 &times; 12 ft bedroom is 180 sq ft. The chart calls for 6,000 BTU per hour for 150 to 250 sq ft, and with average sun and two people no adjustment is needed.</p>
     <p class="source">Source: <a href="https://www.energystar.gov/productfinder/product/certified-room-air-conditioners/" rel="noopener" target="_blank">ENERGY STAR: room air conditioner sizing chart</a></p>
-      <h2>Good to know</h2>
+      
+    <h2>Good to know</h2>
     <ul><li>Bigger is not better. An oversized unit cools fast, shuts off before it removes humidity, and leaves the room clammy.</li><li>Open floor plans count as one room. Include every connected space with no door.</li><li>This chart is for room air conditioners. Whole-house central systems need a contractor load calculation (Manual J).</li></ul>
 
     <h2>Common questions</h2>
@@ -102,7 +103,7 @@
       
     <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="electricity-cost-calculator.html"><strong>Electricity Cost Calculator</strong><span>What an appliance costs to run per day, month, and year.</span></a><a class="calc-card" href="insulation-calculator.html"><strong>Insulation Calculator</strong><span>Packages of batt or roll insulation for an attic, wall, or floor.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="generator-size-calculator.html"><strong>Generator Size Calculator</strong><span>Running and starting watts for a power outage.</span></a></div>
-    <p class="cat-more"><a href="index.html#electrical">More electrical & cooling calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -110,8 +111,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -132,7 +133,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "air-conditioner-btu", title: "Air Conditioner BTU Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "air-conditioner-btu", title: "Air Conditioner BTU Calculator", calc: function (v) {
 var a=v.length*v.width,T=[[150,5000],[250,6000],[300,7000],[350,8000],[400,9000],[450,10000],[550,12000],[700,14000],[1000,18000],[1200,21000],[1400,23000],[1500,24000],[2000,30000],[2500,34000]],b=34000,i;
 for(i=0;i<T.length;i++){ if(a<=T[i][0]){ b=T[i][1]; break; } }
 var h=v.height>8?v.height/8:1,btu=b*h*(v.sun||1)+Math.max(v.people-2,0)*600+(v.kitchen||0);

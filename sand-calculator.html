@@ -87,6 +87,7 @@
     <p class="formula">Cubic yards = length (ft) &times; width (ft) &times; depth (in) &divide; 12 &divide; 27. Tons = cubic yards &times; 1.35. Bags = tons &times; 2,000 &divide; 50.</p>
     <h3>Worked example</h3>
     <p>A 12 &times; 10 ft paver bed with 1 inch of sand needs 0.37 cubic yards, which is 0.5 tons or 20 bags of 50 lb sand.</p>
+    
     <h2>Good to know</h2>
     <ul><li>Wet sand weighs more, up to about 1.6 tons per cubic yard.</li><li>Use coarse concrete sand under pavers, not fine play sand.</li><li>A 50 lb bag of sand is about half a cubic foot.</li></ul>
 
@@ -100,7 +101,7 @@
       
     <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="paver-calculator.html"><strong>Paver Calculator</strong><span>Pavers, gravel base, and bedding sand for a patio or walkway.</span></a><a class="calc-card" href="gravel-calculator.html"><strong>Gravel Calculator</strong><span>Tons and cubic yards of gravel for a driveway, path, or base.</span></a><a class="calc-card" href="cubic-yard-calculator.html"><strong>Cubic Yard Calculator</strong><span>Turn length, width, and depth into cubic yards.</span></a><a class="calc-card" href="concrete-calculator.html"><strong>Concrete Calculator</strong><span>Cubic yards and bags of concrete for a slab or pad.</span></a></div>
-    <p class="cat-more"><a href="index.html#yard">More yard & garden calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -108,8 +109,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
-  <p>Free online calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -130,7 +131,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "sand", title: "Sand Calculator", label: "Estimate", calc: function (v) {
+window.CP_CALC = { id: "sand", title: "Sand Calculator", calc: function (v) {
 var cy=v.length*v.width*(v.depth/12)/27,t=cy*(v.density||1.35);
 return {rows:[['Volume',cy,'cuyd',2],['50 lb bags',Math.ceil(t*2000/50),'bags',0]],total:['Buy',t,'ton',2]};
 } };
