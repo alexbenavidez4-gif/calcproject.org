@@ -90,7 +90,6 @@
     <p class="formula">Posts = (fence length &divide; spacing) + 1, panels = fence length &divide; panel width.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="120 linear ft with 8 ft spacing needs 16 posts and 15 panels." data-met="36.6 linear meters with 2.4 m spacing needs 16 posts and 15 panels.">120 linear ft with 8 ft spacing needs 16 posts and 15 panels.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>Call 811 before you dig so buried utilities get marked.</li><li>Check your property line and any HOA or city height rules before you buy.</li><li>Each gate needs two posts of its own, usually heavier than line posts.</li></ul>
 
@@ -106,7 +105,7 @@
       <ul><li><a href="fence-post-depth-guide.html">Fence Post Depth and Spacing: What Actually Holds Up</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="post-hole-concrete-calculator.html"><strong>Post Hole Concrete Calculator</strong><span>Bags of concrete for fence posts, deck posts, and mailboxes.</span></a><a class="calc-card" href="deck-stain-calculator.html"><strong>Deck Stain Calculator</strong><span>Gallons of stain or sealer for a deck, with railings.</span></a><a class="calc-card" href="deck-calculator.html"><strong>Deck Calculator</strong><span>Decking boards for the deck surface, with gap spacing.</span></a><a class="calc-card" href="gravel-calculator.html"><strong>Gravel Calculator</strong><span>Tons and cubic yards of gravel for a driveway, path, or base.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#exterior">More decks, fences & exterior calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -114,8 +113,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -136,7 +135,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "fence", title: "Fence Calculator", calc: function (v) {
+window.CP_CALC = { id: "fence", title: "Fence Calculator", label: "Estimate", calc: function (v) {
 var posts=Math.ceil(v.length/(v.postspacing||8))+1;
 return {rows:[['Posts needed',posts,'',0]],total:['Buy',Math.ceil(v.length/(v.panelwidth||8)),'panels',0]};
 } };

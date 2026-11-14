@@ -93,7 +93,6 @@
     <p class="formula">Volume &times; density gives total weight.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 20&times;10 ft path at 4 inches deep needs about 3.5 tons of gravel." data-met="a 6.1&times;3 m path at 10.2 cm deep needs about 3.2 tonnes of gravel.">a 20&times;10 ft path at 4 inches deep needs about 3.5 tons of gravel.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>Crushed stone packs to about 1.4 tons per cubic yard. Pea gravel and river rock run closer to 1.3 to 1.5.</li><li>A new driveway is built in layers: larger stone on the bottom, finer stone on top. Run the calculator once per layer.</li><li>Most suppliers have a delivery minimum. Ask before you order a small load.</li></ul>
 
@@ -109,7 +108,7 @@
       <ul><li><a href="gravel-sizes-guide.html">Gravel Sizes Explained: Which Size to Use for Driveways, Paths, and Drainage</a></li><li><a href="gravel-vs-mulch-guide.html">Gravel vs. Mulch — Which Is Right for Your Yard?</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="sand-calculator.html"><strong>Sand Calculator</strong><span>Tons, yards, and 50 lb bags of sand.</span></a><a class="calc-card" href="paver-calculator.html"><strong>Paver Calculator</strong><span>Pavers, gravel base, and bedding sand for a patio or walkway.</span></a><a class="calc-card" href="cubic-yard-calculator.html"><strong>Cubic Yard Calculator</strong><span>Turn length, width, and depth into cubic yards.</span></a><a class="calc-card" href="mulch-calculator.html"><strong>Mulch Calculator</strong><span>Bags and cubic yards of mulch for beds and borders.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#yard">More yard & garden calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -117,8 +116,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -139,7 +138,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "gravel", title: "Gravel Calculator", calc: function (v) {
+window.CP_CALC = { id: "gravel", title: "Gravel Calculator", label: "Estimate", calc: function (v) {
 var cy=v.length*v.width*(v.depth/12)/27;
 return {rows:[['Volume',cy,'cuyd',2]],total:['Buy',cy*(v.tonsperyard||1.4),'ton',1]};
 } };

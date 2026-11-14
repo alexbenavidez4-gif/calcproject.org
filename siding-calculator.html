@@ -97,7 +97,6 @@
     <p class="formula">Perimeter &times; wall height, minus door and window area, plus waste, divided by panel coverage.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 160 linear ft home with 9 ft walls, two doors, and eight windows needs about 92 panels at 16 sq ft each." data-met="a 48.8 linear meter home with 2.7 m walls, two doors, and eight windows needs about 92 panels at 1.5 m&sup2; each.">a 160 linear ft home with 9 ft walls, two doors, and eight windows needs about 92 panels at 16 sq ft each.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>Gable ends are triangles. Add half of the gable width times its height to your area.</li><li>Siding is often sold by the square, which is 100 square feet.</li><li>You also need starter strip, J-channel, corner posts, and trim. These are sold by the linear foot.</li></ul>
 
@@ -113,7 +112,7 @@
       <ul><li><a href="siding-estimating-guide.html">How to Estimate Siding: Squares, Gables, Windows, and Waste</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="roofing-calculator.html"><strong>Roofing Calculator</strong><span>Shingle bundles from your roof footprint and pitch.</span></a><a class="calc-card" href="paint-calculator.html"><strong>Paint Calculator</strong><span>Gallons of paint for a room, with doors, windows, and coats.</span></a><a class="calc-card" href="insulation-calculator.html"><strong>Insulation Calculator</strong><span>Packages of batt or roll insulation for an attic, wall, or floor.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#exterior">More decks, fences & exterior calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -121,8 +120,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -143,7 +142,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "siding", title: "Siding Calculator", calc: function (v) {
+window.CP_CALC = { id: "siding", title: "Siding Calculator", label: "Estimate", calc: function (v) {
 var net=Math.max(v.perimeter*v.height-v.doors*21-v.windows*15,0),t=net*(1+v.waste/100);
 return {rows:[['Net wall area',net,'sqft',0],['Siding squares',t/100,'squares',1,'imp']],total:['Buy',Math.ceil(t/(v.coverage||16)),'panels',0]};
 } };

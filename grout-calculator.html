@@ -89,7 +89,6 @@
     <p class="formula">Joint volume per square foot = 144 &times; (tile length + tile width) &divide; (tile length &times; tile width) &times; joint width &times; tile thickness, in cubic inches. That is multiplied by about 0.058 lb per cubic inch for cement grout, then by your area and waste.</p>
     <h3>Worked example</h3>
     <p>For 12 &times; 12 inch tile, 3/8 inch thick, with 1/8 inch joints, grout runs about 0.065 lb per square foot. Over 100 sq ft with 10 percent waste that is about 7.2 lb, so one 25 lb bag is plenty.</p>
-    
     <h2>Good to know</h2>
     <ul><li>Small tile and mosaics use far more grout than large tile because there are more joints per square foot.</li><li>Use unsanded grout for joints narrower than 1/8 inch and sanded grout for wider joints.</li><li>Coverage varies by brand. Check the chart on the bag before you buy, and get one extra bag from the same color lot.</li></ul>
 
@@ -105,7 +104,7 @@
       <ul><li><a href="tile-layout-mistakes-guide.html">Tile Layout Mistakes That Cost You Extra Boxes</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="tile-calculator.html"><strong>Tile Calculator</strong><span>Tiles for a floor, wall, shower, or backsplash.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="paver-calculator.html"><strong>Paver Calculator</strong><span>Pavers, gravel base, and bedding sand for a patio or walkway.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#floors">More flooring, tile & stairs calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -113,8 +112,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -135,7 +134,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "grout", title: "Grout Calculator", calc: function (v) {
+window.CP_CALC = { id: "grout", title: "Grout Calculator", label: "Estimate", calc: function (v) {
 var L=v.tilelen||1,W=v.tilewid||1,per=144*((L+W)/(L*W))*v.joint*v.thick*0.0578,lb=per*v.area*(1+v.waste/100);
 return {rows:[['Grout per square foot',per,'lb',3],['Grout needed',lb,'lb',1]],total:['Buy',Math.max(Math.ceil(lb/(v.bag||25)),lb>0?1:0),'bags',0]};
 } };

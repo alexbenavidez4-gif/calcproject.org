@@ -88,7 +88,6 @@
     <p class="formula">Studs = wall length (in) &divide; spacing, rounded up, plus 1 for the end. Add 2 studs for each corner or wall end and 2 for each door or window, then add waste. Plates = wall length &times; 3 (one bottom plate and a double top plate).</p>
     <h3>Worked example</h3>
     <p>A 20 ft wall at 16 inches on center needs 240 &divide; 16 + 1 = 16 studs. Two corners and one doorway add 6 more, for 22. With 10 percent waste, buy 25 studs and 60 linear feet of plate.</p>
-    
     <h2>Good to know</h2>
     <ul><li>Use pressure-treated lumber for any bottom plate that sits on concrete.</li><li>Headers, cripples, and sills for wide openings are extra. Add them from your plan.</li><li>A quick check used by framers: one stud per linear foot of wall covers studs, corners, and openings at 16 inches on center.</li></ul>
 
@@ -102,7 +101,7 @@
       
     <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="drywall-calculator.html"><strong>Drywall Calculator</strong><span>Sheets of drywall for the walls of a room.</span></a><a class="calc-card" href="insulation-calculator.html"><strong>Insulation Calculator</strong><span>Packages of batt or roll insulation for an attic, wall, or floor.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#walls">More paint, walls & insulation calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -110,8 +109,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -132,7 +131,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "wall-framing", title: "Wall Framing Calculator", calc: function (v) {
+window.CP_CALC = { id: "wall-framing", title: "Wall Framing Calculator", label: "Estimate", calc: function (v) {
 var base=Math.ceil(v.length*12/(v.spacing||16))+1,extra=v.corners*2+v.openings*2,tot=Math.ceil((base+extra)*(1+v.waste/100));
 return {rows:[['Studs along the wall',base,'',0],['Extra for corners and openings',extra,'',0],['Top and bottom plates',v.length*3,'ft',1]],total:['Buy',tot,'studs',0]};
 } };

@@ -87,7 +87,6 @@
     <p class="formula">Volume = length (ft) &times; width (ft) &times; depth (in) &divide; 12, in cubic feet. Divide by 27 for cubic yards, or by the bag size for bags.</p>
     <h3>Worked example</h3>
     <p>A 20 &times; 10 ft area filled 4 inches deep needs 66.7 cubic feet, which is 2.47 cubic yards or 89 bags of 0.75 cubic foot topsoil.</p>
-    
     <h2>Good to know</h2>
     <ul><li>At this size, bulk delivery is far cheaper than bags. One cubic yard equals 36 bags of 0.75 cubic foot soil.</li><li>A cubic yard of topsoil weighs roughly 2,000 to 2,700 lb depending on moisture. Do not overload a pickup.</li><li>Soil settles after watering. Order about 10 percent extra.</li></ul>
 
@@ -103,7 +102,7 @@
       <ul><li><a href="mulch-and-topsoil-depth-guide.html">Mulch and Topsoil Depth: How Many Cubic Yards or Bags You Really Need</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="mulch-calculator.html"><strong>Mulch Calculator</strong><span>Bags and cubic yards of mulch for beds and borders.</span></a><a class="calc-card" href="raised-bed-soil-calculator.html"><strong>Raised Bed Soil Calculator</strong><span>Soil to fill one or more raised garden beds.</span></a><a class="calc-card" href="sod-calculator.html"><strong>Sod Calculator</strong><span>Pallets of sod for a new lawn.</span></a><a class="calc-card" href="grass-seed-calculator.html"><strong>Grass Seed Calculator</strong><span>Pounds of grass seed for a new lawn or overseeding.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#yard">More yard & garden calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -111,8 +110,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -133,7 +132,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "topsoil", title: "Topsoil Calculator", calc: function (v) {
+window.CP_CALC = { id: "topsoil", title: "Topsoil Calculator", label: "Estimate", calc: function (v) {
 var cf=v.length*v.width*(v.depth/12);
 return {rows:[['Volume needed',cf,'cuft',1],['In cubic yards',cf/27,'cuyd',2]],total:['Buy',Math.ceil(cf/(v.bagsize||0.75)),'bags',0]};
 } };

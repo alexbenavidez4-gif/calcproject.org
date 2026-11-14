@@ -88,7 +88,6 @@
     <p class="formula">Blocks per row = wall length (in) &divide; block length, rounded up. Rows = wall height (in) &divide; block height, rounded up, plus one buried base row. Blocks = blocks per row &times; rows. Caps = one row.</p>
     <h3>Worked example</h3>
     <p>A 20 ft long, 3 ft tall wall with 16 &times; 6 inch blocks needs 15 blocks per row and 6 rows above ground plus 1 buried row: 105 blocks and 15 caps.</p>
-    
     <h2>Good to know</h2>
     <ul><li>Dig a trench and lay 4 to 6 inches of compacted gravel under the first row.</li><li>Backfill behind the wall with drainage gravel and a perforated pipe so water pressure does not push it over.</li><li>Tapered blocks used on curves need the cap count checked against the manufacturer chart.</li></ul>
 
@@ -104,7 +103,7 @@
       <ul><li><a href="gravel-sizes-guide.html">Gravel Sizes Explained: Which Size to Use for Driveways, Paths, and Drainage</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="concrete-block-calculator.html"><strong>Concrete Block Calculator</strong><span>Cinder blocks and mortar bags for a block wall.</span></a><a class="calc-card" href="gravel-calculator.html"><strong>Gravel Calculator</strong><span>Tons and cubic yards of gravel for a driveway, path, or base.</span></a><a class="calc-card" href="paver-calculator.html"><strong>Paver Calculator</strong><span>Pavers, gravel base, and bedding sand for a patio or walkway.</span></a><a class="calc-card" href="topsoil-calculator.html"><strong>Topsoil Calculator</strong><span>Cubic yards and bags of topsoil, garden soil, or compost.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#concrete">More concrete & masonry calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -112,8 +111,8 @@
 <div class="ruler" role="presentation"></div>
 
 <footer>
-  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#finance">Loans, Savings &amp; Money</a> <a href="index.html#business">Business &amp; Pricing</a> <a href="index.html#percent">Percent, Fractions &amp; Numbers</a> <a href="index.html#geometry">Geometry</a> <a href="index.html#stats">Statistics &amp; Probability</a> <a href="index.html#math">Math Tools</a> <a href="index.html#physics">Physics &amp; Science</a> <a href="index.html#convert">Unit Converters</a> <a href="index.html#time">Time &amp; Date</a> <a href="index.html#health">Health &amp; Fitness</a> <a href="index.html#everyday">Everyday &amp; School</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -134,7 +133,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "retaining-wall", title: "Retaining Wall Calculator", calc: function (v) {
+window.CP_CALC = { id: "retaining-wall", title: "Retaining Wall Calculator", label: "Estimate", calc: function (v) {
 var per=Math.ceil(v.length*12/(v.blocklen||16)),rows=Math.ceil(v.height*12/(v.blockht||6))+(v.buried?1:0);
 var note=v.height>4?'Walls over about 4 ft usually need an engineer and a permit.':'';
 return {rows:[['Blocks per row',per,'',0],['Rows, including buried row',rows,'',0],['Cap blocks',v.caps?per:0,'',0]],total:['Buy',per*rows,'blocks',0],note:note};
