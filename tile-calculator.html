@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tile Calculator: How Many Tiles Do I Need?</title>
+<meta name="description" content="Free tile calculator for floors, walls, and backsplashes. Enter the area and your tile size to get the number of tiles to buy, with waste.">
+<link rel="canonical" href="https://calcproject.org/tile-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Tile Calculator: How Many Tiles Do I Need?">
+<meta property="og:description" content="Free tile calculator for floors, walls, and backsplashes. Enter the area and your tile size to get the number of tiles to buy, with waste.">
+<meta property="og:url" content="https://calcproject.org/tile-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Tile Calculator", "url": "https://calcproject.org/tile-calculator.html", "description": "Free tile calculator for floors, walls, and backsplashes. Enter the area and your tile size to get the number of tiles to buy, with waste.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Flooring, Tile & Stairs", "item": "https://calcproject.org/index.html#floors"}, {"@type": "ListItem", "position": 3, "name": "Tile Calculator", "item": "https://calcproject.org/tile-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many 12x12 tiles do I need for 100 square feet?", "acceptedAnswer": {"@type": "Answer", "text": "Each 12 × 12 inch tile covers 1 square foot, so 100 tiles plus 10 percent waste: 110 tiles."}}, {"@type": "Question", "name": "How much extra tile should I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Ten percent for straight layouts, 15 percent for diagonal patterns or rooms with many cuts, and up to 20 percent for herringbone."}}, {"@type": "Question", "name": "How do I calculate tiles per square foot?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the tile length by its width in inches and divide 144 by the result. A 6 × 24 inch plank covers 1 square foot, so you need 1 per square foot."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> &rsaquo; <span>Tile Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Tile Calculator</h1>
+  <p class="lead">Enter the area and your exact tile size to see how many tiles a floor, wall, or backsplash needs, with waste for cuts and breakage.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Tile Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Tile</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="t-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="t-length" min="0" step="0.1" value="10" data-factor="0.3048"></div>
+          <div class="field"><label for="t-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="t-width" min="0" step="0.1" value="8" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="t-tilelen">Tile length (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="t-tilelen" min="0.1" step="0.1" value="12" data-factor="2.54"></div>
+          <div class="field"><label for="t-tilewid">Tile width (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="t-tilewid" min="0.1" step="0.1" value="12" data-factor="2.54"></div>
+        </div>
+        <div class="field"><label for="t-waste">Waste allowance <span class="hint">(% for cuts &amp; breakage)</span></label><input type="number" id="t-waste" min="0" step="1" value="10"></div>
+        <button type="button" class="calc-btn">Calculate tiles</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the tile calculator</h2>
+    <ol><li>Measure the length and width of the area to tile.</li><li>Enter the tile length and width in inches.</li><li>Set the waste allowance: 10 percent for a straight grid, 15 percent for diagonal or large-format tile.</li><li>Divide the tile count by the tiles per box to get boxes.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Area = length &times; width, plus waste, divided by the square footage of one tile.</p>
+    <h3>Worked example</h3>
+    <p>For example, <span class="u" data-imp="a 10&times;8 ft floor with 12&times;12 in tiles and 10% waste needs about 88 tiles." data-met="a 3&times;2.4 m floor with 30&times;30 cm tiles and 10% waste needs about 88 tiles.">a 10&times;8 ft floor with 12&times;12 in tiles and 10% waste needs about 88 tiles.</span></p>
+    
+    <h2>Good to know</h2>
+    <ul><li>For a backsplash, enter the counter run as the length and the height in feet as the width. Eighteen inches is 1.5 ft.</li><li>Large tiles in small rooms waste more because every edge tile is cut.</li><li>Keep a few spare tiles. Matching a discontinued tile later is nearly impossible.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How many 12x12 tiles do I need for 100 square feet?</h3>
+      <p>Each 12 &times; 12 inch tile covers 1 square foot, so 100 tiles plus 10 percent waste: 110 tiles.</p>
+      <h3>How much extra tile should I buy?</h3>
+      <p>Ten percent for straight layouts, 15 percent for diagonal patterns or rooms with many cuts, and up to 20 percent for herringbone.</p>
+      <h3>How do I calculate tiles per square foot?</h3>
+      <p>Multiply the tile length by its width in inches and divide 144 by the result. A 6 &times; 24 inch plank covers 1 square foot, so you need 1 per square foot.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="tile-layout-mistakes-guide.html">Tile Layout Mistakes That Cost You Extra Boxes</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="grout-calculator.html"><strong>Grout Calculator</strong><span>Pounds and bags of grout from tile size and joint width.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="baseboard-trim-calculator.html"><strong>Baseboard &amp; Trim Calculator</strong><span>Linear feet and boards of baseboard or crown molding.</span></a></div>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "tile", title: "Tile Calculator", calc: function (v) {
+var a=v.length*v.width,t=a*(1+v.waste/100),per=((v.tilelen||1)*(v.tilewid||1))/144;
+return {rows:[['Area to cover',a,'sqft',1],['With waste',t,'sqft',1]],total:['Buy',Math.ceil(t/per),'tiles',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

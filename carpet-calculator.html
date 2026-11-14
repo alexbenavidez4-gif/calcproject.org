@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpet Calculator: Square Feet and Square Yards</title>
+<meta name="description" content="Free carpet calculator. Enter room length and width to get the square feet and square yards of carpet and pad to buy, with waste included.">
+<link rel="canonical" href="https://calcproject.org/carpet-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Carpet Calculator: Square Feet and Square Yards">
+<meta property="og:description" content="Free carpet calculator. Enter room length and width to get the square feet and square yards of carpet and pad to buy, with waste included.">
+<meta property="og:url" content="https://calcproject.org/carpet-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Carpet Calculator", "url": "https://calcproject.org/carpet-calculator.html", "description": "Free carpet calculator. Enter room length and width to get the square feet and square yards of carpet and pad to buy, with waste included.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Flooring, Tile & Stairs", "item": "https://calcproject.org/index.html#floors"}, {"@type": "ListItem", "position": 3, "name": "Carpet Calculator", "item": "https://calcproject.org/carpet-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert square feet to square yards of carpet?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the square feet by 9. A 180 square foot room is 20 square yards."}}, {"@type": "Question", "name": "How much extra carpet should I order?", "acceptedAnswer": {"@type": "Answer", "text": "Add about 10 percent. Add more for patterned carpet or rooms wider than the roll."}}, {"@type": "Question", "name": "How wide is a roll of carpet?", "acceptedAnswer": {"@type": "Answer", "text": "Most residential carpet is 12 feet wide. Some styles also come in 13.5 and 15 foot widths."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> &rsaquo; <span>Carpet Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Carpet Calculator</h1>
+  <p class="lead">Carpet is priced by the square yard or square foot. Enter the room size to get both, with a waste allowance for seams and trimming.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Carpet Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Carpet</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="0.1" value="14" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-width" min="0" step="0.1" value="12" data-factor="0.3048" inputmode="decimal"></div></div>
+        <div class="field"><label for="c-waste">Waste allowance (%)</label><input type="number" id="c-waste" min="0" step="1" value="10" inputmode="decimal"></div>
+        <button type="button" class="calc-btn">Calculate carpet</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the carpet calculator</h2>
+    <ol><li>Measure the room at its widest and longest points, into doorways.</li><li>Add closets as part of the room if they get the same carpet.</li><li>Use the same square yards for the carpet pad.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Square yards = room length (ft) &times; width (ft), plus waste, divided by 9.</p>
+    <h3>Worked example</h3>
+    <p>A 14 &times; 12 ft room is 168 sq ft. With 10 percent waste that is 184.8 sq ft, or 20.53 square yards of carpet and pad.</p>
+    
+    <h2>Good to know</h2>
+    <ul><li>Carpet comes in rolls 12 ft wide, sometimes 15 ft. A room wider than the roll needs a seam and more waste.</li><li>Patterned carpet needs extra length so the pattern lines up at seams.</li><li>For stairs, plan about 1 square yard for every 2 steps on a standard 3 ft wide stair.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How do I convert square feet to square yards of carpet?</h3>
+      <p>Divide the square feet by 9. A 180 square foot room is 20 square yards.</p>
+      <h3>How much extra carpet should I order?</h3>
+      <p>Add about 10 percent. Add more for patterned carpet or rooms wider than the roll.</p>
+      <h3>How wide is a roll of carpet?</h3>
+      <p>Most residential carpet is 12 feet wide. Some styles also come in 13.5 and 15 foot widths.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="how-to-measure-a-room-guide.html">How to Measure a Room for Square Footage (Even If It&#x27;s Not a Rectangle)</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="stair-calculator.html"><strong>Stair Calculator</strong><span>Number of steps, riser height, total run, and stringer length.</span></a><a class="calc-card" href="baseboard-trim-calculator.html"><strong>Baseboard &amp; Trim Calculator</strong><span>Linear feet and boards of baseboard or crown molding.</span></a></div>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "carpet", title: "Carpet Calculator", calc: function (v) {
+var a=v.length*v.width,t=a*(1+v.waste/100);
+return {rows:[['Room area',a,'sqft',1],['With waste',t,'sqft',1]],total:['Buy',t/9,'sqyd',2]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

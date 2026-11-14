@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topsoil Calculator: Cubic Yards and Bags of Soil</title>
+<meta name="description" content="Free topsoil calculator. Enter length, width, and depth to get cubic yards of topsoil, garden soil, or compost and the number of bags to buy.">
+<link rel="canonical" href="https://calcproject.org/topsoil-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Topsoil Calculator: Cubic Yards and Bags of Soil">
+<meta property="og:description" content="Free topsoil calculator. Enter length, width, and depth to get cubic yards of topsoil, garden soil, or compost and the number of bags to buy.">
+<meta property="og:url" content="https://calcproject.org/topsoil-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Topsoil Calculator", "url": "https://calcproject.org/topsoil-calculator.html", "description": "Free topsoil calculator. Enter length, width, and depth to get cubic yards of topsoil, garden soil, or compost and the number of bags to buy.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Yard & Garden", "item": "https://calcproject.org/index.html#yard"}, {"@type": "ListItem", "position": 3, "name": "Topsoil Calculator", "item": "https://calcproject.org/topsoil-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much topsoil do I need for a new lawn?", "acceptedAnswer": {"@type": "Answer", "text": "Four to 6 inches of good topsoil. For 1,000 square feet at 4 inches that is about 12.3 cubic yards."}}, {"@type": "Question", "name": "How many bags of topsoil are in a cubic yard?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty-six bags of 0.75 cubic foot soil, 27 bags of 1 cubic foot, or 18 bags of 1.5 cubic feet."}}, {"@type": "Question", "name": "How much does a cubic yard of topsoil cover?", "acceptedAnswer": {"@type": "Answer", "text": "About 81 square feet at 4 inches deep, 108 square feet at 3 inches, or 324 square feet at 1 inch."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#yard">Yard &amp; Garden</a> &rsaquo; <span>Topsoil Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Topsoil Calculator</h1>
+  <p class="lead">Enter the area and depth to see how much topsoil, garden soil, or compost you need, in cubic yards for delivery or bags for the store.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Topsoil Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Topsoil</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="0.1" value="20" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-width" min="0" step="0.1" value="10" data-factor="0.3048" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field"><label for="c-depth">Depth (<span class="u" data-imp="in" data-met="cm">in</span>)</label><input type="number" id="c-depth" min="0" step="0.5" value="4" data-factor="2.54" inputmode="decimal"></div><div class="field"><label for="c-bagsize">Bag size (<span class="u" data-imp="cu ft" data-met="L">cu ft</span>)</label><input type="number" id="c-bagsize" min="0" step="0.05" value="0.75" data-factor="28.316846592" inputmode="decimal"></div></div>
+        <button type="button" class="calc-btn">Calculate topsoil</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the topsoil calculator</h2>
+    <ol><li>Measure the length and width of the area in feet.</li><li>Enter the depth: 4 to 6 inches for a new lawn, 1/4 to 1/2 inch for top-dressing.</li><li>Enter the bag size. Bagged topsoil is commonly 0.75 or 1 cubic foot.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Volume = length (ft) &times; width (ft) &times; depth (in) &divide; 12, in cubic feet. Divide by 27 for cubic yards, or by the bag size for bags.</p>
+    <h3>Worked example</h3>
+    <p>A 20 &times; 10 ft area filled 4 inches deep needs 66.7 cubic feet, which is 2.47 cubic yards or 89 bags of 0.75 cubic foot topsoil.</p>
+    
+    <h2>Good to know</h2>
+    <ul><li>At this size, bulk delivery is far cheaper than bags. One cubic yard equals 36 bags of 0.75 cubic foot soil.</li><li>A cubic yard of topsoil weighs roughly 2,000 to 2,700 lb depending on moisture. Do not overload a pickup.</li><li>Soil settles after watering. Order about 10 percent extra.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How much topsoil do I need for a new lawn?</h3>
+      <p>Four to 6 inches of good topsoil. For 1,000 square feet at 4 inches that is about 12.3 cubic yards.</p>
+      <h3>How many bags of topsoil are in a cubic yard?</h3>
+      <p>Thirty-six bags of 0.75 cubic foot soil, 27 bags of 1 cubic foot, or 18 bags of 1.5 cubic feet.</p>
+      <h3>How much does a cubic yard of topsoil cover?</h3>
+      <p>About 81 square feet at 4 inches deep, 108 square feet at 3 inches, or 324 square feet at 1 inch.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="mulch-and-topsoil-depth-guide.html">Mulch and Topsoil Depth: How Many Cubic Yards or Bags You Really Need</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="mulch-calculator.html"><strong>Mulch Calculator</strong><span>Bags and cubic yards of mulch for beds and borders.</span></a><a class="calc-card" href="raised-bed-soil-calculator.html"><strong>Raised Bed Soil Calculator</strong><span>Soil to fill one or more raised garden beds.</span></a><a class="calc-card" href="sod-calculator.html"><strong>Sod Calculator</strong><span>Pallets of sod for a new lawn.</span></a><a class="calc-card" href="grass-seed-calculator.html"><strong>Grass Seed Calculator</strong><span>Pounds of grass seed for a new lawn or overseeding.</span></a></div>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "topsoil", title: "Topsoil Calculator", calc: function (v) {
+var cf=v.length*v.width*(v.depth/12);
+return {rows:[['Volume needed',cf,'cuft',1],['In cubic yards',cf/27,'cuyd',2]],total:['Buy',Math.ceil(cf/(v.bagsize||0.75)),'bags',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

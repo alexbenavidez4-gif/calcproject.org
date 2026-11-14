@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concrete Block Calculator: CMU Blocks and Mortar</title>
+<meta name="description" content="Free concrete block calculator. Enter wall length and height to get the number of 8x8x16 cinder blocks and bags of mortar to buy.">
+<link rel="canonical" href="https://calcproject.org/concrete-block-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Concrete Block Calculator: CMU Blocks and Mortar">
+<meta property="og:description" content="Free concrete block calculator. Enter wall length and height to get the number of 8x8x16 cinder blocks and bags of mortar to buy.">
+<meta property="og:url" content="https://calcproject.org/concrete-block-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Concrete Block Calculator", "url": "https://calcproject.org/concrete-block-calculator.html", "description": "Free concrete block calculator. Enter wall length and height to get the number of 8x8x16 cinder blocks and bags of mortar to buy.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Concrete & Masonry", "item": "https://calcproject.org/index.html#concrete"}, {"@type": "ListItem", "position": 3, "name": "Concrete Block Calculator", "item": "https://calcproject.org/concrete-block-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many concrete blocks do I need per square foot?", "acceptedAnswer": {"@type": "Answer", "text": "For standard 8x8x16 block, 1.125 blocks per square foot of wall, or 112.5 blocks per 100 square feet."}}, {"@type": "Question", "name": "How many blocks are in a pallet?", "acceptedAnswer": {"@type": "Answer", "text": "A pallet of standard 8x8x16 block usually holds 72 to 90 blocks, depending on the supplier."}}, {"@type": "Question", "name": "Do I need to fill the blocks with concrete?", "acceptedAnswer": {"@type": "Answer", "text": "Structural and retaining walls usually need rebar and grout in some or all cores. Check local code and an engineer for any wall that holds back soil or supports a roof."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#concrete">Concrete &amp; Masonry</a> &rsaquo; <span>Concrete Block Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Concrete Block Calculator</h1>
+  <p class="lead">Enter the wall size to get the number of concrete blocks (CMU or cinder blocks) and an estimate of the mortar to lay them.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Concrete Block Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Block Wall</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Wall length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="0.1" value="20" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-height">Wall height (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-height" min="0" step="0.1" value="8" data-factor="0.3048" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field"><label for="c-blocklen">Block length (<span class="u" data-imp="in" data-met="cm">in</span>) <span class="hint">(with mortar joint)</span></label><input type="number" id="c-blocklen" min="0" step="0.1" value="16" data-factor="2.54" inputmode="decimal"></div><div class="field"><label for="c-blockht">Block height (<span class="u" data-imp="in" data-met="cm">in</span>) <span class="hint">(with mortar joint)</span></label><input type="number" id="c-blockht" min="0" step="0.1" value="8" data-factor="2.54" inputmode="decimal"></div></div>
+        <div class="field"><label for="c-waste">Waste allowance (%)</label><input type="number" id="c-waste" min="0" step="1" value="5" inputmode="decimal"></div>
+        <button type="button" class="calc-btn">Calculate blocks</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the concrete block calculator</h2>
+    <ol><li>Measure the wall length and height in feet.</li><li>Leave the block size at 16 &times; 8 inches for standard block, or change it for half-high or other sizes.</li><li>Subtract large door or window openings from the wall length if you want a tighter count.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Blocks = wall area (length &times; height) &divide; the face area of one block, plus waste. A standard block is 16 &times; 8 inches with its mortar joint, which is 0.89 sq ft, or 1.125 blocks per square foot. Mortar is estimated at one 80 lb bag of premixed mortar for every 12 blocks.</p>
+    <h3>Worked example</h3>
+    <p>A 20 &times; 8 ft wall is 160 sq ft, which takes 180 standard blocks. With 5 percent waste, buy 189 blocks and about 16 bags of mortar mix.</p>
+    
+    <h2>Good to know</h2>
+    <ul><li>Block sizes are nominal. A block sold as 8x8x16 really measures 7 5/8 &times; 7 5/8 &times; 15 5/8 inches, and the 3/8 inch joint makes up the difference.</li><li>Block walls need a concrete footing, usually twice as wide as the wall.</li><li>Mortar use varies with joint thickness and how much you drop. Check the yield printed on the bag.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How many concrete blocks do I need per square foot?</h3>
+      <p>For standard 8x8x16 block, 1.125 blocks per square foot of wall, or 112.5 blocks per 100 square feet.</p>
+      <h3>How many blocks are in a pallet?</h3>
+      <p>A pallet of standard 8x8x16 block usually holds 72 to 90 blocks, depending on the supplier.</p>
+      <h3>Do I need to fill the blocks with concrete?</h3>
+      <p>Structural and retaining walls usually need rebar and grout in some or all cores. Check local code and an engineer for any wall that holds back soil or supports a roof.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="brick-calculator.html"><strong>Brick Calculator</strong><span>Bricks and mortar for a wall, veneer, or garden border.</span></a><a class="calc-card" href="retaining-wall-calculator.html"><strong>Retaining Wall Calculator</strong><span>Blocks, rows, and caps for a garden or retaining wall.</span></a><a class="calc-card" href="concrete-calculator.html"><strong>Concrete Calculator</strong><span>Cubic yards and bags of concrete for a slab or pad.</span></a><a class="calc-card" href="rebar-calculator.html"><strong>Rebar Calculator</strong><span>Linear feet and number of bars for a slab grid.</span></a></div>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "concrete-block", title: "Concrete Block Calculator", calc: function (v) {
+var a=v.length*v.height,per=((v.blocklen||16)*(v.blockht||8))/144,n=Math.ceil(a/per*(1+v.waste/100));
+return {rows:[['Wall area',a,'sqft',1],['Mortar, 80 lb bags',Math.ceil(n/12),'bags',0]],total:['Buy',n,'blocks',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

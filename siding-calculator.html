@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siding Calculator: Square Feet and Panels of Siding</title>
+<meta name="description" content="Free siding calculator. Enter house perimeter, wall height, doors, and windows to get the square feet and number of siding panels to buy.">
+<link rel="canonical" href="https://calcproject.org/siding-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Siding Calculator: Square Feet and Panels of Siding">
+<meta property="og:description" content="Free siding calculator. Enter house perimeter, wall height, doors, and windows to get the square feet and number of siding panels to buy.">
+<meta property="og:url" content="https://calcproject.org/siding-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Siding Calculator", "url": "https://calcproject.org/siding-calculator.html", "description": "Free siding calculator. Enter house perimeter, wall height, doors, and windows to get the square feet and number of siding panels to buy.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Decks, Fences & Exterior", "item": "https://calcproject.org/index.html#exterior"}, {"@type": "ListItem", "position": 3, "name": "Siding Calculator", "item": "https://calcproject.org/siding-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate how much siding I need?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply the house perimeter by the wall height, subtract doors and windows, add gables, then add 10 to 15 percent for waste."}}, {"@type": "Question", "name": "What is a square of siding?", "acceptedAnswer": {"@type": "Answer", "text": "One square covers 100 square feet of wall. A house with 1,500 square feet of wall needs 15 squares before waste."}}, {"@type": "Question", "name": "How much siding waste should I allow?", "acceptedAnswer": {"@type": "Answer", "text": "Ten percent for a simple box-shaped house and 15 percent for houses with many gables, dormers, and windows."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> &rsaquo; <span>Siding Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Siding Calculator</h1>
+  <p class="lead">Turn your house perimeter and wall height into the siding to buy, with doors and windows subtracted and waste added.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Siding Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Siding</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="sd-perimeter">House perimeter <span class="u" data-imp="(linear ft)" data-met="(linear m)">(linear ft)</span></label><input type="number" id="sd-perimeter" min="0" step="1" value="160" data-factor="0.3048"></div>
+          <div class="field"><label for="sd-height">Avg. wall height (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="sd-height" min="0" step="0.5" value="9" data-factor="0.3048"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="sd-doors">Doors <span class="hint u" data-imp="(~21 sq ft each)" data-met="(~2 m&sup2; each)">(~21 sq ft each)</span></label><input type="number" id="sd-doors" min="0" step="1" value="2"></div>
+          <div class="field"><label for="sd-windows">Windows <span class="hint u" data-imp="(~15 sq ft each)" data-met="(~1.4 m&sup2; each)">(~15 sq ft each)</span></label><input type="number" id="sd-windows" min="0" step="1" value="8"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="sd-waste">Waste allowance (%)</label><input type="number" id="sd-waste" min="0" step="1" value="12"></div>
+          <div class="field"><label for="sd-coverage">Coverage per panel <span class="u" data-imp="(sq ft)" data-met="(m&sup2;)">(sq ft)</span></label><input type="number" id="sd-coverage" min="0.1" step="0.1" value="16" data-factor="0.09290304"></div>
+        </div>
+        <button type="button" class="calc-btn">Calculate siding</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the siding calculator</h2>
+    <ol><li>Walk the house and add the length of every outside wall for the perimeter.</li><li>Enter the average wall height from the foundation to the soffit.</li><li>Count the doors and windows.</li><li>Enter the coverage per panel from the product label, and a waste allowance of 10 to 15 percent.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Perimeter &times; wall height, minus door and window area, plus waste, divided by panel coverage.</p>
+    <h3>Worked example</h3>
+    <p>For example, <span class="u" data-imp="a 160 linear ft home with 9 ft walls, two doors, and eight windows needs about 92 panels at 16 sq ft each." data-met="a 48.8 linear meter home with 2.7 m walls, two doors, and eight windows needs about 92 panels at 1.5 m&sup2; each.">a 160 linear ft home with 9 ft walls, two doors, and eight windows needs about 92 panels at 16 sq ft each.</span></p>
+    
+    <h2>Good to know</h2>
+    <ul><li>Gable ends are triangles. Add half of the gable width times its height to your area.</li><li>Siding is often sold by the square, which is 100 square feet.</li><li>You also need starter strip, J-channel, corner posts, and trim. These are sold by the linear foot.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How do I calculate how much siding I need?</h3>
+      <p>Multiply the house perimeter by the wall height, subtract doors and windows, add gables, then add 10 to 15 percent for waste.</p>
+      <h3>What is a square of siding?</h3>
+      <p>One square covers 100 square feet of wall. A house with 1,500 square feet of wall needs 15 squares before waste.</p>
+      <h3>How much siding waste should I allow?</h3>
+      <p>Ten percent for a simple box-shaped house and 15 percent for houses with many gables, dormers, and windows.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="siding-estimating-guide.html">How to Estimate Siding: Squares, Gables, Windows, and Waste</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="roofing-calculator.html"><strong>Roofing Calculator</strong><span>Shingle bundles from your roof footprint and pitch.</span></a><a class="calc-card" href="paint-calculator.html"><strong>Paint Calculator</strong><span>Gallons of paint for a room, with doors, windows, and coats.</span></a><a class="calc-card" href="insulation-calculator.html"><strong>Insulation Calculator</strong><span>Packages of batt or roll insulation for an attic, wall, or floor.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a></div>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "siding", title: "Siding Calculator", calc: function (v) {
+var net=Math.max(v.perimeter*v.height-v.doors*21-v.windows*15,0),t=net*(1+v.waste/100);
+return {rows:[['Net wall area',net,'sqft',0],['Siding squares',t/100,'squares',1,'imp']],total:['Buy',Math.ceil(t/(v.coverage||16)),'panels',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

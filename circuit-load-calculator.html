@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit Load Calculator: Will It Trip the Breaker?</title>
+<meta name="description" content="Free circuit load calculator. Add up the watts of everything on one circuit and see whether a 15, 20, or 30 amp breaker can handle the load.">
+<link rel="canonical" href="https://calcproject.org/circuit-load-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Circuit Load Calculator: Will It Trip the Breaker?">
+<meta property="og:description" content="Free circuit load calculator. Add up the watts of everything on one circuit and see whether a 15, 20, or 30 amp breaker can handle the load.">
+<meta property="og:url" content="https://calcproject.org/circuit-load-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Circuit Load Calculator", "url": "https://calcproject.org/circuit-load-calculator.html", "description": "Free circuit load calculator. Add up the watts of everything on one circuit and see whether a 15, 20, or 30 amp breaker can handle the load.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Electrical & Cooling", "item": "https://calcproject.org/index.html#electrical"}, {"@type": "ListItem", "position": 3, "name": "Circuit Load Calculator", "item": "https://calcproject.org/circuit-load-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many outlets can be on a 20 amp circuit?", "acceptedAnswer": {"@type": "Answer", "text": "There is no fixed number for homes in the National Electrical Code. What matters is the total load. Keep steady loads under 16 amps (1,920 watts at 120 V) on a 20 amp circuit."}}, {"@type": "Question", "name": "What is the 80 percent rule for breakers?", "acceptedAnswer": {"@type": "Answer", "text": "A load that runs for 3 hours or more should not exceed 80 percent of the breaker rating: 12 amps on a 15 amp breaker and 16 amps on a 20 amp breaker."}}, {"@type": "Question", "name": "Why does my breaker keep tripping?", "acceptedAnswer": {"@type": "Answer", "text": "Usually because too much is running on one circuit at once. A breaker that trips with a light load can point to a wiring fault and should be checked by an electrician."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#electrical">Electrical &amp; Cooling</a> &rsaquo; <span>Circuit Load Calculator</span></nav>
+  <span class="eyebrow">Electrical &middot; Estimates only</span>
+  <h1>Circuit Load Calculator</h1>
+  <p class="lead">List what is plugged into one circuit and see the total amps, the steady-use limit, and whether the breaker can handle it.</p>
+</header>
+
+<div class="safety-strip" role="note" style="margin-top:22px">
+  <strong>Estimates only.</strong> Electrical code varies by city, county, and state. Check your local code and use a licensed electrician for any wiring work.
+</div>
+
+<main class="calc-main">
+  <section class="ticket static" id="circuit-load">
+    <div class="ticket-head">
+      <div><h2>Enter your numbers</h2><p>Add up what's plugged into one circuit and see if the breaker can handle it.</p></div>
+      <span class="stamp">Job: Electrical</span>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="cl-breaker">Breaker size</label>
+            <select id="cl-breaker"><option value="15">15 amp</option><option value="20" selected>20 amp</option><option value="30">30 amp</option><option value="40">40 amp</option><option value="50">50 amp</option></select></div>
+          <div class="field"><label for="cl-volts">Voltage</label>
+            <select id="cl-volts"><option value="120">120 V</option><option value="240">240 V</option></select></div>
+        </div>
+        <div id="cl-devices"></div>
+        <button type="button" class="btn-outline" onclick="addDevice()">+ Add another device</button>
+        <button class="calc-btn" onclick="calcCircuit()">Check the circuit</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="cl-receipt"></div></div>
+      <div class="formula-note"><strong>How it works:</strong> total watts &divide; volts = amps on the circuit. Things that run for 3 hours or more (heaters, chargers) should stay under 80% of the breaker, so a 20 amp circuit tops out at 16 amps of steady load. <strong>Example:</strong> a 1,500 W heater plus a 100 W TV and a 60 W lamp is 1,660 W, or 13.8 amps, which fits a 20 amp circuit but is over the steady-use limit on a 15 amp circuit.</div>
+      <div class="ticket-warn">&#9888;&#65039; Estimates only. If a breaker trips often, have an electrician check the circuit. Never swap in a bigger breaker without checking the wire size.</div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>Common questions</h2>
+      <h3>How many outlets can be on a 20 amp circuit?</h3>
+      <p>There is no fixed number for homes in the National Electrical Code. What matters is the total load. Keep steady loads under 16 amps (1,920 watts at 120 V) on a 20 amp circuit.</p>
+      <h3>What is the 80 percent rule for breakers?</h3>
+      <p>A load that runs for 3 hours or more should not exceed 80 percent of the breaker rating: 12 amps on a 15 amp breaker and 16 amps on a 20 amp breaker.</p>
+      <h3>Why does my breaker keep tripping?</h3>
+      <p>Usually because too much is running on one circuit at once. A breaker that trips with a light load can point to a wiring fault and should be checked by an electrician.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="electricity-cost-calculator.html"><strong>Electricity Cost Calculator</strong><span>What an appliance costs to run per day, month, and year.</span></a><a class="calc-card" href="watts-amps-calculator.html"><strong>Watts to Amps Calculator</strong><span>Convert between watts, amps, and volts for any device.</span></a><a class="calc-card" href="wire-size-calculator.html"><strong>Wire Size &amp; Voltage Drop Calculator</strong><span>Voltage drop and the smallest wire for a long run.</span></a><a class="calc-card" href="air-conditioner-btu-calculator.html"><strong>Air Conditioner BTU Calculator</strong><span>BTUs needed to cool a room with a window or portable AC.</span></a></div>
+    <p class="cat-more"><a href="advanced-tools.html">All electrical calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <h2 id="electrical-disclaimer">Electrical calculator disclaimer</h2>
+    <p>The electrical calculators on CalcProject.org provide general estimates for planning and educational purposes only. Results are based on common standards and simplified formulas and may not account for every factor in your situation, such as wire type, temperature, conduit fill, or load type.</p>
+    <p>Electrical code requirements vary by city, county, and state, and local codes may differ from national standards like the National Electrical Code (NEC). Always check with your local building department and consult a licensed electrician before doing any electrical work.</p>
+    <p>Working with electricity can cause serious injury, death, or fire. CalcProject.org is not responsible for any damage, injury, or loss resulting from the use of these calculators.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Electrical results are estimates. Code varies by location, so check with your local building department and a licensed electrician.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Garage subpanel, storm prep" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script src="electrical.js"></script>
+</body>
+</html>

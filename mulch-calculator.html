@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mulch Calculator: Bags and Cubic Yards of Mulch</title>
+<meta name="description" content="Free mulch calculator. Enter bed length, width, and depth to get cubic yards of mulch and the number of 2 cu ft bags to buy.">
+<link rel="canonical" href="https://calcproject.org/mulch-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Mulch Calculator: Bags and Cubic Yards of Mulch">
+<meta property="og:description" content="Free mulch calculator. Enter bed length, width, and depth to get cubic yards of mulch and the number of 2 cu ft bags to buy.">
+<meta property="og:url" content="https://calcproject.org/mulch-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mulch Calculator", "url": "https://calcproject.org/mulch-calculator.html", "description": "Free mulch calculator. Enter bed length, width, and depth to get cubic yards of mulch and the number of 2 cu ft bags to buy.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Yard & Garden", "item": "https://calcproject.org/index.html#yard"}, {"@type": "ListItem", "position": 3, "name": "Mulch Calculator", "item": "https://calcproject.org/mulch-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many bags of mulch are in a cubic yard?", "acceptedAnswer": {"@type": "Answer", "text": "A cubic yard is 27 cubic feet, so it takes 13.5 bags of 2 cubic foot mulch, or 9 bags of 3 cubic foot mulch."}}, {"@type": "Question", "name": "How deep should mulch be?", "acceptedAnswer": {"@type": "Answer", "text": "Two to 3 inches for most beds. Go to 4 inches for coarse bark in areas with heavy weeds. Deeper than that can smother roots."}}, {"@type": "Question", "name": "How much area does a cubic yard of mulch cover?", "acceptedAnswer": {"@type": "Answer", "text": "About 108 square feet at 3 inches deep, or 162 square feet at 2 inches deep."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#yard">Yard &amp; Garden</a> &rsaquo; <span>Mulch Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Mulch Calculator</h1>
+  <p class="lead">Find how much mulch a bed needs at any depth, in bags for the store or cubic yards for bulk delivery.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Mulch Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Mulch &amp; Soil</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row">
+          <div class="field"><label for="m-length">Area length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="m-length" min="0" step="0.1" value="20" data-factor="0.3048"></div>
+          <div class="field"><label for="m-width">Area width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="m-width" min="0" step="0.1" value="6" data-factor="0.3048"></div>
+        </div>
+        <div class="field"><label for="m-depth">Desired depth (<span class="u" data-imp="inches" data-met="cm">inches</span>)</label><input type="number" id="m-depth" min="0.5" step="0.5" value="3" data-factor="2.54"></div>
+        <div class="field"><label for="m-bagsize">Bag size <span class="hint u" data-imp="(cubic ft)" data-met="(liters)">(cubic ft)</span></label><input type="number" id="m-bagsize" min="0.1" step="0.1" value="2" data-factor="28.316846592"></div>
+        <button type="button" class="calc-btn">Calculate mulch</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use the mulch calculator</h2>
+    <ol><li>Measure the length and width of the bed in feet.</li><li>Enter the depth in inches. Two to 3 inches is right for most beds.</li><li>Enter the bag size. Most bagged mulch is 2 cubic feet.</li><li>Compare the bag count with the cubic yards for bulk delivery.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Volume = length &times; width &times; depth, then converted to bags or bulk units.</p>
+    <h3>Worked example</h3>
+    <p>For example, <span class="u" data-imp="a 20&times;6 ft bed at 3 inches deep needs about 1.1 cubic yards &mdash; roughly 15 bags at 2 cubic ft each." data-met="a 6.1&times;1.8 m bed at 7.6 cm deep needs about 0.84 cubic meters &mdash; roughly 15 bags at 56.6 liters each.">a 20&times;6 ft bed at 3 inches deep needs about 1.1 cubic yards &mdash; roughly 15 bags at 2 cubic ft each.</span></p>
+    
+    <h2>Good to know</h2>
+    <ul><li>Bulk mulch is usually cheaper once you need more than about 1.5 cubic yards (20 bags of 2 cu ft).</li><li>Keep mulch a few inches back from tree trunks and house siding.</li><li>For a round bed, multiply 3.14 by the radius squared for the area, then enter that as the length with a width of 1.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How many bags of mulch are in a cubic yard?</h3>
+      <p>A cubic yard is 27 cubic feet, so it takes 13.5 bags of 2 cubic foot mulch, or 9 bags of 3 cubic foot mulch.</p>
+      <h3>How deep should mulch be?</h3>
+      <p>Two to 3 inches for most beds. Go to 4 inches for coarse bark in areas with heavy weeds. Deeper than that can smother roots.</p>
+      <h3>How much area does a cubic yard of mulch cover?</h3>
+      <p>About 108 square feet at 3 inches deep, or 162 square feet at 2 inches deep.</p>
+      
+    <h2>Related guides</h2>
+      <ul><li><a href="mulch-and-topsoil-depth-guide.html">Mulch and Topsoil Depth: How Many Cubic Yards or Bags You Really Need</a></li><li><a href="gravel-vs-mulch-guide.html">Gravel vs. Mulch — Which Is Right for Your Yard?</a></li></ul>
+      <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="topsoil-calculator.html"><strong>Topsoil Calculator</strong><span>Cubic yards and bags of topsoil, garden soil, or compost.</span></a><a class="calc-card" href="gravel-calculator.html"><strong>Gravel Calculator</strong><span>Tons and cubic yards of gravel for a driveway, path, or base.</span></a><a class="calc-card" href="raised-bed-soil-calculator.html"><strong>Raised Bed Soil Calculator</strong><span>Soil to fill one or more raised garden beds.</span></a><a class="calc-card" href="cubic-yard-calculator.html"><strong>Cubic Yard Calculator</strong><span>Turn length, width, and depth into cubic yards.</span></a></div>
+    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "mulch", title: "Mulch Calculator", calc: function (v) {
+var cf=v.length*v.width*(v.depth/12);
+return {rows:[['Volume needed',cf,'cuft',1],['In cubic yards',cf/27,'cuyd',2]],total:['Buy',Math.ceil(cf/(v.bagsize||1)),'bags',0]};
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>
