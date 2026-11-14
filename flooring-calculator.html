@@ -91,7 +91,6 @@
     <p class="formula">Area = length &times; width, plus your waste percentage, divided by how many square feet each box covers, rounded up to a full box.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 14&times;11 ft room (154 sq ft) with 10% waste needs about 170 sq ft of material &mdash; 9 boxes if each box covers 20 sq ft." data-met="a 4.3&times;3.4 m room (14.3 m&sup2;) with 10% waste needs about 15.8 m&sup2; of material &mdash; 9 boxes if each box covers 1.9 m&sup2;.">a 14&times;11 ft room (154 sq ft) with 10% waste needs about 170 sq ft of material &mdash; 9 boxes if each box covers 20 sq ft.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>Include closets and the area under appliances you plan to floor under.</li><li>Stores usually take back unopened boxes, so rounding up is cheap insurance.</li><li>Buy all boxes from the same lot number so the color matches.</li></ul>
 
@@ -107,7 +106,7 @@
       <ul><li><a href="flooring-boxes-guide.html">How Many Boxes of Flooring Do You Actually Need?</a></li><li><a href="how-to-measure-a-room-guide.html">How to Measure a Room for Square Footage (Even If It&#x27;s Not a Rectangle)</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="tile-calculator.html"><strong>Tile Calculator</strong><span>Tiles for a floor, wall, shower, or backsplash.</span></a><a class="calc-card" href="carpet-calculator.html"><strong>Carpet Calculator</strong><span>Square yards of carpet and pad for a room.</span></a><a class="calc-card" href="baseboard-trim-calculator.html"><strong>Baseboard &amp; Trim Calculator</strong><span>Linear feet and boards of baseboard or crown molding.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#floors">More flooring, tile & stairs calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -116,7 +115,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -137,7 +136,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "flooring", title: "Flooring Calculator", calc: function (v) {
+window.CP_CALC = { id: "flooring", title: "Flooring Calculator", label: "Estimate", calc: function (v) {
 var a=v.length*v.width,t=a*(1+v.waste/100);
 return {rows:[['Room area',a,'sqft',1],['With waste',t,'sqft',1]],total:['Buy',Math.ceil(t/(v.boxcoverage||1)),'boxes',0]};
 } };

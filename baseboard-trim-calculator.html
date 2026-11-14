@@ -97,7 +97,6 @@
     <p class="formula">Perimeter minus doorway widths, plus waste, divided by board length.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 12&times;10 ft room with one 3 ft doorway needs about 6 boards at 8 ft each." data-met="a 3.7&times;3 m room with one 0.9 m doorway needs about 6 boards at 2.4 m each.">a 12&times;10 ft room with one 3 ft doorway needs about 6 boards at 8 ft each.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>For crown molding, set doorways to 0, because crown runs across the top of every wall.</li><li>Longer boards mean fewer joints. Use one full board per wall where you can.</li><li>Rooms with many inside and outside corners need closer to 15 percent waste.</li></ul>
 
@@ -113,7 +112,7 @@
       <ul><li><a href="baseboard-corners-guide.html">Baseboard Corners: Cope vs Miter and Why It Changes Your Board Count</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="paint-calculator.html"><strong>Paint Calculator</strong><span>Gallons of paint for a room, with doors, windows, and coats.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#walls">More paint, walls & insulation calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -122,7 +121,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -143,7 +142,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "baseboard-trim", title: "Baseboard & Trim Calculator", calc: function (v) {
+window.CP_CALC = { id: "baseboard-trim", title: "Baseboard & Trim Calculator", label: "Estimate", calc: function (v) {
 var per=2*(v.length+v.width),net=Math.max(per-v.doorways*v.doorwaywidth,0),tot=net*(1+v.waste/100);
 return {rows:[['Linear length needed',net,'ft',1],['With waste',tot,'ft',1]],total:['Buy',Math.ceil(tot/(v.boardlength||8)),'boards',0]};
 } };

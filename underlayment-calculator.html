@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Underlayment Calculator With Formula and Example</title>
+<meta name="description" content="Free Underlayment Calculator. Rolls of flooring underlayment for a room. Shows the formula and a worked example. No sign-up needed.">
+<link rel="canonical" href="https://calcproject.org/underlayment-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="Underlayment Calculator With Formula and Example">
+<meta property="og:description" content="Free Underlayment Calculator. Rolls of flooring underlayment for a room. Shows the formula and a worked example. No sign-up needed.">
+<meta property="og:url" content="https://calcproject.org/underlayment-calculator.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Underlayment Calculator", "url": "https://calcproject.org/underlayment-calculator.html", "description": "Free Underlayment Calculator. Rolls of flooring underlayment for a room. Shows the formula and a worked example. No sign-up needed.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Flooring, Tile & Stairs", "item": "https://calcproject.org/index.html#floors"}, {"@type": "ListItem", "position": 3, "name": "Underlayment Calculator", "item": "https://calcproject.org/underlayment-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many rolls of underlayment do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Divide the room area by the coverage of one roll, usually 100 square feet, and add about 5 percent. A 14 × 12 ft room needs 2 rolls."}}, {"@type": "Question", "name": "Do I need underlayment under vinyl plank?", "acceptedAnswer": {"@type": "Answer", "text": "Not if the plank has a pad attached. Adding a second layer can make the joints flex and fail."}}, {"@type": "Question", "name": "Which side of the underlayment faces up?", "acceptedAnswer": {"@type": "Answer", "text": "It varies by product. Most foil or film-faced underlayments go film side up, but follow the printing on the roll."}}]}</script>
+</head>
+<body>
+<div class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="brand" aria-label="CalcProject.org home">
+      <img src="logo-header.png" alt="CalcProject.org logo" width="52" height="52">
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Calculators</a>
+      <a href="advanced-tools.html">Electrical</a>
+      <a href="math-tools.html">Math</a>
+      <a href="guides.html">Guides</a>
+      <a href="about.html">About &amp; Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> &rsaquo; <span>Underlayment Calculator</span></nav>
+  <span class="eyebrow">Free &middot; No sign-up &middot; Feet or meters</span>
+  <h1>Underlayment Calculator</h1>
+  <p class="lead">Rolls of flooring underlayment for a room.</p>
+</header>
+
+<main class="calc-main">
+  <section class="ticket static" id="calc" aria-label="Underlayment Calculator">
+    <div class="ticket-head">
+      <div><h2>Enter your measurements</h2><p>Results update as you type. Switch to metric with the button on the right.</p></div>
+      <div class="ticket-side">
+        <span class="stamp">Job: Underlayment</span>
+        <div class="ticket-units" role="group" aria-label="Unit system">
+          <button type="button" class="active" data-unit-btn="imperial" aria-pressed="true">Imperial</button>
+          <button type="button" data-unit-btn="metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="calc-inputs">
+        <div class="field-row"><div class="field"><label for="c-length">Room length (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-length" min="0" step="any" value="14" data-factor="0.3048" inputmode="decimal"></div><div class="field"><label for="c-width">Room width (<span class="u" data-imp="ft" data-met="m">ft</span>)</label><input type="number" id="c-width" min="0" step="any" value="12" data-factor="0.3048" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field"><label for="c-roll">Coverage per roll (<span class="u" data-imp="sq ft" data-met="m&sup2;">sq ft</span>)</label><input type="number" id="c-roll" min="0" step="any" value="100" data-factor="0.09290304" inputmode="decimal"></div><div class="field"><label for="c-waste">Waste allowance <span class="hint">(%)</span></label><input type="number" id="c-waste" step="any" value="5" inputmode="decimal"></div></div>
+        <button type="button" class="calc-btn">Calculate</button>
+        <button type="button" class="btn-outline save-ticket-btn">Save or print results</button>
+      </div>
+      <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"><div class="label">Estimate</div><p class="receipt-note">Your result shows here once the page finishes loading.</p></div></div>
+    </div>
+  </section>
+
+  <article class="content-card">
+    <h2>How to use this calculator</h2>
+    <ol><li>Fill in Room length, Room width, Coverage per roll and Waste allowance.</li><li>Use the Imperial and Metric switch if you measure in meters and centimeters.</li><li>The result updates as you type. Tap <strong>Calculate</strong> to run it again.</li><li>Tap <strong>Save or print results</strong> to keep a copy or add it to your project sheet.</li></ol>
+
+    <h2>The formula</h2>
+    <p class="formula">Rolls = room area, plus waste, divided by the square feet per roll.</p>
+    <h3>Worked example</h3>
+    <p>With the starting numbers on this page (Room length: 14 ft; Room width: 12 ft; Coverage per roll: 100 sq ft; Waste allowance: 5), the result is <strong>Buy 2 rolls</strong>. It also shows Room area: 168.0 sq ft.</p>
+    <h2>Good to know</h2>
+    <ul><li>Many vinyl plank floors have a pad attached and should not get a second underlayment. Check the flooring instructions.</li><li>Over a concrete slab, use an underlayment with a built-in vapor barrier or lay 6 mil plastic first.</li><li>Butt the seams and tape them. Overlapping the foam creates a ridge under the floor.</li></ul>
+
+    <h2>Common questions</h2>
+      <h3>How many rolls of underlayment do I need?</h3>
+      <p>Divide the room area by the coverage of one roll, usually 100 square feet, and add about 5 percent. A 14 &times; 12 ft room needs 2 rolls.</p>
+      <h3>Do I need underlayment under vinyl plank?</h3>
+      <p>Not if the plank has a pad attached. Adding a second layer can make the joints flex and fail.</p>
+      <h3>Which side of the underlayment faces up?</h3>
+      <p>It varies by product. Most foil or film-faced underlayments go film side up, but follow the printing on the roll.</p>
+      
+    <h2>Related calculators</h2>
+    <div class="card-grid"><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="tile-calculator.html"><strong>Tile Calculator</strong><span>Tiles for a floor, wall, shower, or backsplash.</span></a><a class="calc-card" href="carpet-calculator.html"><strong>Carpet Calculator</strong><span>Square yards of carpet and pad for a room.</span></a><a class="calc-card" href="grout-calculator.html"><strong>Grout Calculator</strong><span>Pounds and bags of grout from tile size and joint width.</span></a></div>
+    <p class="cat-more"><a href="index.html#floors">More flooring, tile & stairs calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
+    <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
+  </article>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
+  <p>Free online calculators. No sign-up, no app.</p>
+  <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
+</footer>
+<dialog id="save-dialog" aria-labelledby="sd-title">
+  <div class="sd-inner">
+    <h2 id="sd-title">Save or print your results</h2>
+    <p class="sd-on" id="sd-on"></p>
+    <label for="project-name">Name your project <span>(optional)</span></label>
+    <input type="text" id="project-name" maxlength="60" placeholder="e.g. Back deck, kids' bedroom" autocomplete="off">
+    <p class="sd-tip">On a phone, choose <strong>Save as PDF</strong> on the next screen to keep a copy.</p>
+    <div class="sd-actions">
+      <button type="button" class="btn-outline" id="sd-cancel">Cancel</button>
+      <button type="button" class="calc-btn" id="sd-print">Print or save</button>
+    </div>
+    <button type="button" class="sd-clear" id="sd-clear">Start a new sheet with only this calculator</button>
+  </div>
+</dialog>
+
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+window.CP_CALC = { id: "underlayment", title: "Underlayment Calculator", label: "Estimate", calc: function (v) {
+var H = window.CPH, R = function (rows, total, note) { return { rows: rows, total: total, note: note || "" }; };
+var a=v.length*v.width;return R([['Room area',a,'sqft',1]],['Buy',Math.ceil(a*(1+v.waste/100)/(v.roll||100)),'rolls',0]);
+} };
+</script>
+<script src="calc.js"></script>
+</body>
+</html>

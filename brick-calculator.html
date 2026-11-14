@@ -88,7 +88,6 @@
     <p class="formula">Bricks per square foot = 144 &divide; ((brick length + joint) &times; (brick height + joint)). Multiply by the wall area and add waste. Mortar is estimated at one 80 lb bag of premixed mortar for every 35 bricks.</p>
     <h3>Worked example</h3>
     <p>A modular brick (7 5/8 &times; 2 1/4 in) with a 3/8 inch joint works out to 6.86 bricks per square foot. A 20 &times; 4 ft wall is 80 sq ft, so with 10 percent waste buy 604 bricks and about 18 bags of mortar mix.</p>
-    
     <h2>Good to know</h2>
     <ul><li>This counts a single layer (one wythe). Double it for a wall two bricks thick.</li><li>Subtract door and window openings from the area for brick veneer on a house.</li><li>Order all the brick at once. Color varies between production runs.</li></ul>
 
@@ -102,7 +101,7 @@
       
     <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="concrete-block-calculator.html"><strong>Concrete Block Calculator</strong><span>Cinder blocks and mortar bags for a block wall.</span></a><a class="calc-card" href="paver-calculator.html"><strong>Paver Calculator</strong><span>Pavers, gravel base, and bedding sand for a patio or walkway.</span></a><a class="calc-card" href="retaining-wall-calculator.html"><strong>Retaining Wall Calculator</strong><span>Blocks, rows, and caps for a garden or retaining wall.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#concrete">More concrete & masonry calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -111,7 +110,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -132,7 +131,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "brick", title: "Brick Calculator", calc: function (v) {
+window.CP_CALC = { id: "brick", title: "Brick Calculator", label: "Estimate", calc: function (v) {
 var a=v.length*v.height,per=144/(((v.bricklen||7.625)+v.joint)*((v.brickht||2.25)+v.joint)),n=Math.ceil(a*per*(1+v.waste/100));
 return {rows:[['Wall area',a,'sqft',1],['Bricks per square foot',per,'',2],['Mortar, 80 lb bags',Math.ceil(n/35),'bags',0]],total:['Buy',n,'bricks',0]};
 } };

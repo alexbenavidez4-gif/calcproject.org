@@ -97,7 +97,6 @@
     <p class="formula">Deck area &divide; (board width + gap) gives total board length, plus waste, divided by board length.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 16&times;12 ft deck needs about 35 boards at 12 ft each." data-met="a 4.9&times;3.7 m deck needs about 35 boards at 3.7 m each.">a 16&times;12 ft deck needs about 35 boards at 12 ft each.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>Choose a board length that matches the deck width so you avoid butt joints.</li><li>Diagonal decking needs about 15 percent waste.</li><li>This covers the walking surface only. Joists, beams, posts, railings, and stairs are extra.</li></ul>
 
@@ -113,7 +112,7 @@
       <ul><li><a href="deck-board-spacing-guide.html">Deck Board Spacing: Why That Small Gap Matters More Than You Think</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="deck-stain-calculator.html"><strong>Deck Stain Calculator</strong><span>Gallons of stain or sealer for a deck, with railings.</span></a><a class="calc-card" href="post-hole-concrete-calculator.html"><strong>Post Hole Concrete Calculator</strong><span>Bags of concrete for fence posts, deck posts, and mailboxes.</span></a><a class="calc-card" href="stair-calculator.html"><strong>Stair Calculator</strong><span>Number of steps, riser height, total run, and stringer length.</span></a><a class="calc-card" href="board-foot-calculator.html"><strong>Board Foot Calculator</strong><span>Board feet and cost for hardwood and rough lumber.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#exterior">More decks, fences & exterior calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -122,7 +121,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -143,7 +142,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "deck", title: "Deck Calculator", calc: function (v) {
+window.CP_CALC = { id: "deck", title: "Deck Calculator", label: "Estimate", calc: function (v) {
 var a=v.length*v.width,lin=a*(12/((v.boardwidth||5.5)+v.gap))*(1+v.waste/100);
 return {rows:[['Deck area',a,'sqft',1],['Total board length',lin,'ft',1]],total:['Buy',Math.ceil(lin/(v.boardlength||12)),'boards',0]};
 } };

@@ -94,7 +94,6 @@
     <p class="formula">Area = length &times; width, plus waste, divided by the square footage of one tile.</p>
     <h3>Worked example</h3>
     <p>For example, <span class="u" data-imp="a 10&times;8 ft floor with 12&times;12 in tiles and 10% waste needs about 88 tiles." data-met="a 3&times;2.4 m floor with 30&times;30 cm tiles and 10% waste needs about 88 tiles.">a 10&times;8 ft floor with 12&times;12 in tiles and 10% waste needs about 88 tiles.</span></p>
-    
     <h2>Good to know</h2>
     <ul><li>For a backsplash, enter the counter run as the length and the height in feet as the width. Eighteen inches is 1.5 ft.</li><li>Large tiles in small rooms waste more because every edge tile is cut.</li><li>Keep a few spare tiles. Matching a discontinued tile later is nearly impossible.</li></ul>
 
@@ -110,7 +109,7 @@
       <ul><li><a href="tile-layout-mistakes-guide.html">Tile Layout Mistakes That Cost You Extra Boxes</a></li></ul>
       <h2>Related calculators</h2>
     <div class="card-grid"><a class="calc-card" href="grout-calculator.html"><strong>Grout Calculator</strong><span>Pounds and bags of grout from tile size and joint width.</span></a><a class="calc-card" href="flooring-calculator.html"><strong>Flooring Calculator</strong><span>Boxes of laminate, vinyl plank, or hardwood for a room.</span></a><a class="calc-card" href="square-footage-calculator.html"><strong>Square Footage Calculator</strong><span>Add up the square feet of one room or a whole house.</span></a><a class="calc-card" href="baseboard-trim-calculator.html"><strong>Baseboard &amp; Trim Calculator</strong><span>Linear feet and boards of baseboard or crown molding.</span></a></div>
-    <p class="cat-more"><a href="index.html">See all calculators &rarr;</a></p>
+    <p class="cat-more"><a href="index.html#floors">More flooring, tile & stairs calculators &rarr;</a> &nbsp; <a href="index.html">All calculators &rarr;</a></p>
     <p class="disclaimer">Estimates are a starting point for shopping, not a substitute for a contractor's exact measurement. Always round up, check the coverage printed on your product, and keep your receipt for returns.</p>
   </article>
 </main>
@@ -119,7 +118,7 @@
 
 <footer>
   <p class="foot-links"><a href="index.html#measure">Measuring &amp; Area</a> <a href="index.html#walls">Paint, Walls &amp; Insulation</a> <a href="index.html#floors">Flooring, Tile &amp; Stairs</a> <a href="index.html#concrete">Concrete &amp; Masonry</a> <a href="index.html#yard">Yard &amp; Garden</a> <a href="index.html#exterior">Decks, Fences &amp; Exterior</a> <a href="index.html#electrical">Electrical &amp; Cooling</a> <a href="index.html#math">Math Tools</a></p>
-  <p>Free home improvement calculators. No sign-up, no app.</p>
+  <p>Free online calculators. No sign-up, no app.</p>
   <p><a href="index.html">All calculators</a> &middot; <a href="guides.html">Guides</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="about.html">About &amp; Contact</a></p>
 </footer>
 <dialog id="save-dialog" aria-labelledby="sd-title">
@@ -140,7 +139,7 @@
 <div id="print-sheet" aria-hidden="true"></div>
 
 <script>
-window.CP_CALC = { id: "tile", title: "Tile Calculator", calc: function (v) {
+window.CP_CALC = { id: "tile", title: "Tile Calculator", label: "Estimate", calc: function (v) {
 var a=v.length*v.width,t=a*(1+v.waste/100),per=((v.tilelen||1)*(v.tilewid||1))/144;
 return {rows:[['Area to cover',a,'sqft',1],['With waste',t,'sqft',1]],total:['Buy',Math.ceil(t/per),'tiles',0]};
 } };
