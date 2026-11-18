@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3049181732703221"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7VM2GPNKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L7VM2GPNKZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Calculate Inflation: Formula and Examples</title>
+<link rel="canonical" href="https://calcproject.org/how-to-calculate-inflation-guide.html">
+<meta name="description" content="Learn the inflation formula with real examples: what $100 from 1980 is worth today, how to find the yearly rate, and how to project future prices.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CalcProject">
+<meta property="og:title" content="How to Calculate Inflation: Formula and Examples">
+<meta property="og:description" content="Learn the inflation formula with real examples: what $100 from 1980 is worth today, how to find the yearly rate, and how to project future prices.">
+<meta property="og:url" content="https://calcproject.org/how-to-calculate-inflation-guide.html">
+<meta property="og:image" content="https://calcproject.org/logo-large.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16324A; --navy-deep:#0F2436; --cyan:#7FB3C7; --chalk:#F3F1E8;
+    --orange:#E4572E; --yellow:#F4B942; --graphite:#2A2A28; --graphite-soft:#5B5B57;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--navy); color:var(--chalk); font-family:'Inter',sans-serif; line-height:1.65; }
+  h1,h2{ font-family:'Bebas Neue',sans-serif; letter-spacing:0.03em; }
+  .ruler{
+    height:34px; margin:0 auto; max-width:760px; position:relative;
+    background-image:
+      repeating-linear-gradient(90deg, var(--cyan) 0, var(--cyan) 1px, transparent 1px, transparent 12px),
+      repeating-linear-gradient(90deg, var(--chalk) 0, var(--chalk) 2px, transparent 2px, transparent 60px);
+    background-position:0 100%, 0 100%; background-repeat:repeat-x; background-size:12px 12px, 60px 24px; opacity:0.55;
+  }
+  header{ padding:56px 24px 32px; text-align:center; }
+  .eyebrow{
+    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--yellow); border:1px solid var(--yellow); padding:4px 10px;
+    border-radius:2px; margin-bottom:18px;
+  }
+  header h1{ font-size:clamp(2rem,5vw,3rem); color:var(--chalk); max-width:700px; margin:0 auto; }
+  .back-link{
+    display:inline-block; margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:12px;
+    letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; color:var(--chalk); opacity:0.75;
+  }
+  .back-link:hover{color:var(--yellow); opacity:1;}
+  main{max-width:720px; margin:0 auto; padding:48px 24px 80px;}
+  .doc{
+    background:var(--chalk); color:var(--graphite); border-radius:6px; padding:40px clamp(20px,5vw,48px);
+    box-shadow:0 24px 60px rgba(0,0,0,0.28);
+  }
+  .doc h2{ color:var(--navy); font-size:1.5rem; margin:32px 0 12px; }
+  .doc h2:first-child{margin-top:0;}
+  .doc p, .doc li{ font-size:1rem; color:var(--graphite); }
+  .doc a{color:var(--navy); text-decoration:underline;}
+  .callout{
+    background:rgba(228,87,46,0.08); border-left:3px solid var(--orange); padding:14px 18px;
+    margin:20px 0; font-size:0.95rem; border-radius:0 4px 4px 0;
+  }
+  .hero-img{ width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:6px; display:block; margin-bottom:24px; box-shadow:0 24px 60px rgba(0,0,0,0.28); }
+  footer{ text-align:center; padding:0 20px 60px; color:var(--cyan); font-size:0.85rem; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Calculate Inflation: Formula and Examples", "description": "Learn the inflation formula with real examples: what $100 from 1980 is worth today, how to find the yearly rate, and how to project future prices.", "url": "https://calcproject.org/how-to-calculate-inflation-guide.html", "mainEntityOfPage": "https://calcproject.org/how-to-calculate-inflation-guide.html", "image": "https://calcproject.org/logo-large.png", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "author": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/"}, "publisher": {"@type": "Organization", "name": "CalcProject", "url": "https://calcproject.org/", "logo": {"@type": "ImageObject", "url": "https://calcproject.org/logo-large.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcproject.org/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://calcproject.org/guides.html"}, {"@type": "ListItem", "position": 3, "name": "How to Calculate Inflation: Formula and Examples", "item": "https://calcproject.org/how-to-calculate-inflation-guide.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I divide or multiply to adjust for inflation?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply your old amount by the ratio of the later index to the earlier index. The later number goes on top. If you put the earlier year on top you get the answer for going the other direction."}}, {"@type": "Question", "name": "Why is the average yearly rate not the total change divided by the years?", "acceptedAnswer": {"@type": "Answer", "text": "Inflation compounds, because each year builds on the year before. $1,000 from 1980 grew by 290.71 percent by 2025. Divided by 45 that looks like 6.46 percent a year, but the real compounded average is 3.07 percent a year."}}, {"@type": "Question", "name": "Which year should I use for the latest numbers?", "acceptedAnswer": {"@type": "Answer", "text": "The calculator covers 1913 through 2025. The 2025 figure is an average of the 11 months the Bureau of Labor Statistics published, because October 2025 data was not collected."}}, {"@type": "Question", "name": "Is my personal inflation the same as the CPI?", "acceptedAnswer": {"@type": "Answer", "text": "Not exactly. The CPI is an average for urban consumers. If you spend more on rent, gas, or food than the average household, your own rate can run higher or lower."}}]}</script>
+</head>
+<body>
+
+<header>
+  <span class="eyebrow">Money &middot; Inflation</span>
+  <h1>How to Calculate Inflation: The Formula, With Worked Examples</h1>
+  <a class="back-link" href="guides.html">&larr; All Guides</a>
+</header>
+
+<div class="ruler" role="presentation"></div>
+
+<main>
+  <div class="doc">
+    <p>A dollar in 1980 bought a lot more than a dollar does today. Inflation is the reason, and working it out takes one division and one multiplication. This guide shows the formula, walks through a real example with the official numbers, and covers the mistakes that throw people off. If you would rather skip the math, the <a href="inflation-calculator.html">inflation calculator</a> does it for you and shows every step.</p>
+
+    <h2>The One-Line Formula</h2>
+    <p><strong>Value today = old amount &times; (index for the later year &divide; index for the earlier year).</strong></p>
+    <p>The index is the Consumer Price Index, or CPI. The U.S. Bureau of Labor Statistics tracks what a typical basket of everyday goods and services costs, such as groceries, rent, gas, and medical care, and turns it into a single number. The base period is 1982 to 1984, which is set to 100. A higher number means prices are higher. Comparing the index for two years tells you how much prices changed between them.</p>
+
+    <h2>Worked Example: $1,000 in 1980</h2>
+    <p>What does $1,000 in 1980 equal in 2025 money?</p>
+    <ol>
+      <li><strong>Look up the index for each year.</strong> The annual average CPI was 82.4 in 1980 and 321.943 in 2025.</li>
+      <li><strong>Divide the later index by the earlier one.</strong> 321.943 &divide; 82.4 = 3.907075.</li>
+      <li><strong>Multiply your amount by that ratio.</strong> $1,000 &times; 3.907075 = <strong>$3,907.08</strong>.</li>
+    </ol>
+    <p>Prices rose by (3.907075 &minus; 1) &times; 100 = <strong>290.71 percent</strong> over those 45 years. Put another way, something that cost $1,000 in 1980 costs about $3,907 now.</p>
+
+    <h2>What $100 Is Worth in 2025</h2>
+    <p>The same math applied to $100 from different starting years:</p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.95rem;">
+      <thead><tr style="text-align:left;border-bottom:2px solid #16324A;"><th style="padding:8px 6px;">Year</th><th style="padding:8px 6px;">CPI</th><th style="padding:8px 6px;">$100 then equals, in 2025</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #ccc;"><td style="padding:8px 6px;">1970</td><td style="padding:8px 6px;">38.8</td><td style="padding:8px 6px;">$829.75</td></tr>
+        <tr style="border-bottom:1px solid #ccc;"><td style="padding:8px 6px;">1980</td><td style="padding:8px 6px;">82.4</td><td style="padding:8px 6px;">$390.71</td></tr>
+        <tr style="border-bottom:1px solid #ccc;"><td style="padding:8px 6px;">1990</td><td style="padding:8px 6px;">130.7</td><td style="padding:8px 6px;">$246.32</td></tr>
+        <tr style="border-bottom:1px solid #ccc;"><td style="padding:8px 6px;">2000</td><td style="padding:8px 6px;">172.2</td><td style="padding:8px 6px;">$186.96</td></tr>
+        <tr style="border-bottom:1px solid #ccc;"><td style="padding:8px 6px;">2010</td><td style="padding:8px 6px;">218.056</td><td style="padding:8px 6px;">$147.64</td></tr>
+        <tr><td style="padding:8px 6px;">2020</td><td style="padding:8px 6px;">258.811</td><td style="padding:8px 6px;">$124.39</td></tr>
+      </tbody>
+    </table>
+    <p>The 2025 index is 321.943. The figures come from annual averages of the all-items CPI for urban consumers (CPI-U).</p>
+
+    <h2>How to Find the Inflation Rate Between Two Years</h2>
+    <p>To get the percent change in prices, subtract the earlier index from the later one, divide by the earlier one, and multiply by 100.</p>
+    <p><strong>Example, 2021 to 2022:</strong> (292.655 &minus; 270.97) &divide; 270.97 &times; 100 = <strong>8.0 percent</strong>. Prices in 2022 averaged 8 percent higher than in 2021, so $1.00 in 2021 matched $1.08 in 2022.</p>
+
+    <h2>The Average Yearly Rate Is Not Total &divide; Years</h2>
+    <p>This is the most common mistake. Over 45 years prices rose 290.71 percent. If you divide that by 45 you get 6.46 percent a year, which is wrong, because each year&rsquo;s increase builds on the year before it. The right way is to take the ratio to the power of one over the number of years:</p>
+    <p>3.907075<sup>(1 &divide; 45)</sup> &minus; 1 = <strong>3.07 percent a year</strong>.</p>
+    <p>That is a compound average. It is the single yearly rate that, repeated 45 times, gives the same total.</p>
+
+    <h2>Looking Forward: What Will Prices Be Later?</h2>
+    <p>You can also guess the future by choosing a yearly rate. Prices grow by a factor of (1 + rate) each year, so after several years the factor is (1 + rate) raised to the number of years.</p>
+    <p><strong>Example:</strong> something that costs $1,000 today, at 3 percent inflation for 10 years: 1.03<sup>10</sup> = 1.343916, so it costs about <strong>$1,343.92</strong>. Turned around, $1,000 in cash then buys only what $744.09 buys today. This is why money kept under a mattress loses buying power, and why a savings account has to earn more than inflation just to stay even.</p>
+
+    <h2>Common Mistakes</h2>
+    <ul>
+      <li><strong>Flipping the ratio.</strong> The later year&rsquo;s index goes on top. Flipped, you get what today&rsquo;s money was worth in the past.</li>
+      <li><strong>Adding or averaging percentages.</strong> Rates compound, so you cannot add yearly percentages together or just divide the total.</li>
+      <li><strong>Mixing a monthly number with an annual one.</strong> Use the same type of index for both years, either both annual averages or both for the same month.</li>
+      <li><strong>Treating the CPI as your exact cost of living.</strong> It is an average. Your own mix of rent, gas, food, and other costs may rise faster or slower.</li>
+    </ul>
+
+    <div class="callout"><strong>Quick rule:</strong> later index divided by earlier index gives the price ratio. Multiply your amount by that ratio and you have today&rsquo;s equivalent.</div>
+
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Do I divide or multiply to adjust for inflation?</strong><br>Multiply your old amount by the ratio of the later index to the earlier index. The later number goes on top. If you put the earlier year on top you get the answer for going the other direction.</p>
+    <p><strong>Why is the average yearly rate not the total change divided by the years?</strong><br>Inflation compounds, because each year builds on the year before. $1,000 from 1980 grew by 290.71 percent by 2025. Divided by 45 that looks like 6.46 percent a year, but the real compounded average is 3.07 percent a year.</p>
+    <p><strong>Which year should I use for the latest numbers?</strong><br>The calculator covers 1913 through 2025. The 2025 figure is an average of the 11 months the Bureau of Labor Statistics published, because October 2025 data was not collected.</p>
+    <p><strong>Is my personal inflation the same as the CPI?</strong><br>Not exactly. The CPI is an average for urban consumers. If you spend more on rent, gas, or food than the average household, your own rate can run higher or lower.</p>
+
+    <p>Try your own numbers with the <a href="inflation-calculator.html">inflation calculator</a>. To work with the percentages, the <a href="percentage-calculator.html">percentage calculator</a> handles percent change, and the <a href="guides.html">guides page</a> has more how-to articles.</p>
+
+    <p style="font-size:0.85rem;color:#5B5B57;margin-top:28px;">Last updated: November 2026. Data: U.S. Bureau of Labor Statistics, CPI-U, U.S. city average, all items, 1982-84 = 100, annual averages. The 2025 figure is the average of the 11 months published. This is general information, not financial advice.</p>
+
+  </div>
+</main>
+
+<div class="ruler" role="presentation"></div>
+
+<footer>
+  <p><a href="guides.html">More Guides</a> &middot; <a href="/">Calculators</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
