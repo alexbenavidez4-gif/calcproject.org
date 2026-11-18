@@ -1,10 +1,11 @@
 /* CalcProject.org math calculators (page logic shared by each math calculator page; the math itself is in math-engine.js). */
 
-  const FN={"linear": {"l": "linear"}, "quadratic": {"q": "quadratic"}, "slope": {"m": "slope"}, "derivative": {"d": "derivative"}, "integral": {"i": "integral"}, "pythagorean": {"h": "pythagHyp", "l": "pythagLeg"}, "trig": {"s": "trig", "a": "trigAngle"}, "percent": {"of": "percentOf", "is": "percentIs", "chg": "percentChange"}, "fraction": {"f": "fraction"}, "gcf-lcm": {"g": "gcdlcm"}, "statistics": {"s": "stats"}};
+  const FN={"linear": {"l": "linear"}, "quadratic": {"q": "quadratic"}, "slope": {"m": "slope"}, "derivative": {"d": "derivative"}, "integral": {"i": "integral"}, "pythagorean": {"h": "pythagHyp", "l": "pythagLeg"}, "trig": {"s": "trig", "a": "trigAngle"}, "percent": {"of": "percentOf", "is": "percentIs", "chg": "percentChange"}, "fraction": {"f": "fraction"}, "gcf-lcm": {"g": "gcdlcm"}, "statistics": {"s": "stats"}, "inflation": {"h": "inflationCpi", "r": "inflationRate"}, "temperature": {"c": "cToF", "f": "fToC"}, "time": {"t": "timeCalc"}};
   const $=id=>document.getElementById(id);
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const tickets=[...document.querySelectorAll('.ticket[data-tid]')];
   const used=new Set();
+  const SHEET_MY=document.body.getAttribute('data-sheet-my')||'My math solutions', SHEET_KIND=document.body.getAttribute('data-sheet-kind')||'Math solutions', SHEET_FOOT=document.body.getAttribute('data-sheet-foot')||'Free math calculators with steps at CalcProject.org';
 
   function mode(t){ const s=t.querySelector('.mode-sel'); return s?s.value:Object.keys(FN[t.dataset.tid])[0]; }
   function showMode(t){
@@ -63,10 +64,10 @@
     const date=new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
     const name=$('project-name').value.trim();
     const head=document.createElement('div'); head.className='ps-head';
-    head.innerHTML='<div class="ps-brand"><img src="logo-header.png" alt="" onerror="this.remove()"><div><p class="ps-title">CalcProject.org</p><p class="ps-site">'+esc(name||'My math solutions')+'</p></div></div><div class="ps-meta"><strong>'+date+'</strong>Math solutions</div>';
+    head.innerHTML='<div class="ps-brand"><img src="logo-header.png" alt="" onerror="this.remove()"><div><p class="ps-title">CalcProject.org</p><p class="ps-site">'+esc(name||SHEET_MY)+'</p></div></div><div class="ps-meta"><strong>'+date+'</strong>'+esc(SHEET_KIND)+'</div>';
     sheet.appendChild(head);
     if(!window._origTitle) window._origTitle=document.title;
-    document.title='CalcProject.org - '+(name||'My math solutions');
+    document.title='CalcProject.org - '+(name||SHEET_MY);
     tickets.filter(t=>used.has(t.id)&&t._last).forEach(t=>{
       const box=document.createElement('section'); box.className='ps-calc';
       const h=document.createElement('h2'); h.textContent=t.querySelector('.ticket-head h2').textContent.trim(); box.appendChild(h);
@@ -84,7 +85,7 @@
       t._last.steps.forEach(s=>{ const li=document.createElement('li'); li.textContent=s; ol.appendChild(li); });
       box.appendChild(ol); sheet.appendChild(box);
     });
-    const back=document.createElement('p'); back.className='ps-comeback'; back.textContent='Free math calculators with steps at CalcProject.org';
+    const back=document.createElement('p'); back.className='ps-comeback'; back.textContent=SHEET_FOOT;
     sheet.appendChild(back);
   }
   function doPrint(){ buildSheet(); window.print(); }

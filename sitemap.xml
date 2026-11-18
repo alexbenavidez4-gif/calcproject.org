@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://calcproject.org/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://calcproject.org/</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://calcproject.org/square-footage-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/cubic-yard-calculator.html</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://calcproject.org/board-foot-calculator.html</loc><lastmod>2026-11-14</lastmod></url>
@@ -90,7 +90,7 @@
   <url><loc>https://calcproject.org/pythagorean-theorem-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/right-triangle-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/percentage-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
-  <url><loc>https://calcproject.org/fraction-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://calcproject.org/fraction-calculator.html</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://calcproject.org/gcf-lcm-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/mean-median-mode-calculator.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/advanced-tools.html</loc><lastmod>2026-11-14</lastmod></url>
@@ -114,7 +114,10 @@
   <url><loc>https://calcproject.org/sod-vs-seed-guide.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/tile-layout-mistakes-guide.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/wallpaper-pattern-repeat-guide.html</loc><lastmod>2026-11-15</lastmod></url>
-  <url><loc>https://calcproject.org/about.html</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://calcproject.org/about.html</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://calcproject.org/contact.html</loc><lastmod>2026-11-15</lastmod></url>
   <url><loc>https://calcproject.org/privacy-policy.html</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://calcproject.org/inflation-calculator.html</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://calcproject.org/time-calculator.html</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://calcproject.org/celsius-to-fahrenheit-calculator.html</loc><lastmod>2026-11-17</lastmod></url>
 </urlset>

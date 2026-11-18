@@ -84,14 +84,28 @@
   /* ---------- Fractions ---------- */
   function fraction(v) {
     var n1 = v.n1, d1 = v.d1, n2 = v.n2, d2 = v.d2, op = v.op;
-    var all = [n1, d1, n2, d2];
-    for (var i = 0; i < 4; i++) {
-      if (!isNum(all[i]) || !Number.isInteger(all[i])) return err('Use whole numbers for the tops and bottoms of both fractions.');
+    var w1 = isNum(v.w1) ? v.w1 : 0, w2 = isNum(v.w2) ? v.w2 : 0;
+    var all = [n1, d1, n2, d2, w1, w2];
+    for (var i = 0; i < 6; i++) {
+      if (!isNum(all[i]) || !Number.isInteger(all[i])) return err('Use whole numbers for the whole parts, tops and bottoms.');
     }
     if (d1 === 0 || d2 === 0) return err('A denominator (the bottom number) cannot be 0.');
     if (d1 < 0) { n1 = -n1; d1 = -d1; }
     if (d2 < 0) { n2 = -n2; d2 = -d2; }
-    var f1 = n1 + '/' + d1, f2 = n2 + '/' + d2, steps = [], rn, rd;
+    var steps = [];
+    if (w1 !== 0) {
+      if (n1 < 0) return err('For a mixed number, put the minus sign on the whole number and keep the top positive.');
+      var m1 = (w1 < 0 ? -1 : 1) * (Math.abs(w1) * d1 + n1);
+      steps.push('Turn the mixed number ' + w1 + ' ' + n1 + '/' + d1 + ' into an improper fraction: ' + (w1 < 0 ? '−' : '') + '(' + Math.abs(w1) + ' × ' + d1 + ' + ' + n1 + ') ÷ ' + d1 + ' = ' + m1 + '/' + d1 + '.');
+      n1 = m1;
+    }
+    if (w2 !== 0) {
+      if (n2 < 0) return err('For a mixed number, put the minus sign on the whole number and keep the top positive.');
+      var m2 = (w2 < 0 ? -1 : 1) * (Math.abs(w2) * d2 + n2);
+      steps.push('Turn the mixed number ' + w2 + ' ' + n2 + '/' + d2 + ' into an improper fraction: ' + (w2 < 0 ? '−' : '') + '(' + Math.abs(w2) + ' × ' + d2 + ' + ' + n2 + ') ÷ ' + d2 + ' = ' + m2 + '/' + d2 + '.');
+      n2 = m2;
+    }
+    var f1 = n1 + '/' + d1, f2 = n2 + '/' + d2, rn, rd;
 
     if (op === 'add' || op === 'sub') {
       var L = d1 / gcd(d1, d2) * d2, a = n1 * (L / d1), b = n2 * (L / d2);
@@ -537,12 +551,163 @@
     return { answers: ans, steps: steps };
   }
 
+  /* ---------- Inflation (US CPI-U annual averages, 1982-84 = 100) ---------- */
+  /* Source: U.S. Bureau of Labor Statistics CPI-U, U.S. city average, all items, not seasonally adjusted.
+     1913-2024 are annual averages. 2025 is the average of the 11 months BLS published
+     (October 2025 was not collected during the federal funding lapse). */
+  var CPI = {
+    1913:9.9,1914:10.0,1915:10.1,1916:10.9,1917:12.8,1918:15.1,1919:17.3,1920:20.0,1921:17.9,1922:16.8,
+    1923:17.1,1924:17.1,1925:17.5,1926:17.7,1927:17.4,1928:17.1,1929:17.1,1930:16.7,1931:15.2,1932:13.7,
+    1933:13.0,1934:13.4,1935:13.7,1936:13.9,1937:14.4,1938:14.1,1939:13.9,1940:14.0,1941:14.7,1942:16.3,
+    1943:17.3,1944:17.6,1945:18.0,1946:19.5,1947:22.3,1948:24.1,1949:23.8,1950:24.1,1951:26.0,1952:26.5,
+    1953:26.7,1954:26.9,1955:26.8,1956:27.2,1957:28.1,1958:28.9,1959:29.1,1960:29.6,1961:29.9,1962:30.2,
+    1963:30.6,1964:31.0,1965:31.5,1966:32.4,1967:33.4,1968:34.8,1969:36.7,1970:38.8,1971:40.5,1972:41.8,
+    1973:44.4,1974:49.3,1975:53.8,1976:56.9,1977:60.6,1978:65.2,1979:72.6,1980:82.4,1981:90.9,1982:96.5,
+    1983:99.6,1984:103.9,1985:107.6,1986:109.6,1987:113.6,1988:118.3,1989:124.0,1990:130.7,1991:136.2,1992:140.3,
+    1993:144.5,1994:148.2,1995:152.4,1996:156.9,1997:160.5,1998:163.0,1999:166.6,2000:172.2,2001:177.1,2002:179.9,
+    2003:184.0,2004:188.9,2005:195.3,2006:201.6,2007:207.342,2008:215.303,2009:214.537,2010:218.056,2011:224.939,2012:229.594,
+    2013:232.957,2014:236.736,2015:237.017,2016:240.007,2017:245.12,2018:251.107,2019:255.657,2020:258.811,2021:270.97,2022:292.655,
+    2023:304.702,2024:313.689,2025:321.943
+  };
+  var CPI_FIRST = 1913, CPI_LAST = 2025;
+
+  function commas(s) { return String(s).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function money(n) {
+    var neg = n < 0, s = Math.abs(n).toFixed(2).split('.');
+    return (neg ? '-' : '') + '$' + commas(s[0]) + '.' + s[1];
+  }
+  function pct(n) { return Number(n.toFixed(2)) + '%'; }
+  function cpiText(y) { return String(CPI[y]); }
+
+  function inflationCpi(v) {
+    if (!isNum(v.amt) || v.amt <= 0) return err('Enter an amount greater than 0.');
+    if (v.amt > 1e12) return err('That amount is too large. Try something under one trillion.');
+    var y1 = v.y1, y2 = v.y2;
+    if (!isNum(y1) || !isNum(y2) || !Number.isInteger(y1) || !Number.isInteger(y2)) return err('Enter two whole years, like 2000 and 2025.');
+    if (y1 < CPI_FIRST || y1 > CPI_LAST || y2 < CPI_FIRST || y2 > CPI_LAST) return err('Pick years from ' + CPI_FIRST + ' to ' + CPI_LAST + '. That is the range of official CPI data.');
+    var c1 = CPI[y1], c2 = CPI[y2], ratio = c2 / c1, out = v.amt * ratio, steps = [];
+    steps.push('Look up the Consumer Price Index (CPI-U, 1982-84 = 100) for each year: ' + y1 + ' was ' + cpiText(y1) + ' and ' + y2 + ' was ' + cpiText(y2) + '.');
+    steps.push('Divide the later index by the earlier one to get the price ratio: ' + cpiText(y2) + ' ÷ ' + cpiText(y1) + ' = ' + Number(ratio.toFixed(6)) + '.');
+    steps.push('Multiply your amount by the ratio: ' + money(v.amt) + ' × ' + Number(ratio.toFixed(6)) + ' = ' + money(out) + '.');
+    var total = (ratio - 1) * 100;
+    steps.push('Total change in prices: (' + Number(ratio.toFixed(6)) + ' − 1) × 100 = ' + pct(total) + '.');
+    var yrs = Math.abs(y2 - y1), ans = [
+      { label: money(v.amt) + ' in ' + y1 + ' is worth', value: money(out) + ' in ' + y2 },
+      { label: 'Total price change:', value: pct(total) }
+    ];
+    if (yrs > 0) {
+      var avg = (Math.pow(ratio, 1 / yrs) - 1) * 100;
+      steps.push('Average change per year, compounded over ' + yrs + ' year' + (yrs === 1 ? '' : 's') + ': ' + Number(ratio.toFixed(6)) + '^(1 ÷ ' + yrs + ') − 1 = ' + pct(avg) + '.');
+      ans.push({ label: 'Average per year:', value: pct(avg) });
+    }
+    if (y1 === CPI_LAST || y2 === CPI_LAST) steps.push('Note: the 2025 figure is the average of the 11 months published by the Bureau of Labor Statistics (October 2025 was not collected).');
+    return { answers: ans, steps: steps };
+  }
+
+  function inflationRate(v) {
+    if (!isNum(v.amt) || v.amt <= 0) return err('Enter an amount greater than 0.');
+    if (!isNum(v.rate) || v.rate < -50 || v.rate > 100) return err('Enter a yearly inflation rate between -50 and 100 percent.');
+    if (!isNum(v.yrs) || v.yrs < 0 || v.yrs > 200) return err('Enter a number of years between 0 and 200.');
+    var g = 1 + v.rate / 100, f = Math.pow(g, v.yrs), future = v.amt * f, power = v.amt / f, steps = [];
+    steps.push('Turn the rate into a growth factor: 1 + ' + fmt(v.rate) + ' ÷ 100 = ' + fmt(g) + '.');
+    steps.push('Raise it to the number of years: ' + fmt(g) + '^' + fmt(v.yrs) + ' = ' + Number(f.toFixed(6)) + '.');
+    steps.push('Cost later of something that costs ' + money(v.amt) + ' today: ' + money(v.amt) + ' × ' + Number(f.toFixed(6)) + ' = ' + money(future) + '.');
+    steps.push('Buying power later of ' + money(v.amt) + ': ' + money(v.amt) + ' ÷ ' + Number(f.toFixed(6)) + ' = ' + money(power) + ' in today\'s money.');
+    return {
+      answers: [
+        { label: 'Something that costs ' + money(v.amt) + ' today will cost', value: money(future) },
+        { label: money(v.amt) + ' will buy only', value: money(power) + ' worth' },
+        { label: 'Total price change:', value: pct((f - 1) * 100) }
+      ], steps: steps
+    };
+  }
+
+  /* ---------- Temperature ---------- */
+  function cToF(v) {
+    if (!isNum(v.t)) return err('Enter a temperature in degrees Celsius.');
+    if (v.t < -273.15) return err('Nothing can be colder than absolute zero, which is -273.15°C.');
+    var mult = v.t * 9 / 5, f = mult + 32, k = v.t + 273.15;
+    return {
+      answers: [{ label: fmt(v.t) + '°C =', value: fmt(f) + '°F' }, { label: 'In Kelvin:', value: fmt(k) + ' K' }],
+      steps: [
+        'Use the formula: °F = °C × 9/5 + 32.',
+        'Multiply the Celsius value by 9/5: ' + par(Number(fmt(v.t))) + ' × 9 ÷ 5 = ' + fmt(mult) + '.',
+        'Add 32: ' + fmt(mult) + ' + 32 = ' + fmt(f) + '.',
+        'So ' + fmt(v.t) + '°C is ' + fmt(f) + '°F. (Kelvin is °C + 273.15 = ' + fmt(k) + ' K.)'
+      ]
+    };
+  }
+  function fToC(v) {
+    if (!isNum(v.t)) return err('Enter a temperature in degrees Fahrenheit.');
+    if (v.t < -459.67) return err('Nothing can be colder than absolute zero, which is -459.67°F.');
+    var sub = v.t - 32, c = sub * 5 / 9, k = c + 273.15;
+    return {
+      answers: [{ label: fmt(v.t) + '°F =', value: fmt(c) + '°C' }, { label: 'In Kelvin:', value: fmt(k) + ' K' }],
+      steps: [
+        'Use the formula: °C = (°F − 32) × 5/9.',
+        'Subtract 32 from the Fahrenheit value: ' + par(Number(fmt(v.t))) + ' − 32 = ' + fmt(sub) + '.',
+        'Multiply by 5/9: ' + par(Number(fmt(sub))) + ' × 5 ÷ 9 = ' + fmt(c) + '.',
+        'So ' + fmt(v.t) + '°F is ' + fmt(c) + '°C. (Kelvin is °C + 273.15 = ' + fmt(k) + ' K.)'
+      ]
+    };
+  }
+
+  /* ---------- Time (add or subtract) ---------- */
+  function plural(n, w) { return n + ' ' + w + (n === 1 ? '' : 's'); }
+  function dhms(total) {
+    var d = Math.floor(total / 86400), r = total - d * 86400,
+      h = Math.floor(r / 3600), m = Math.floor((r - h * 3600) / 60), s = r - h * 3600 - m * 60;
+    return { d: d, h: h, m: m, s: s };
+  }
+  function dhmsText(p) {
+    var out = [];
+    if (p.d) out.push(plural(p.d, 'day'));
+    if (p.h) out.push(plural(p.h, 'hour'));
+    if (p.m) out.push(plural(p.m, 'minute'));
+    if (p.s) out.push(plural(p.s, 'second'));
+    return out.length ? out.join(', ') : '0 seconds';
+  }
+  function pad2(n) { return (n < 10 ? '0' : '') + n; }
+  function timeCalc(v) {
+    var keys = ['d1', 'h1', 'm1', 's1', 'd2', 'h2', 'm2', 's2'], x = {};
+    for (var i = 0; i < keys.length; i++) {
+      var n = v[keys[i]];
+      if (n === undefined || (typeof n === 'number' && isNaN(n))) n = 0;
+      if (!isNum(n) || !Number.isInteger(n) || n < 0) return err('Use whole numbers that are 0 or more in every time box. Leave a box empty for 0.');
+      if (n > 1000000) return err('One of those numbers is too large. Try something under one million.');
+      x[keys[i]] = n;
+    }
+    if (v.op !== 'add' && v.op !== 'sub') return err('Pick add or subtract.');
+    var t1 = x.d1 * 86400 + x.h1 * 3600 + x.m1 * 60 + x.s1, t2 = x.d2 * 86400 + x.h2 * 3600 + x.m2 * 60 + x.s2;
+    var label = function (d, h, m, s) { return d + ' d ' + h + ' h ' + m + ' m ' + s + ' s'; };
+    var steps = [];
+    steps.push('Turn the first time into seconds (1 day = 86,400 s, 1 hour = 3,600 s, 1 minute = 60 s): ' + label(x.d1, x.h1, x.m1, x.s1) + ' = ' + commas(t1) + ' seconds.');
+    steps.push('Turn the second time into seconds: ' + label(x.d2, x.h2, x.m2, x.s2) + ' = ' + commas(t2) + ' seconds.');
+    var res = v.op === 'add' ? t1 + t2 : t1 - t2, neg = res < 0, abs = Math.abs(res);
+    steps.push((v.op === 'add' ? 'Add' : 'Subtract') + ' the seconds: ' + commas(t1) + (v.op === 'add' ? ' + ' : ' − ') + commas(t2) + ' = ' + commas(res) + ' seconds.');
+    if (neg) steps.push('The second time is longer than the first, so the answer is negative. Convert ' + commas(abs) + ' seconds and put a minus sign in front.');
+    var p = dhms(abs);
+    steps.push('Convert back: ' + commas(abs) + ' ÷ 86,400 = ' + p.d + ' day' + (p.d === 1 ? '' : 's') + ', then the rest ÷ 3,600 = ' + p.h + ' hour' + (p.h === 1 ? '' : 's') + ', then ÷ 60 = ' + p.m + ' minute' + (p.m === 1 ? '' : 's') + ' and ' + p.s + ' second' + (p.s === 1 ? '' : 's') + '.');
+    var sign = neg ? '-' : '', totalH = Math.floor(abs / 3600), rem = abs - totalH * 3600;
+    var hms = sign + totalH + ':' + pad2(Math.floor(rem / 60)) + ':' + pad2(rem % 60);
+    return {
+      answers: [
+        { label: 'Result:', value: neg ? '-(' + dhmsText(p) + ')' : dhmsText(p) },
+        { label: 'As hours:minutes:seconds:', value: hms },
+        { label: 'Total hours:', value: fmt(res / 3600) },
+        { label: 'Total minutes:', value: fmt(res / 60) },
+        { label: 'Total seconds:', value: commas(res) }
+      ], steps: steps
+    };
+  }
+
   var api = {
     percentOf: percentOf, percentIs: percentIs, percentChange: percentChange,
     fraction: fraction, linear: linear, quadratic: quadratic,
     pythagHyp: pythagHyp, pythagLeg: pythagLeg, slope: slope,
     gcdlcm: gcdlcm, stats: stats, trig: trig, trigAngle: trigAngle,
-    derivative: derivative, integral: integral
+    derivative: derivative, integral: integral,
+    inflationCpi: inflationCpi, inflationRate: inflationRate, cToF: cToF, fToC: fToC, timeCalc: timeCalc
   };
   root.CalcMath = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
