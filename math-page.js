@@ -1,6 +1,6 @@
 /* CalcProject.org math calculators (page logic shared by each math calculator page; the math itself is in math-engine.js). */
 
-  const FN={"linear": {"l": "linear"}, "quadratic": {"q": "quadratic"}, "slope": {"m": "slope"}, "derivative": {"d": "derivative"}, "integral": {"i": "integral"}, "pythagorean": {"h": "pythagHyp", "l": "pythagLeg"}, "trig": {"s": "trig", "a": "trigAngle"}, "percent": {"of": "percentOf", "is": "percentIs", "chg": "percentChange"}, "fraction": {"f": "fraction"}, "gcf-lcm": {"g": "gcdlcm"}, "statistics": {"s": "stats"}, "inflation": {"h": "inflationCpi", "r": "inflationRate"}, "temperature": {"c": "cToF", "f": "fToC"}, "time": {"t": "timeCalc"}};
+  const FN={"linear": {"l": "linear"}, "quadratic": {"q": "quadratic"}, "slope": {"m": "slope"}, "derivative": {"d": "derivative"}, "integral": {"i": "integral"}, "pythagorean": {"h": "pythagHyp", "l": "pythagLeg"}, "trig": {"s": "trig", "a": "trigAngle"}, "percent": {"of": "percentOf", "is": "percentIs", "chg": "percentChange"}, "fraction": {"f": "fraction"}, "gcf-lcm": {"g": "gcdlcm"}, "statistics": {"s": "stats"}, "inflation": {"h": "inflationCpi", "r": "inflationRate"}, "temperature": {"c": "cToF", "f": "fToC"}, "time": {"t": "timeCalc"}, "hours": {"d": "hoursShift", "w": "hoursWeek"}};
   const $=id=>document.getElementById(id);
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const tickets=[...document.querySelectorAll('.ticket[data-tid]')];

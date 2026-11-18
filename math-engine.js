@@ -701,13 +701,133 @@
     };
   }
 
+  /* ---------- Hours worked (start/end times, breaks, decimal hours, pay) ---------- */
+  function parseClock(str) {
+    var s = String(str == null ? '' : str).toLowerCase().replace(/[.\s]/g, '');
+    if (!s) return null;
+    var ap = null, m = s.match(/^(.*?)(am|pm|a|p)$/);
+    if (m) { s = m[1]; ap = m[2].charAt(0); }
+    var h, mi;
+    if (/^\d{1,2}$/.test(s)) { h = parseInt(s, 10); mi = 0; }
+    else if (/^\d{1,2}:\d{2}$/.test(s)) { h = parseInt(s.split(':')[0], 10); mi = parseInt(s.split(':')[1], 10); }
+    else if (/^\d{3,4}$/.test(s)) { mi = parseInt(s.slice(-2), 10); h = parseInt(s.slice(0, -2), 10); }
+    else return null;
+    if (mi > 59) return null;
+    if (ap) {
+      if (h < 1 || h > 12) return null;
+      if (h === 12) h = 0;
+      if (ap === 'p') h += 12;
+    } else if (h > 23) return null;
+    return h * 60 + mi;
+  }
+  function clockText(mins) {
+    var h = Math.floor(mins / 60) % 24, m = mins % 60, ap = h >= 12 ? 'PM' : 'AM', h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + ':' + pad2(m) + ' ' + ap;
+  }
+  function hmText(mins) {
+    var h = Math.floor(mins / 60), m = mins % 60, out = [];
+    if (h) out.push(plural(h, 'hour'));
+    if (m) out.push(plural(m, 'minute'));
+    return out.length ? out.join(', ') : '0 minutes';
+  }
+  function dec2(mins) { return String(Number((mins / 60).toFixed(2))); }
+  function shiftMinutes(st, en, brk, who) {
+    // returns {mins, span, overnight} or {error}
+    var s = parseClock(st), e = parseClock(en);
+    if (s === null) return { error: who + 'Enter a start time like 9:00 AM or 17:30.' };
+    if (e === null) return { error: who + 'Enter an end time like 5:30 PM or 17:30.' };
+    if (e === s) return { error: who + 'The start and end times are the same. Change one of them.' };
+    var overnight = e < s, span = overnight ? e + 1440 - s : e - s;
+    if (brk >= span) return { error: who + 'The unpaid break is as long as, or longer than, the shift.' };
+    return { s: s, e: e, span: span, mins: span - brk, overnight: overnight, brk: brk };
+  }
+  function cleanBreak(b) {
+    if (b === undefined || b === '' || (typeof b === 'number' && isNaN(b))) return 0;
+    return b;
+  }
+  function hoursShift(v) {
+    var brk = cleanBreak(v.brk);
+    if (!isNum(brk) || brk < 0 || brk > 1440 || !Number.isInteger(brk)) return err('Enter the unpaid break in whole minutes (0 or more). Leave it empty for no break.');
+    var days = (v.days === undefined || (typeof v.days === 'number' && isNaN(v.days))) ? 1 : v.days;
+    if (!isNum(days) || !Number.isInteger(days) || days < 1 || days > 366) return err('Enter the number of days as a whole number from 1 to 366.');
+    var hasRate = isNum(v.rate);
+    if (hasRate && (v.rate < 0 || v.rate > 100000)) return err('Enter an hourly pay rate of 0 or more, or leave it empty.');
+    var r = shiftMinutes(v.st, v.en, brk, '');
+    if (r.error) return err(r.error);
+    var steps = [];
+    steps.push('Turn each time into minutes after midnight: ' + clockText(r.s) + ' = ' + commas(r.s) + ' and ' + clockText(r.e) + ' = ' + commas(r.e) + '.');
+    if (r.overnight) steps.push('The end time is earlier than the start time, so the shift runs past midnight. Add 24 hours (1,440 minutes) to the end: ' + commas(r.e) + ' + 1,440 − ' + commas(r.s) + ' = ' + commas(r.span) + ' minutes.');
+    else steps.push('Subtract the start from the end: ' + commas(r.e) + ' − ' + commas(r.s) + ' = ' + commas(r.span) + ' minutes (' + hmText(r.span) + ').');
+    if (brk) steps.push('Subtract the unpaid break: ' + commas(r.span) + ' − ' + brk + ' = ' + commas(r.mins) + ' minutes (' + hmText(r.mins) + ').');
+    else steps.push('No unpaid break, so the time worked is ' + commas(r.mins) + ' minutes (' + hmText(r.mins) + ').');
+    steps.push('Decimal hours: ' + commas(r.mins) + ' ÷ 60 = ' + dec2(r.mins) + ' hours.');
+    var ans = [{ label: 'Time worked per day:', value: hmText(r.mins) }, { label: 'Decimal hours per day:', value: dec2(r.mins) }];
+    var total = r.mins * days;
+    if (days > 1) {
+      steps.push('Total for ' + days + ' days: ' + commas(r.mins) + ' × ' + days + ' = ' + commas(total) + ' minutes (' + hmText(total) + ', or ' + dec2(total) + ' hours).');
+      ans.push({ label: 'Total for ' + days + ' days:', value: hmText(total) });
+      ans.push({ label: 'Total decimal hours:', value: dec2(total) });
+    }
+    if (hasRate) {
+      var pay = total / 60 * v.rate;
+      steps.push('Pay: ' + dec2(total) + ' hours × ' + money(v.rate) + ' per hour = ' + money(pay) + ' (before taxes, rounded to the cent).');
+      ans.push({ label: 'Pay before taxes:', value: money(pay) });
+    }
+    return { answers: ans, steps: steps };
+  }
+
+  var DAYS = [['mo', 'Monday'], ['tu', 'Tuesday'], ['we', 'Wednesday'], ['th', 'Thursday'], ['fr', 'Friday'], ['sa', 'Saturday'], ['su', 'Sunday']];
+  function hoursWeek(v) {
+    var hasRate = isNum(v.rate);
+    if (hasRate && (v.rate < 0 || v.rate > 100000)) return err('Enter an hourly pay rate of 0 or more, or leave it empty.');
+    var rows = [], total = 0, steps = [];
+    for (var i = 0; i < DAYS.length; i++) {
+      var k = DAYS[i][0], name = DAYS[i][1] + ': ';
+      var st = String(v[k + 's'] == null ? '' : v[k + 's']).trim(), en = String(v[k + 'e'] == null ? '' : v[k + 'e']).trim();
+      if (!st && !en) continue;
+      if (!st || !en) return err(name + 'Enter both a start and an end time, or leave both empty for a day off.');
+      var brk = cleanBreak(v[k + 'b']);
+      if (!isNum(brk) || brk < 0 || brk > 1440 || !Number.isInteger(brk)) return err(name + 'Enter the break in whole minutes, or leave it empty.');
+      var r = shiftMinutes(st, en, brk, name);
+      if (r.error) return err(r.error);
+      rows.push({ name: DAYS[i][1], r: r });
+      total += r.mins;
+      steps.push(DAYS[i][1] + ': ' + clockText(r.s) + ' to ' + clockText(r.e) + (r.overnight ? ' (past midnight)' : '') + (brk ? ', minus a ' + brk + '-minute break' : '') + ' = ' + hmText(r.mins) + ' (' + commas(r.mins) + ' minutes).');
+    }
+    if (!rows.length) return err('Enter a start and end time for at least one day.');
+    steps.push('Add the days together: ' + rows.map(function (x) { return commas(x.r.mins); }).join(' + ') + ' = ' + commas(total) + ' minutes (' + hmText(total) + ').');
+    steps.push('Decimal hours: ' + commas(total) + ' ÷ 60 = ' + dec2(total) + ' hours.');
+    var ans = [
+      { label: 'Total time worked:', value: hmText(total) },
+      { label: 'Decimal hours:', value: dec2(total) },
+      { label: 'Days worked:', value: String(rows.length) },
+      { label: 'Average per day worked:', value: hmText(Math.round(total / rows.length)) }
+    ];
+    if (hasRate) {
+      var pay;
+      if (v.ot === 'yes' && total > 2400) {
+        var reg = 2400, ot = total - 2400;
+        pay = reg / 60 * v.rate + ot / 60 * v.rate * 1.5;
+        steps.push('Overtime: the first 40 hours are paid at ' + money(v.rate) + ' and the ' + dec2(ot) + ' hours over 40 are paid at 1.5 times that rate (' + money(v.rate * 1.5) + ').');
+        steps.push('Pay: 40 × ' + money(v.rate) + ' + ' + dec2(ot) + ' × ' + money(v.rate * 1.5) + ' = ' + money(pay) + ' (before taxes, rounded to the cent).');
+        ans.push({ label: 'Regular hours:', value: '40' });
+        ans.push({ label: 'Overtime hours:', value: dec2(ot) });
+      } else {
+        pay = total / 60 * v.rate;
+        steps.push('Pay: ' + dec2(total) + ' hours × ' + money(v.rate) + ' per hour = ' + money(pay) + ' (before taxes, rounded to the cent).');
+      }
+      ans.push({ label: 'Pay before taxes:', value: money(pay) });
+    }
+    return { answers: ans, steps: steps };
+  }
+
   var api = {
     percentOf: percentOf, percentIs: percentIs, percentChange: percentChange,
     fraction: fraction, linear: linear, quadratic: quadratic,
     pythagHyp: pythagHyp, pythagLeg: pythagLeg, slope: slope,
     gcdlcm: gcdlcm, stats: stats, trig: trig, trigAngle: trigAngle,
     derivative: derivative, integral: integral,
-    inflationCpi: inflationCpi, inflationRate: inflationRate, cToF: cToF, fToC: fToC, timeCalc: timeCalc
+    inflationCpi: inflationCpi, inflationRate: inflationRate, cToF: cToF, fToC: fToC, timeCalc: timeCalc, hoursShift: hoursShift, hoursWeek: hoursWeek, parseClock: parseClock
   };
   root.CalcMath = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
