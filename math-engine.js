@@ -821,13 +821,56 @@
     return { answers: ans, steps: steps };
   }
 
+  /* ---------- Minutes to decimal hours (and back) ---------- */
+  function dec2n(x) { return String(Number(x.toFixed(2))); }
+  function minToDec(v) {
+    var m = v.mins;
+    if (!isNum(m) || m < 0 || m > 1000000) return err('Enter the minutes as a number from 0 to 1,000,000.');
+    var exact = m / 60, steps = [];
+    steps.push('Divide the minutes by 60, because there are 60 minutes in an hour: ' + commas(m) + ' ÷ 60 = ' + String(Number(exact.toFixed(6))) + '.');
+    steps.push('Round to two decimal places, the way timesheets and payroll usually do: ' + dec2n(exact) + ' hours.');
+    var ans = [{ label: 'Decimal hours:', value: dec2n(exact) }, { label: 'More precisely:', value: String(Number(exact.toFixed(4))) }];
+    if (Number.isInteger(m)) {
+      ans.push({ label: 'Same time as:', value: hmText(m) });
+      if (m >= 60) steps.push(commas(m) + ' minutes is ' + hmText(m) + ', which is ' + Math.floor(m / 60) + ' + ' + dec2n((m % 60) / 60) + ' = ' + dec2n(exact) + ' hours.');
+    }
+    return { answers: ans, steps: steps };
+  }
+  function hmToDec(v) {
+    var h = cleanBreak(v.h), m = cleanBreak(v.m);
+    if (!isNum(h) || h < 0 || h > 100000) return err('Enter the hours as a number from 0 to 100,000, or leave it empty.');
+    if (!isNum(m) || m < 0 || m > 1000000) return err('Enter the minutes as a number from 0 to 1,000,000, or leave it empty.');
+    if (h === 0 && m === 0) return err('Enter some hours or some minutes.');
+    var total = h * 60 + m, exact = total / 60, steps = [];
+    steps.push('Turn the minutes into a fraction of an hour: ' + commas(m) + ' ÷ 60 = ' + String(Number((m / 60).toFixed(6))) + '.');
+    steps.push('Add the whole hours: ' + commas(h) + ' + ' + String(Number((m / 60).toFixed(6))) + ' = ' + String(Number(exact.toFixed(6))) + '.');
+    steps.push('Round to two decimal places: ' + dec2n(exact) + ' hours.');
+    var ans = [{ label: 'Decimal hours:', value: dec2n(exact) }, { label: 'More precisely:', value: String(Number(exact.toFixed(4))) }];
+    if (Number.isInteger(total)) ans.push({ label: 'Total minutes:', value: commas(total) });
+    return { answers: ans, steps: steps };
+  }
+  function decToHm(v) {
+    var d = v.dec;
+    if (!isNum(d) || d < 0 || d > 100000) return err('Enter the decimal hours as a number from 0 to 100,000.');
+    var whole = Math.floor(d + 1e-9), frac = d - whole, mins = Math.round(frac * 60), steps = [];
+    if (mins === 60) { whole += 1; mins = 0; }
+    steps.push('The whole number is the hours: ' + whole + '.');
+    steps.push('Multiply the part after the decimal point by 60: ' + String(Number(frac.toFixed(6))) + ' × 60 = ' + String(Number((frac * 60).toFixed(4))) + ' minutes, which rounds to ' + mins + '.');
+    var total = whole * 60 + mins;
+    return { answers: [
+      { label: 'Hours and minutes:', value: hmText(total) },
+      { label: 'As h:mm:', value: whole + ':' + pad2(mins) },
+      { label: 'Total minutes:', value: commas(total) }
+    ], steps: steps };
+  }
+
   var api = {
     percentOf: percentOf, percentIs: percentIs, percentChange: percentChange,
     fraction: fraction, linear: linear, quadratic: quadratic,
     pythagHyp: pythagHyp, pythagLeg: pythagLeg, slope: slope,
     gcdlcm: gcdlcm, stats: stats, trig: trig, trigAngle: trigAngle,
     derivative: derivative, integral: integral,
-    inflationCpi: inflationCpi, inflationRate: inflationRate, cToF: cToF, fToC: fToC, timeCalc: timeCalc, hoursShift: hoursShift, hoursWeek: hoursWeek, parseClock: parseClock
+    inflationCpi: inflationCpi, inflationRate: inflationRate, cToF: cToF, fToC: fToC, timeCalc: timeCalc, hoursShift: hoursShift, hoursWeek: hoursWeek, parseClock: parseClock, minToDec: minToDec, hmToDec: hmToDec, decToHm: decToHm
   };
   root.CalcMath = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
